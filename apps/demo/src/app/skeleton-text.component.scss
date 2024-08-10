@@ -1,0 +1,48 @@
+@use '@angular/material' as mat;
+@use 'theme' as *;
+
+@mixin apply-theme {
+  --ssq-skeleton-text-surface-bright: #{mat.get-theme-color($light-theme, primary-fixed-dim)};
+  --ssq-skeleton-text-surface-dim: #{mat.get-theme-color($light-theme, surface-dim)};
+
+  @media (prefers-color-scheme: dark) {
+    --ssq-skeleton-text-surface-bright: #{mat.get-theme-color($dark-theme, primary-fixed-dim)};
+    --ssq-skeleton-text-surface-dim: #{mat.get-theme-color($dark-theme, on-surface-variant)};
+  }
+}
+
+:host {
+  @include apply-theme;
+
+  inline-size: var(--ssq-skeleton-text-size-x, 8rem);
+  block-size: var(--ssq-skeleton-text-size-y, 1rem);
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  place-self: center;
+  background-color: var(--ssq-skeleton-text-surface-dim);
+}
+
+:host(.skeleton-text-animated) {
+  &::after {
+    inset: 0;
+    position: absolute;
+    display: inline-block;
+    content: '';
+    background-image: linear-gradient(
+      90deg,
+      hsl(from var(--ssq-skeleton-text-surface-bright) h s l / 0) 0,
+      hsl(from var(--ssq-skeleton-text-surface-bright) h s l / 0.2) 20%,
+      hsl(from var(--ssq-skeleton-text-surface-bright) h s l / 0.5) 60%,
+      hsl(from var(--ssq-skeleton-text-surface-bright) h s l / 0)
+    );
+    translate: -100% 0;
+    animation: shimmer var(--ssq-skeleton-text-animation-duration, 1s) infinite;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}

@@ -1,0 +1,64 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use './styles/theme' as *;
+
+:root {
+  accent-color: var(--ssq-primary);
+  color-scheme: light dark;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--ssq-primary);
+  text-decoration: none;
+
+  &:hover {
+    color: light-dark(oklab(from var(--ssq-primary) 0.25 a b), oklab(from var(--ssq-primary) 0.75 a b));
+  }
+
+  &:active {
+    color: hsl(from var(--ssq-primary) calc(h + 25) s l);
+  }
+}
+
+@include mat.core();
+
+:root {
+  --ssq-primary: #{mat.get-theme-color($light-theme, primary)};
+
+  @include mat.core-theme($light-theme);
+  @include mat.icon-theme($light-theme);
+  @include mat.list-theme($light-theme);
+  @include mat.progress-bar-theme($light-theme);
+  @include mat.snack-bar-theme($light-theme);
+
+  @media (prefers-color-scheme: dark) {
+    --ssq-primary: #{mat.get-theme-color($dark-theme, primary)};
+
+    @include mat.core-color($dark-theme);
+    @include mat.icon-color($dark-theme);
+    @include mat.list-color($dark-theme);
+    @include mat.progress-bar-color($dark-theme);
+    @include mat.snack-bar-color($dark-theme);
+  }
+}
+
+.popover-error {
+  --mdc-snackbar-container-color: #{mat.get-theme-color($light-theme, error)};
+  --mdc-snackbar-supporting-text-color: #{mat.get-theme-color($light-theme, on-error)};
+}

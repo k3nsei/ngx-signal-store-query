@@ -1,0 +1,70 @@
+name: release-please
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: Why was the workflow triggered manually?
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prepare release PR or move on with release when PR was accepted
+        id: release
+        uses: google-github-actions/release-please-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: node
+          package-name: '@ngx-signal-store-query/core'
+          extra-files: |
+            LICENSE
+            README.md
+
+      - name: Checkout repository
+        if: ${{ steps.release.outputs.release_created }}
+        uses: actions/checkout@v4
+
+      - name: Setup NodeJS
+        if: ${{ steps.release.outputs.release_created }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+
+      - name: Install NPM dependencies
+        if: ${{ steps.release.outputs.release_created }}
+        shell: bash
+        run: npm ci
+
+      - name: Build
+        if: ${{ steps.release.outputs.release_created }}
+        shell: bash
+        run: npx --no -- ng build ngx-signal-store-query
+
+      - name: Copy extra files
+        if: ${{ steps.release.outputs.release_created }}
+        shell: bash
+        run: |
+          cp LICENSE dist/libs/ngx-signal-store-query/LICENSE
+          cp README.md dist/libs/ngx-signal-store-query/README.md
+
+      - name: Publish
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        shell: bash
+        run: |
+          cd dist/libs/ngx-signal-store-query
+          npm publish --provenance --access public

@@ -1,0 +1,33 @@
+{
+  "name": "@ngx-signal-store-query/core",
+  "version": "0.1.0",
+  "description": "Signal Store feature that bridges with Angular Query",
+  "keywords": [
+    "Angular",
+    "Signals",
+    "State Management",
+    "Signal Store",
+    "Signal Store Feature",
+    "Angular Query"
+  ],
+  "homepage": "https://github.com/k3nsei/ngx-signal-store-query#readme",
+  "bugs": {
+    "url": "https://github.com/k3nsei/ngx-signal-store-query/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/k3nsei/ngx-signal-store-query.git"
+  },
+  "license": "MIT",
+  "author": "Piotr Stępniewski (k3nsei)",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=18.0.0",
+    "@angular/core": ">=18.0.0",
+    "@ngrx/signals": ">=18.0.0",
+    "@tanstack/angular-query-experimental": ">=5.40.0"
+  }
+}
