@@ -21,7 +21,7 @@ export const CounterStore = signalStore(
 
         return new Promise((resolve, reject) => {
           if (count >= 5) {
-            return reject(new RangeError('Count is to big'));
+            return reject(new RangeError('Count is too high'));
           }
 
           timer = setTimeout(() => resolve({ count: count + amount }), 250);
@@ -52,7 +52,7 @@ export const CounterStore = signalStore(
 
         return new Promise((resolve, reject) => {
           if (count <= 0) {
-            return reject(new RangeError('Count is to low'));
+            return reject(new RangeError('Count is too low'));
           }
 
           timer = setTimeout(() => resolve({ count: count - amount }), 250);
