@@ -1,0 +1,44 @@
+@use '@angular/material' as mat;
+
+@use 'theme' as *;
+
+@mixin apply-theme {
+  --ssq-chip-border-color: #{mat.get-theme-color($light-theme, on-surface)};
+
+  @media (prefers-color-scheme: dark) {
+    --ssq-chip-border-color: #{mat.get-theme-color($dark-theme, on-surface)};
+  }
+}
+
+:host {
+  @include apply-theme;
+
+  min-inline-size: 100%;
+  min-block-size: 100%;
+  position: relative;
+  display: block;
+
+  .busy-indicator {
+    inset: 0 auto 0;
+    position: fixed;
+  }
+
+  .list-item {
+    :is(&__pill) {
+      padding: 0.05rem 0.375rem;
+      translate: 0.125rem -0.25rem;
+      display: inline-grid;
+      align-items: center;
+      border: 0.05rem solid hsl(from var(--ssq-chip-border-color) h s l / 50%);
+      border-radius: 2em;
+      font-size: 0.75rem;
+    }
+  }
+
+  .no-records {
+    display: block;
+    place-content: center;
+    text-align: center;
+    opacity: 0.5;
+  }
+}
