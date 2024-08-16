@@ -1,0 +1,22 @@
+@use '@angular/material' as mat;
+
+@use 'theme' as *;
+
+:host {
+  margin-inline: auto;
+  min-inline-size: 6rem;
+  inline-size: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 3rem;
+  justify-items: center;
+  gap: 0.5rem;
+
+  output {
+    grid-column: 1 / 3;
+    display: block;
+    align-content: center;
+    text-align: center;
+    font: #{mat.get-theme-typography($light-theme, headline-large, font)};
+  }
+}

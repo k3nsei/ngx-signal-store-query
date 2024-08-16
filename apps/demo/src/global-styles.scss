@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
+
 @use './styles/theme' as *;
 
 :root {
@@ -42,6 +43,7 @@ a {
   --ssq-primary: #{mat.get-theme-color($light-theme, primary)};
 
   @include mat.core-theme($light-theme);
+  @include mat.fab-theme($light-theme);
   @include mat.icon-theme($light-theme);
   @include mat.list-theme($light-theme);
   @include mat.progress-bar-theme($light-theme);
@@ -51,6 +53,7 @@ a {
     --ssq-primary: #{mat.get-theme-color($dark-theme, primary)};
 
     @include mat.core-color($dark-theme);
+    @include mat.fab-color($dark-theme);
     @include mat.icon-color($dark-theme);
     @include mat.list-color($dark-theme);
     @include mat.progress-bar-color($dark-theme);

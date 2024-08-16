@@ -49,10 +49,10 @@ import { ExampleStore } from './example.store.ts';
   selector: 'app-example',
   template: `
     <pre>
-      Loading: {{ store.exampleQuery().isLoading() }}
-      Fetching: {{ store.exampleQuery().isFetching() }}
+      Loading: {{ store.exampleQuery.isLoading() }}
+      Fetching: {{ store.exampleQuery.isFetching() }}
       Data:
-      {{ store.exampleQuery().data() | json }}
+      {{ store.exampleQuery.data() | json }}
     </pre>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

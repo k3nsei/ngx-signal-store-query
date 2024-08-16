@@ -1,63 +1,37 @@
 import {
   type EmptyFeatureResult,
-  patchState,
-  type Prettify,
-  type SignalStoreFeature,
   signalStoreFeature,
+  type SignalStoreFeature,
   type SignalStoreFeatureResult,
-  type StateSignals,
-  withHooks,
-  withState,
-  type WritableStateSource,
+  withMethods,
 } from '@ngrx/signals';
-import { type CreateQueryResult, injectQuery } from '@tanstack/angular-query-experimental';
+import { injectQuery } from '@tanstack/angular-query-experimental';
 
+import { type CreateQueryFn, type QueryMethod, type QueryProp, type QueryStore } from './types';
 import { lowerFirst } from './utils';
 
-export function withQuery<
-  Input extends SignalStoreFeatureResult,
-  QueryName extends string,
-  Store = QueryStore<Input>,
-  DataFnType = unknown,
-  DataType = DataFnType,
-  ErrorType = Error,
-  QueryKey extends readonly unknown[] = readonly unknown[],
+export const withQuery = <
+  Name extends string,
+  TDataFn = unknown,
+  TData = TDataFn,
+  TError = Error,
+  Input extends SignalStoreFeatureResult = SignalStoreFeatureResult,
 >(
-  queryName: QueryName,
-  createQueryFn: (store: Store) => QueryFactory<DataFnType, DataType, ErrorType, QueryKey>,
-): SignalStoreFeature<
-  Input,
-  EmptyFeatureResult & { state: Record<QueryProp<QueryName>, CreateQueryResult<DataType, ErrorType>> }
-> {
-  const prop: QueryProp<QueryName> = `${lowerFirst(queryName)}Query`;
+  name: Name,
+  createQueryFn: CreateQueryFn<TDataFn, TData, TError, Input>,
+): SignalStoreFeature<Input, EmptyFeatureResult & { methods: Record<QueryProp<Name>, QueryMethod<TData, TError>> }> => {
+  const prop: QueryProp<Name> = `${lowerFirst(name)}Query`;
 
   return signalStoreFeature(
-    withState({
-      [prop]: {},
-    } as unknown as Record<QueryProp<QueryName>, CreateQueryResult<DataType, ErrorType>>),
-    withHooks((store) => {
-      const query = injectQuery(createQueryFn(store as Store));
+    withMethods((store) => {
+      const query = injectQuery(createQueryFn(store as QueryStore<Input>));
 
       return {
-        onInit(): void {
-          patchState(store, {
-            [prop]: query,
-          } as Record<QueryProp<QueryName>, CreateQueryResult<DataType, ErrorType>>);
-        },
-      };
+        [prop]: new Proxy(() => query, {
+          get: (_, prop) => Reflect.get(query, prop),
+          has: (_, prop) => Reflect.has(query, prop),
+        }),
+      } as Record<QueryProp<Name>, QueryMethod<TData, TError>>;
     }),
   );
-}
-
-type QueryStore<Input extends SignalStoreFeatureResult> = Prettify<
-  StateSignals<Input['state']> & Input['computed'] & Input['methods'] & WritableStateSource<Prettify<Input['state']>>
->;
-
-type QueryProp<QueryName extends string> = `${Uncapitalize<QueryName>}Query`;
-
-type QueryFactory<
-  DataFnType = unknown,
-  DataType = DataFnType,
-  ErrorType = Error,
-  QueryKey extends readonly unknown[] = readonly unknown[],
-> = Parameters<typeof injectQuery<DataFnType, ErrorType, DataType, QueryKey>>[0];
+};

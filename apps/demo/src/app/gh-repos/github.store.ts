@@ -1,6 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
 import { type HttpErrorResponse } from '@angular/common/http';
-import { inject, PLATFORM_ID } from '@angular/core';
+import { DestroyRef, inject, PLATFORM_ID } from '@angular/core';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -8,13 +8,20 @@ import { patchState, signalStore, withHooks, withState } from '@ngrx/signals';
 import { withQuery } from '@ngx-signal-store-query/core';
 import { lastValueFrom } from 'rxjs';
 
-import { GitHubApiService } from './github-api.service';
+import { GithubApiService } from './github-api.service';
 
-export const AppStore = signalStore(
-  withState({ organization: 'google', delay: 3000 }),
+export const GithubStore = signalStore(
+  withState(() => {
+    const platformId = inject(PLATFORM_ID);
+
+    return {
+      organization: 'google',
+      delay: isPlatformBrowser(platformId) ? 2000 : 0,
+    };
+  }),
   withQuery('github', (store) => {
     const snackBar = inject(MatSnackBar);
-    const api = inject(GitHubApiService);
+    const api = inject(GithubApiService);
 
     return () => {
       const organization = store.organization();
@@ -39,6 +46,7 @@ export const AppStore = signalStore(
     };
   }),
   withHooks((store) => {
+    const destroyRef = inject(DestroyRef);
     const platformId = inject(PLATFORM_ID);
 
     return {
@@ -47,7 +55,9 @@ export const AppStore = signalStore(
           return;
         }
 
-        setTimeout(() => patchState(store, { organization: 'angular' }), store.delay() + 5000);
+        const timer = setTimeout(() => patchState(store, { organization: 'angular' }), store.delay() + 3000);
+
+        destroyRef.onDestroy(() => clearTimeout(timer));
       },
     };
   }),

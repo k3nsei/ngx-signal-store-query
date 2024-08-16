@@ -22,5 +22,10 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/install-npm-deps
 
+      - name: Lint
+        run: npx --no -- ng lint
+
       - name: Build
-        run: npx --no -- ng build ngx-signal-store-query
+        run: |
+          npx --no -- ng build ngx-signal-store-query --configuration=production
+          npx --no -- ng build demo --configuration=production --progress=false --verbose
