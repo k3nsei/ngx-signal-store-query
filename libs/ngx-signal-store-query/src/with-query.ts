@@ -13,25 +13,28 @@ import { lowerFirst } from './utils';
 export const withQuery = <
   Name extends string,
   TDataFn = unknown,
-  TData = TDataFn,
   TError = Error,
+  TData = TDataFn,
   Input extends SignalStoreFeatureResult = SignalStoreFeatureResult,
 >(
   name: Name,
-  createQueryFn: CreateQueryFn<TDataFn, TData, TError, Input>,
-): SignalStoreFeature<Input, EmptyFeatureResult & { methods: Record<QueryProp<Name>, QueryMethod<TData, TError>> }> => {
-  const prop: QueryProp<Name> = `${lowerFirst(name)}Query`;
+  createQueryFn: CreateQueryFn<TDataFn, TError, TData, NoInfer<Input>>,
+): SignalStoreFeature<
+  Input,
+  EmptyFeatureResult & { methods: Record<QueryProp<NoInfer<Name>>, QueryMethod<NoInfer<TData>, NoInfer<TError>>> }
+> => {
+  const prop: QueryProp<NoInfer<Name>> = `${lowerFirst(name)}Query`;
 
   return signalStoreFeature(
     withMethods((store) => {
-      const query = injectQuery(createQueryFn(store as QueryStore<Input>));
+      const query = injectQuery(createQueryFn(store as QueryStore<NoInfer<Input>>));
 
       return {
         [prop]: new Proxy(() => query, {
           get: (_, prop) => Reflect.get(query, prop),
           has: (_, prop) => Reflect.has(query, prop),
         }),
-      } as Record<QueryProp<Name>, QueryMethod<TData, TError>>;
+      } as Record<QueryProp<NoInfer<Name>>, QueryMethod<NoInfer<TData>, NoInfer<TError>>>;
     }),
   );
 };

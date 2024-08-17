@@ -1,10 +1,11 @@
 import { isPlatformBrowser } from '@angular/common';
 import { type HttpErrorResponse } from '@angular/common/http';
 import { DestroyRef, inject, PLATFORM_ID } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { patchState, signalStore, withHooks, withState } from '@ngrx/signals';
+import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 import { withQuery } from '@ngx-signal-store-query/core';
 import { lastValueFrom } from 'rxjs';
 
@@ -19,7 +20,13 @@ export const GithubStore = signalStore(
       delay: isPlatformBrowser(platformId) ? 2000 : 0,
     };
   }),
+  withMethods((store) => ({
+    changeOrganization(organization: string) {
+      return patchState(store, { organization });
+    },
+  })),
   withQuery('github', (store) => {
+    const destroyRef = inject(DestroyRef);
     const snackBar = inject(MatSnackBar);
     const api = inject(GithubApiService);
 
@@ -31,34 +38,18 @@ export const GithubStore = signalStore(
         enabled: !!organization,
         queryKey: ['github', 'orgs', { organization }, 'repos'],
         queryFn: () =>
-          lastValueFrom(api.fetchOrganizationRepositoryList$(organization, delay)).catch(
-            (error: HttpErrorResponse | Error) => {
-              snackBar.open(error.message, '', {
-                panelClass: 'popover-error',
-                duration: 5000,
-              });
+          lastValueFrom(
+            api.fetchOrganizationRepositoryList$(organization, delay).pipe(takeUntilDestroyed(destroyRef)),
+          ).catch((error: HttpErrorResponse | Error) => {
+            snackBar.open(error.message, '', {
+              panelClass: 'popover-error',
+              duration: 5000,
+            });
 
-              return [];
-            },
-          ),
+            return [];
+          }),
         staleTime: 5 * 60 * 1000,
       };
-    };
-  }),
-  withHooks((store) => {
-    const destroyRef = inject(DestroyRef);
-    const platformId = inject(PLATFORM_ID);
-
-    return {
-      onInit() {
-        if (!isPlatformBrowser(platformId)) {
-          return;
-        }
-
-        const timer = setTimeout(() => patchState(store, { organization: 'angular' }), store.delay() + 3000);
-
-        destroyRef.onDestroy(() => clearTimeout(timer));
-      },
     };
   }),
 );

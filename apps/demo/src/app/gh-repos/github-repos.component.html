@@ -1,11 +1,11 @@
-@if (isFetching() || isLoading()) {
+@if (isBusy()) {
   <mat-progress-bar class="busy-indicator" mode="indeterminate" />
 }
 
 <mat-list class="list">
   <div mat-subheader>{{ organization() | titlecase }} Repositories</div>
 
-  @if (isFetching() || isLoading()) {
+  @if (isBusy()) {
     <ng-container *ngTemplateOutlet="skeleton" />
     <ng-container *ngTemplateOutlet="skeleton" />
     <ng-container *ngTemplateOutlet="skeleton" />

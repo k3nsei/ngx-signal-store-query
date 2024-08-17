@@ -1,5 +1,13 @@
-import { NgTemplateOutlet, TitleCasePipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { isPlatformBrowser, NgTemplateOutlet, TitleCasePipe } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  DestroyRef,
+  inject,
+  type OnInit,
+  PLATFORM_ID,
+} from '@angular/core';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -19,14 +27,31 @@ import { GithubStore } from './github.store';
   providers: [GithubApiService, GithubStore],
   imports: [NgTemplateOutlet, TitleCasePipe, MatIconModule, MatListModule, MatProgressBarModule, SkeletonTextComponent],
 })
-export class GithubReposComponent {
+export class GithubReposComponent implements OnInit {
+  private readonly destroyRef = inject(DestroyRef);
+
+  private readonly platformId = inject(PLATFORM_ID);
+
   private readonly store = inject(GithubStore);
 
-  protected readonly organization = this.store.organization;
+  protected readonly organization = computed(() => this.store.organization());
 
-  protected readonly isFetching = this.store.githubQuery.isFetching;
+  protected readonly isBusy = computed(() => {
+    const isFetching = this.store.githubQuery.isFetching();
+    const isLoading = this.store.githubQuery.isLoading();
 
-  protected readonly isLoading = this.store.githubQuery.isLoading;
+    return isFetching || isLoading;
+  });
 
   protected readonly data = computed(() => this.store.githubQuery.data() ?? []);
+
+  public ngOnInit(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    const timer = setTimeout(() => this.store.changeOrganization('angular'), this.store.delay() + 3000);
+
+    this.destroyRef.onDestroy(() => clearTimeout(timer));
+  }
 }

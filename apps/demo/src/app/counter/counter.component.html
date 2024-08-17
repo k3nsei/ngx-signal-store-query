@@ -1,9 +1,9 @@
 <output aria-label="Current count">{{ value() }}</output>
 
-<button mat-fab type="button" aria-label="Increase" title="Increase" [disabled]="isBusy()" (click)="increase()">
+<button mat-fab type="button" aria-label="Increase" title="Increase" [disabled]="isBusy()" (click)="increaseBy(1)">
   <mat-icon fontIcon="exposure_plus_1" />
 </button>
 
-<button mat-fab type="button" aria-label="Decrease" title="Decrease" [disabled]="isBusy()" (click)="decrease()">
+<button mat-fab type="button" aria-label="Decrease" title="Decrease" [disabled]="isBusy()" (click)="increaseBy(-1)">
   <mat-icon fontIcon="exposure_neg_1" />
 </button>
