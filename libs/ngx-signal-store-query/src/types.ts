@@ -7,31 +7,26 @@ import {
 import {
   type CreateMutationOptions,
   type CreateMutationResult,
+  type CreateQueryOptions,
   type CreateQueryResult,
-  type injectQuery,
 } from '@tanstack/angular-query-experimental';
-
-import type { QueryClient } from '@tanstack/query-core';
-
-export type CreateQueryFn<
-  TDataFn = unknown,
-  TData = TDataFn,
-  TError = Error,
-  Input extends SignalStoreFeatureResult = SignalStoreFeatureResult,
-> = (store: QueryStore<Input>) => QueryFactory<TDataFn, TData, TError>;
-
-export type QueryProp<Name extends string> = `${Uncapitalize<Name>}Query`;
-
-export type QueryMethod<TData = unknown, TError = Error> = (() => CreateQueryResult<TData, TError>) &
-  CreateQueryResult<TData, TError>;
+import { type QueryClient } from '@tanstack/query-core';
 
 export type QueryStore<Input extends SignalStoreFeatureResult> = Prettify<
   StateSignals<Input['state']> & Input['computed'] & Input['methods'] & WritableStateSource<Prettify<Input['state']>>
 >;
 
-export type QueryFactory<TDataFn = unknown, TData = TDataFn, TError = Error> = Parameters<
-  typeof injectQuery<TDataFn, TError, TData>
->[0];
+export type CreateQueryFn<
+  TDataFn = unknown,
+  TError = Error,
+  TData = TDataFn,
+  Input extends SignalStoreFeatureResult = SignalStoreFeatureResult,
+> = (store: QueryStore<Input>) => (client: QueryClient) => CreateQueryOptions<TDataFn, TError, TData>;
+
+export type QueryProp<Name extends string> = `${Uncapitalize<Name>}Query`;
+
+export type QueryMethod<TData = unknown, TError = Error> = (() => CreateQueryResult<TData, TError>) &
+  CreateQueryResult<TData, TError>;
 
 export type CreateMutationFn<
   TData = unknown,

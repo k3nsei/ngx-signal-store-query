@@ -1,5 +1,3 @@
-import { inject, Injector } from '@angular/core';
-
 import {
   type EmptyFeatureResult,
   signalStoreFeature,
@@ -21,23 +19,31 @@ export const withMutation = <
   Input extends SignalStoreFeatureResult = SignalStoreFeatureResult,
 >(
   name: Name,
-  createMutationFn: CreateMutationFn<TData, TError, TVariables, TContext, Input>,
+  createMutationFn: CreateMutationFn<TData, TError, TVariables, TContext, NoInfer<Input>>,
 ): SignalStoreFeature<
   Input,
-  EmptyFeatureResult & { methods: Record<MutationProp<Name>, MutationMethod<TData, TError, TVariables, TContext>> }
+  EmptyFeatureResult & {
+    methods: Record<
+      MutationProp<NoInfer<Name>>,
+      MutationMethod<NoInfer<TData>, NoInfer<TError>, NoInfer<TVariables>, NoInfer<TContext>>
+    >;
+  }
 > => {
-  const prop: MutationProp<Name> = `${lowerFirst(name)}Mutation`;
+  const prop: MutationProp<NoInfer<Name>> = `${lowerFirst(name)}Mutation`;
 
   return signalStoreFeature(
     withMethods((store) => {
-      const mutation = injectMutation(createMutationFn(store as QueryStore<Input>), inject(Injector));
+      const mutation = injectMutation(createMutationFn(store as QueryStore<NoInfer<Input>>));
 
       return {
         [prop]: new Proxy(() => mutation, {
           get: (_, prop) => Reflect.get(mutation, prop),
           has: (_, prop) => Reflect.has(mutation, prop),
         }),
-      } as Record<MutationProp<Name>, MutationMethod<TData, TError, TVariables, TContext>>;
+      } as Record<
+        MutationProp<NoInfer<Name>>,
+        MutationMethod<NoInfer<TData>, NoInfer<TError>, NoInfer<TVariables>, NoInfer<TContext>>
+      >;
     }),
   );
 };
