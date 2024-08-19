@@ -1,0 +1,14 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "bootstrap-sha": "167e8033e4b4e07a696b09801b0b3086a82996f0",
+  "last-release-sha": "ce0a86eaac2d6d79e4a3e21fc8133584b660f5df",
+  "packages": {
+    ".": {
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": true,
+      "changelog-path": "CHANGELOG.md",
+      "extra-files": ["README.md", "libs/ngx-signal-store-query/package.json"]
+    }
+  }
+}

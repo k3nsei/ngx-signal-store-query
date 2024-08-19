@@ -21,14 +21,11 @@ jobs:
     steps:
       - name: Prepare release PR or move on with release when PR was accepted
         id: release
-        uses: google-github-actions/release-please-action@v4
+        uses: googleapis/release-please-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          release-type: node
-          package-name: '@ngx-signal-store-query/core'
-          extra-files: |
-            LICENSE
-            README.md
+          config-file: .release-please-config.json
+          manifest-file: .release-please-manifest.json
 
       - name: Checkout repository
         if: ${{ steps.release.outputs.release_created }}
