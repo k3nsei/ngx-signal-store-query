@@ -34,7 +34,7 @@
     "@angular/ssr": "^18.2.1",
     "@ngrx/signals": "^18.0.2",
     "@tanstack/angular-query-devtools-experimental": "^5.52.0",
-    "@tanstack/angular-query-experimental": "^5.52.0",
+    "@tanstack/angular-query-experimental": "^5.53.1",
     "express": "^4.19.2",
     "rxjs": "~7.8.1",
     "tslib": "^2.7.0",
