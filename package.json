@@ -33,7 +33,7 @@
     "@angular/router": "^18.2.2",
     "@angular/ssr": "^18.2.2",
     "@ngrx/signals": "^18.0.2",
-    "@tanstack/angular-query-devtools-experimental": "^5.53.2",
+    "@tanstack/angular-query-devtools-experimental": "^5.54.1",
     "@tanstack/angular-query-experimental": "^5.53.2",
     "express": "^4.19.2",
     "rxjs": "~7.8.1",
