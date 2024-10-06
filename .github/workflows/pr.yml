@@ -41,26 +41,29 @@ jobs:
     name: Run E2E tests
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.46.1-noble
+      image: mcr.microsoft.com/playwright:v1.47.2-noble
     timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: ['chromium', 'firefox', 'webkit']
     steps:
       - uses: actions/checkout@v4
 
       - name: Install dependencies
         uses: ./.github/actions/install-npm-deps
 
-      - name: Install dependencies
-        run: npm ci
-
       - name: Run tests
+        env:
+          HOME: /root
         working-directory: apps/demo-e2e
-        run: npx playwright test --project=chromium
+        run: npx playwright test --project=${{ matrix.browser }}
 
       - name: Upload test report
-        if: ${{ always() }}
+        if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
+          name: playwright-${{ matrix.browser }}-report
           path: |
             apps/demo-e2e/playwright-report/
             apps/demo-e2e/test-results/
