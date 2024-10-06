@@ -29,29 +29,37 @@ updates:
         patterns:
           - '@angular/*'
           - '@angular-devkit/*'
+          - '@types/express'
+          - '@types/jasmine'
+          - 'express'
+          - 'jasmine*'
+          - 'karma*'
           - 'ng-packagr'
+          - 'rxjs'
+          - 'tslib'
+          - 'typescript'
           - 'zone.js'
-        exclude-patterns:
-          - '@angular/cdk'
-          - '@angular/material'
-          - '@angular/material-*'
-      angular-material:
+        update-types:
+          - 'minor'
+          - 'patch'
+      angular-query:
         applies-to: 'version-updates'
         patterns:
-          - '@angular/cdk'
-          - '@angular/material'
-          - '@angular/material-*'
+          - '@tanstack/angular-query*'
+        update-types:
+          - 'minor'
+          - 'patch'
       angular-eslint:
         applies-to: 'version-updates'
         patterns:
           - '@angular-eslint/*'
-      eslint:
-        applies-to: 'version-updates'
-        patterns:
           - 'angular-eslint'
           - 'eslint'
           - 'eslint-*'
           - 'typescript-eslint'
+        update-types:
+          - 'minor'
+          - 'patch'
       jest:
         applies-to: 'version-updates'
         patterns:
