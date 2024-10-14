@@ -41,7 +41,7 @@ jobs:
     name: Run E2E tests
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.47.2-noble
+      image: mcr.microsoft.com/playwright:v1.48.0-noble
     timeout-minutes: 10
     strategy:
       fail-fast: false
