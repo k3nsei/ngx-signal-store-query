@@ -6,7 +6,7 @@
     "test": "playwright test"
   },
   "devDependencies": {
-    "@playwright/test": "1.48.0",
+    "@playwright/test": "1.48.1",
     "@types/node": "^22.7.5"
   },
   "volta": {
