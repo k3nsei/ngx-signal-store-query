@@ -22,6 +22,9 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/install-deps
 
+      - name: Check Format
+        run: pnpm exec prettier --check --ignore-unknown .
+
       - name: Lint
         run: pnpm exec ng lint
 
