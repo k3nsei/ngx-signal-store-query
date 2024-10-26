@@ -38,6 +38,7 @@ export const ExampleStore = signalStore(
 
 #### Use it in component
 
+<!-- prettier-ignore-start -->
 ```typescript
 import { JsonPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
@@ -62,3 +63,4 @@ export class ExampleComponent {
   public readonly store = inject(ExampleStore);
 }
 ```
+<!-- prettier-ignore-end -->

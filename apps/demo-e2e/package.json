@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "install-browsers": "playwright install",
     "test": "playwright test"
   },
   "devDependencies": {
-    "@playwright/test": "1.48.0",
-    "@types/node": "^22.7.5"
+    "@playwright/test": "1.48.2",
+    "@types/node": "^22.8.1"
   },
   "volta": {
     "extends": "../../package.json"

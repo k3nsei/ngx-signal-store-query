@@ -7,7 +7,7 @@
       "enabled": false,
       "environment": "local"
     },
-    "packageManager": "npm",
+    "packageManager": "pnpm",
     "schematicCollections": ["@angular-eslint/schematics"],
     "warnings": {
       "versionMismatch": true
