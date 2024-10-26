@@ -9,8 +9,8 @@ import {
   type CreateMutationResult,
   type CreateQueryOptions,
   type CreateQueryResult,
+  type QueryClient,
 } from '@tanstack/angular-query-experimental';
-import { type QueryClient } from '@tanstack/query-core';
 
 export type QueryStore<Input extends SignalStoreFeatureResult> = Prettify<
   StateSignals<Input['state']> & Input['computed'] & Input['methods'] & WritableStateSource<Prettify<Input['state']>>
