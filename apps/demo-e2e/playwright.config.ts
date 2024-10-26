@@ -53,7 +53,7 @@ const config: PlaywrightTestConfig = defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'cd ../../ && npm run start',
+    command: 'pnpm run --dir=../../ serve',
     url: 'http://localhost:4200/',
     reuseExistingServer: !process.env.CI,
     stdout: 'ignore',

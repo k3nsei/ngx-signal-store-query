@@ -31,24 +31,14 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
         uses: actions/checkout@v4
 
-      - name: Setup NodeJS
+      - name: Install dependencies
         if: ${{ steps.release.outputs.release_created }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: 'lts/*'
-          registry-url: 'https://registry.npmjs.org'
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
-
-      - name: Install NPM dependencies
-        if: ${{ steps.release.outputs.release_created }}
-        shell: bash
-        run: npm ci
+        uses: ./.github/actions/install-deps
 
       - name: Build
         if: ${{ steps.release.outputs.release_created }}
         shell: bash
-        run: npx --no -- ng build ngx-signal-store-query --configuration=production
+        run: pnpm exec ng build ngx-signal-store-query --configuration=production
 
       - name: Copy extra files
         if: ${{ steps.release.outputs.release_created }}

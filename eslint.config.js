@@ -9,18 +9,23 @@ module.exports = tsEslint.config(
   {
     ignores: ['.angular/', 'coverage/', 'dist/', 'tmp/', 'out-tsc/', 'bazel-out/'],
   },
-  {
+  ...tsEslint.config({
     files: ['**/*.ts'],
-    plugins: {
-      import: { rules: pluginImport.rules },
-    },
     extends: [
       eslint.configs.recommended,
       ...tsEslint.configs.recommended,
       ...tsEslint.configs.stylistic,
       ...angularEslint.configs.tsRecommended,
       pluginPrettierRecommended,
+      pluginImport.flatConfigs.recommended,
     ],
+    languageOptions: {
+      parser: tsEslint.parser,
+      parserOptions: {
+        project: 'tsconfig.json',
+        tsconfigRootDir: __dirname,
+      },
+    },
     processor: angularEslint.processInlineTemplates,
     rules: {
       /**
@@ -60,6 +65,7 @@ module.exports = tsEslint.config(
        * Import/Export Rules
        */
       'import/first': 'error',
+      'import/named': 'off',
       'import/no-unresolved': 'off',
       'import/order': [
         'error',
@@ -123,7 +129,7 @@ module.exports = tsEslint.config(
         },
       ],
     },
-  },
+  }),
   {
     files: ['**/*.html'],
     extends: [...angularEslint.configs.templateRecommended, ...angularEslint.configs.templateAccessibility],

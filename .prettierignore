@@ -5,3 +5,10 @@
 /tmp
 /out-tsc
 /bazel-out
+
+pnpm-lock.yaml
+
+/apps/demo-e2e/playwright/.cache
+/apps/demo-e2e/playwright-report
+/apps/demo-e2e/blob-report
+/apps/demo-e2e/test-results
