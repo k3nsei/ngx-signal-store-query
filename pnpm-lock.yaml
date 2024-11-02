@@ -45,8 +45,8 @@ importers:
         specifier: ^18.2.10
         version: 18.2.10(@angular/common@18.2.9(@angular/core@18.2.9(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.9(rxjs@7.8.1)(zone.js@0.14.10))
       '@ngrx/signals':
-        specifier: ^18.1.0
-        version: 18.1.0(@angular/core@18.2.9(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)
+        specifier: ^18.1.1
+        version: 18.1.1(@angular/core@18.2.9(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)
       '@tanstack/angular-query-devtools-experimental':
         specifier: ^5.59.16
         version: 5.59.16(@angular/common@18.2.9(@angular/core@18.2.9(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.9(rxjs@7.8.1)(zone.js@0.14.10))(@tanstack/angular-query-experimental@5.59.16(@angular/core@18.2.9(rxjs@7.8.1)(zone.js@0.14.10)))
@@ -1840,8 +1840,8 @@ packages:
     resolution: {integrity: sha512-zM0mVWSXE0a0h9aKACLwKmD6nHcRiKrPpCfvaKqG1CqDEyjEawId0ocXxVzPMCAm6kkWr2P025msfxXEnt8UGQ==}
     engines: {node: '>= 10'}
 
-  '@ngrx/signals@18.1.0':
-    resolution: {integrity: sha512-ivuOyCPXoysUxvCRotRAMtwo+ObfWN06kHz/Nnlp8GyCB6wgZaUUGe6luOQyWhrZkbu3K+oCu7HB6YCSY6zT+A==}
+  '@ngrx/signals@18.1.1':
+    resolution: {integrity: sha512-7AaFp4VrzYhnDHlF15VZAMvp067zIC5arRRRMV+i+oi95sQVDXezpj74KTIguwRbZ3FU+GKGzFCNrwgYvginSg==}
     peerDependencies:
       '@angular/core': ^18.0.0
       rxjs: ^6.5.3 || ^7.4.0
@@ -2924,6 +2924,7 @@ packages:
 
   critters@0.0.24:
     resolution: {integrity: sha512-Oyqew0FGM0wYUSNqR0L6AteO5MpMoUU0rhKRieXeiKs+PmRTxiJMyaunYB2KF6fQ3dzChXKCpbFOEJx3OQ1v/Q==}
+    deprecated: Ownership of Critters has moved to the Nuxt team, who will be maintaining the project going forward. If you'd like to keep using Critters, please switch to the actively-maintained fork at https://github.com/danielroe/beasties
 
   cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -7624,7 +7625,7 @@ snapshots:
       '@napi-rs/nice-win32-x64-msvc': 1.0.1
     optional: true
 
-  '@ngrx/signals@18.1.0(@angular/core@18.2.9(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)':
+  '@ngrx/signals@18.1.1(@angular/core@18.2.9(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)':
     dependencies:
       '@angular/core': 18.2.9(rxjs@7.8.1)(zone.js@0.14.10)
       tslib: 2.8.0
