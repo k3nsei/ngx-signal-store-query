@@ -4,7 +4,9 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/spec",
-    "types": ["jasmine"]
+    "target": "ES2022",
+    "types": ["node", "vite/client", "vitest", "vitest/globals", "vitest/importMeta"]
   },
-  "include": ["**/*.spec.ts", "**/*.d.ts"]
+  "files": ["src/test-setup.ts"],
+  "include": ["src/**/*.spec.ts", "src/**/*.d.ts", "vitest.config.ts", "vitest.config.mts"]
 }

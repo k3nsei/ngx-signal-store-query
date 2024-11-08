@@ -1,29 +1,29 @@
 // @ts-check
-const eslint = require('@eslint/js');
-const tsEslint = require('typescript-eslint');
-const angularEslint = require('angular-eslint');
-const pluginImport = require('eslint-plugin-import');
-const pluginPrettierRecommended = require('eslint-plugin-prettier/recommended');
+import eslint from '@eslint/js';
+import tsEslint from 'typescript-eslint';
+import angularEslint from 'angular-eslint';
+import pluginImport from 'eslint-plugin-import';
+import pluginPrettier from 'eslint-plugin-prettier/recommended';
 
-module.exports = tsEslint.config(
+const config = tsEslint.config(
   {
     ignores: ['.angular/', 'coverage/', 'dist/', 'tmp/', 'out-tsc/', 'bazel-out/'],
   },
   ...tsEslint.config({
-    files: ['**/*.ts'],
+    files: ['**/*.?(c|m)ts?(x)'],
     extends: [
       eslint.configs.recommended,
       ...tsEslint.configs.recommended,
       ...tsEslint.configs.stylistic,
       ...angularEslint.configs.tsRecommended,
-      pluginPrettierRecommended,
+      pluginPrettier,
       pluginImport.flatConfigs.recommended,
     ],
     languageOptions: {
       parser: tsEslint.parser,
       parserOptions: {
         project: 'tsconfig.json',
-        tsconfigRootDir: __dirname,
+        tsconfigRootDir: import.meta.dirname,
       },
     },
     processor: angularEslint.processInlineTemplates,
@@ -136,3 +136,5 @@ module.exports = tsEslint.config(
     rules: {},
   },
 );
+
+export default config;

@@ -38,7 +38,7 @@ jobs:
       - name: Build
         if: ${{ steps.release.outputs.release_created }}
         shell: bash
-        run: pnpm exec ng build ngx-signal-store-query --configuration=production
+        run: pnpm ng build ngx-signal-store-query --configuration=production
 
       - name: Copy extra files
         if: ${{ steps.release.outputs.release_created }}
