@@ -23,15 +23,20 @@ jobs:
         uses: ./.github/actions/install-deps
 
       - name: Check Format
-        run: pnpm exec prettier --check --ignore-unknown .
+        run: pnpm prettier --check --ignore-unknown .
 
       - name: Lint
-        run: pnpm exec ng lint
+        run: pnpm ng lint
 
       - name: Build
         run: |
-          pnpm exec ng build ngx-signal-store-query --configuration=production
-          pnpm exec ng build demo --configuration=production --progress=false --verbose
+          pnpm ng build ngx-signal-store-query --configuration=production
+          pnpm ng build demo --configuration=production --progress=false --verbose
+
+      - name: Test
+        run: |
+          pnpm run test ngx-signal-store-query
+          pnpm run test demo
 
       - name: Upload build artefacts
         uses: actions/upload-artifact@v4
@@ -60,7 +65,7 @@ jobs:
         env:
           HOME: /root
         working-directory: apps/demo-e2e
-        run: pnpm exec playwright test --project=${{ matrix.browser }}
+        run: pnpm playwright test --project=${{ matrix.browser }}
 
       - name: Upload test report
         if: ${{ !cancelled() }}

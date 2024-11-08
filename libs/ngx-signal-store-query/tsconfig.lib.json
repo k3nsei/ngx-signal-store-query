@@ -9,5 +9,5 @@
     "inlineSources": true,
     "types": []
   },
-  "exclude": ["**/*.spec.ts"]
+  "exclude": ["src/**/*.spec.ts", "src/test-setup.ts", "vitest.config.ts", "vitest.config.mts"]
 }

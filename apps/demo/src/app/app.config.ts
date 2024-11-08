@@ -3,7 +3,7 @@ import { type ApplicationConfig, provideZoneChangeDetection } from '@angular/cor
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
-import { provideAngularQuery, QueryClient } from '@tanstack/angular-query-experimental';
+import { provideTanStackQuery, QueryClient, withDevtools } from '@tanstack/angular-query-experimental';
 
 import { githubApiInterceptor } from './gh-repos';
 
@@ -13,7 +13,7 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     provideAnimationsAsync(),
     provideHttpClient(withFetch(), withInterceptors([githubApiInterceptor])),
-    provideAngularQuery(
+    provideTanStackQuery(
       new QueryClient({
         defaultOptions: {
           queries: {
@@ -23,6 +23,7 @@ export const appConfig: ApplicationConfig = {
           },
         },
       }),
+      withDevtools(),
     ),
   ],
 };

@@ -1,8 +1,10 @@
 // @ts-check
-const tsEslint = require('typescript-eslint');
-const rootConfig = require('../../eslint.config.js');
+import tsEslint from 'typescript-eslint';
 
-module.exports = tsEslint.config(
+import rootConfig from '../../eslint.config.mjs';
+
+/** @type {import('eslint').Linter.Config[]} */
+const config = tsEslint.config(
   ...rootConfig,
   {
     files: ['**/*.ts'],
@@ -30,3 +32,5 @@ module.exports = tsEslint.config(
     rules: {},
   },
 );
+
+export default config;
