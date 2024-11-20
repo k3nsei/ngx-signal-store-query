@@ -2,14 +2,13 @@
 
 ## [0.4.0](https://github.com/k3nsei/ngx-signal-store-query/compare/source-v0.3.0...source-v0.4.0) (2024-11-20)
 
-
 ### ⚠ BREAKING CHANGES
 
-* Minimal supporting version of tanstack angular query changed to 5.61.0
+- Minimum supported version of TanStack Angular Query changed to 5.61.0
 
 ### Features
 
-* bump tanstack angular query to 5.61.0 ([a73f6df](https://github.com/k3nsei/ngx-signal-store-query/commit/a73f6df44979fbd35b57c36d7e7faf8e3f43212a))
+- bump tanstack angular query to 5.61.0 ([a73f6df](https://github.com/k3nsei/ngx-signal-store-query/commit/a73f6df44979fbd35b57c36d7e7faf8e3f43212a))
 
 ## [0.3.0](https://github.com/k3nsei/ngx-signal-store-query/compare/v0.2.0...v0.3.0) (2024-08-17)
 
