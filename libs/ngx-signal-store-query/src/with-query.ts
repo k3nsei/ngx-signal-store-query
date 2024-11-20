@@ -5,7 +5,7 @@ import {
   type SignalStoreFeatureResult,
   withMethods,
 } from '@ngrx/signals';
-import { injectQuery } from '@tanstack/angular-query-experimental';
+import { injectQuery, type QueryKey } from '@tanstack/angular-query-experimental';
 
 import { type CreateQueryFn, type QueryMethod, type QueryProp, type QueryStore } from './types';
 import { lowerFirst } from './utils';
@@ -15,10 +15,11 @@ export const withQuery = <
   TDataFn = unknown,
   TError = Error,
   TData = TDataFn,
+  TQueryKey extends QueryKey = QueryKey,
   Input extends SignalStoreFeatureResult = SignalStoreFeatureResult,
 >(
   name: Name,
-  createQueryFn: CreateQueryFn<TDataFn, TError, TData, NoInfer<Input>>,
+  createQueryFn: CreateQueryFn<TDataFn, TError, TData, TQueryKey, NoInfer<Input>>,
 ): SignalStoreFeature<
   Input,
   EmptyFeatureResult & { methods: Record<QueryProp<NoInfer<Name>>, QueryMethod<NoInfer<TData>, NoInfer<TError>>> }

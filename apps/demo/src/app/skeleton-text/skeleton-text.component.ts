@@ -1,7 +1,6 @@
 import { booleanAttribute, ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
-  standalone: true,
   selector: 'ssq-skeleton-text',
   template: `&nbsp;`,
   styleUrl: './skeleton-text.component.scss',
