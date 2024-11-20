@@ -85,7 +85,7 @@
             "server": "apps/demo/src/main.server.ts",
             "prerender": true,
             "ssr": {
-              "entry": "apps/demo/server.ts"
+              "entry": "apps/demo/src/server.ts"
             }
           },
           "configurations": {

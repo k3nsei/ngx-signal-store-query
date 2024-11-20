@@ -7,7 +7,6 @@ import { CounterApiService } from './counter-api.service';
 import { CounterStore } from './counter.store';
 
 @Component({
-  standalone: true,
   selector: 'ssq-counter',
   templateUrl: './counter.component.html',
   styleUrl: './counter.component.scss',

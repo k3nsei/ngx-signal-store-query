@@ -1,6 +1,6 @@
 {
   "name": "@ngx-signal-store-query/core",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Signal Store feature that bridges with Angular Query",
   "keywords": [
     "Angular",
@@ -25,9 +25,9 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@angular/common": ">=18.0.0",
-    "@angular/core": ">=18.0.0",
-    "@ngrx/signals": ">=18.0.0",
-    "@tanstack/angular-query-experimental": ">=5.40.0"
+    "@angular/common": "^18.0.0 || >=19.0.0",
+    "@angular/core": "^18.0.0 || >=19.0.0",
+    "@ngrx/signals": "^18.0.0 || >=19.0.0",
+    "@tanstack/angular-query-experimental": ">=5.61.0"
   }
 }

@@ -19,7 +19,6 @@ import { GithubApiService } from './github-api.service';
 import { GithubStore } from './github.store';
 
 @Component({
-  standalone: true,
   selector: 'ssq-github-repos',
   templateUrl: './github-repos.component.html',
   styleUrl: './github-repos.component.scss',

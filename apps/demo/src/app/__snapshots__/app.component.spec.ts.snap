@@ -1,355 +1,17 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`GIVEN AppComponent > THEN component should be rendered 1`] = `
-<div
-  _nghost-a-c1762976068=""
-  id="root0"
-  ng-version="18.2.11"
->
-  <ssq-counter
-    _ngcontent-a-c1762976068=""
-    _nghost-a-c3988251285=""
-  >
-    <output
-      _ngcontent-a-c3988251285=""
-      aria-label="Current count"
-    >
-      0
-    </output>
-    <button
-      _ngcontent-a-c3988251285=""
-      aria-label="Increase"
-      class="mdc-fab mat-mdc-fab-base mat-mdc-fab mat-accent mat-mdc-button-base"
-      mat-fab=""
-      mat-ripple-loader-class-name="mat-mdc-button-ripple"
-      mat-ripple-loader-uninitialized=""
-      ng-reflect-disabled="false"
-      title="Increase"
-      type="button"
-    >
-      <span
-        class="mat-mdc-button-persistent-ripple mdc-fab__ripple"
-      />
-      <mat-icon
-        _ngcontent-a-c3988251285=""
-        aria-hidden="true"
-        class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color"
-        data-mat-icon-name="exposure_plus_1"
-        data-mat-icon-type="font"
-        fonticon="exposure_plus_1"
-        ng-reflect-font-icon="exposure_plus_1"
-        role="img"
-      />
-      <span
-        class="mdc-button__label"
-      />
-      <span
-        class="mat-mdc-focus-indicator"
-      />
-      <span
-        class="mat-mdc-button-touch-target"
-      />
-    </button>
-    <button
-      _ngcontent-a-c3988251285=""
-      aria-label="Decrease"
-      class="mdc-fab mat-mdc-fab-base mat-mdc-fab mat-accent mat-mdc-button-base"
-      mat-fab=""
-      mat-ripple-loader-class-name="mat-mdc-button-ripple"
-      mat-ripple-loader-uninitialized=""
-      ng-reflect-disabled="false"
-      title="Decrease"
-      type="button"
-    >
-      <span
-        class="mat-mdc-button-persistent-ripple mdc-fab__ripple"
-      />
-      <mat-icon
-        _ngcontent-a-c3988251285=""
-        aria-hidden="true"
-        class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color"
-        data-mat-icon-name="exposure_neg_1"
-        data-mat-icon-type="font"
-        fonticon="exposure_neg_1"
-        ng-reflect-font-icon="exposure_neg_1"
-        role="img"
-      />
-      <span
-        class="mdc-button__label"
-      />
-      <span
-        class="mat-mdc-focus-indicator"
-      />
-      <span
-        class="mat-mdc-button-touch-target"
-      />
-    </button>
-  </ssq-counter>
-  <ssq-github-repos
-    _ngcontent-a-c1762976068=""
-    _nghost-a-c1596711146=""
-  >
-    <mat-progress-bar
-      _ngcontent-a-c1596711146=""
-      aria-valuemax="100"
-      aria-valuemin="0"
-      class="mat-mdc-progress-bar mdc-linear-progress busy-indicator mat-primary mdc-linear-progress--animation-ready mdc-linear-progress--indeterminate"
-      mode="indeterminate"
-      ng-reflect-mode="indeterminate"
-      role="progressbar"
-      tabindex="-1"
-    >
-      <div
-        aria-hidden="true"
-        class="mdc-linear-progress__buffer"
-      >
-        <div
-          class="mdc-linear-progress__buffer-bar"
-          style="flex-basis: 100%;"
-        />
-        <!--container-->
-      </div>
-      <div
-        aria-hidden="true"
-        class="mdc-linear-progress__bar mdc-linear-progress__primary-bar"
-        style="transform: scaleX(1);"
-      >
-        <span
-          class="mdc-linear-progress__bar-inner"
-        />
-      </div>
-      <div
-        aria-hidden="true"
-        class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar"
-      >
-        <span
-          class="mdc-linear-progress__bar-inner"
-        />
-      </div>
-    </mat-progress-bar>
-    <!--container-->
-    <mat-list
-      _ngcontent-a-c1596711146=""
-      aria-disabled="false"
-      class="mat-mdc-list mat-mdc-list-base mdc-list list"
-    >
-      <div
-        _ngcontent-a-c1596711146=""
-        class="mat-mdc-subheader mdc-list-group__subheader"
-        mat-subheader=""
-      >
-        Google Repositories
-      </div>
-      <mat-list-item
-        _ngcontent-a-c1596711146=""
-        aria-disabled="false"
-        class="mat-mdc-list-item mdc-list-item list-item skeleton mdc-list-item--with-leading-icon mdc-list-item--with-two-lines"
-      >
-        <mat-icon
-          _ngcontent-a-c1596711146=""
-          aria-hidden="true"
-          class="mat-icon notranslate mat-mdc-list-item-icon list-item__icon material-icons mat-ligature-font mat-icon-no-color mdc-list-item__start"
-          data-mat-icon-type="font"
-          matlistitemicon=""
-          role="img"
-        >
-          folder
-        </mat-icon>
-        <span
-          class="mdc-list-item__content"
-        >
-          <div
-            _ngcontent-a-c1596711146=""
-            class="mat-mdc-list-item-title mdc-list-item__primary-text list-item__title"
-            matlistitemtitle=""
-          >
-            <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
-              class="skeleton-text-animated"
-            >
-               
-            </ssq-skeleton-text>
-          </div>
-          <div
-            _ngcontent-a-c1596711146=""
-            class="mat-mdc-list-item-line mdc-list-item__secondary-text list-item__description"
-            matlistitemline=""
-          >
-            <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
-              class="skeleton-text-animated"
-              inlinesize="12rem"
-              ng-reflect-inline-size="12rem"
-              style="--ssq-skeleton-text-size-x: 12rem;"
-            >
-               
-            </ssq-skeleton-text>
-          </div>
-          <span
-            class="mat-mdc-list-item-unscoped-content"
-          />
-        </span>
-        <div
-          class="mat-mdc-focus-indicator"
-        />
-      </mat-list-item>
-      <!--bindings={
-  "ng-reflect-ng-template-outlet": "[object Object]"
-}-->
-      <mat-list-item
-        _ngcontent-a-c1596711146=""
-        aria-disabled="false"
-        class="mat-mdc-list-item mdc-list-item list-item skeleton mdc-list-item--with-leading-icon mdc-list-item--with-two-lines"
-      >
-        <mat-icon
-          _ngcontent-a-c1596711146=""
-          aria-hidden="true"
-          class="mat-icon notranslate mat-mdc-list-item-icon list-item__icon material-icons mat-ligature-font mat-icon-no-color mdc-list-item__start"
-          data-mat-icon-type="font"
-          matlistitemicon=""
-          role="img"
-        >
-          folder
-        </mat-icon>
-        <span
-          class="mdc-list-item__content"
-        >
-          <div
-            _ngcontent-a-c1596711146=""
-            class="mat-mdc-list-item-title mdc-list-item__primary-text list-item__title"
-            matlistitemtitle=""
-          >
-            <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
-              class="skeleton-text-animated"
-            >
-               
-            </ssq-skeleton-text>
-          </div>
-          <div
-            _ngcontent-a-c1596711146=""
-            class="mat-mdc-list-item-line mdc-list-item__secondary-text list-item__description"
-            matlistitemline=""
-          >
-            <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
-              class="skeleton-text-animated"
-              inlinesize="12rem"
-              ng-reflect-inline-size="12rem"
-              style="--ssq-skeleton-text-size-x: 12rem;"
-            >
-               
-            </ssq-skeleton-text>
-          </div>
-          <span
-            class="mat-mdc-list-item-unscoped-content"
-          />
-        </span>
-        <div
-          class="mat-mdc-focus-indicator"
-        />
-      </mat-list-item>
-      <!--bindings={
-  "ng-reflect-ng-template-outlet": "[object Object]"
-}-->
-      <mat-list-item
-        _ngcontent-a-c1596711146=""
-        aria-disabled="false"
-        class="mat-mdc-list-item mdc-list-item list-item skeleton mdc-list-item--with-leading-icon mdc-list-item--with-two-lines"
-      >
-        <mat-icon
-          _ngcontent-a-c1596711146=""
-          aria-hidden="true"
-          class="mat-icon notranslate mat-mdc-list-item-icon list-item__icon material-icons mat-ligature-font mat-icon-no-color mdc-list-item__start"
-          data-mat-icon-type="font"
-          matlistitemicon=""
-          role="img"
-        >
-          folder
-        </mat-icon>
-        <span
-          class="mdc-list-item__content"
-        >
-          <div
-            _ngcontent-a-c1596711146=""
-            class="mat-mdc-list-item-title mdc-list-item__primary-text list-item__title"
-            matlistitemtitle=""
-          >
-            <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
-              class="skeleton-text-animated"
-            >
-               
-            </ssq-skeleton-text>
-          </div>
-          <div
-            _ngcontent-a-c1596711146=""
-            class="mat-mdc-list-item-line mdc-list-item__secondary-text list-item__description"
-            matlistitemline=""
-          >
-            <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
-              class="skeleton-text-animated"
-              inlinesize="12rem"
-              ng-reflect-inline-size="12rem"
-              style="--ssq-skeleton-text-size-x: 12rem;"
-            >
-               
-            </ssq-skeleton-text>
-          </div>
-          <span
-            class="mat-mdc-list-item-unscoped-content"
-          />
-        </span>
-        <div
-          class="mat-mdc-focus-indicator"
-        />
-      </mat-list-item>
-      <!--bindings={
-  "ng-reflect-ng-template-outlet": "[object Object]"
-}-->
-      <!--container-->
-      <!--container-->
-    </mat-list>
-    <!--container-->
-  </ssq-github-repos>
-  <!--container-->
-  <angular-query-devtools
-    _ngcontent-a-c1762976068=""
-    ngskiphydration="true"
-  >
-    <div
-      class="tsqd-parent-container"
-    />
-  </angular-query-devtools>
-  <!--container-->
-</div>
-`;
-
 exports[`GIVEN AppComponent > WHEN component was initialized > THEN component should be rendered 1`] = `
 <div
-  _nghost-a-c1762976068=""
   id="root1"
-  ng-version="18.2.11"
+  ng-version="19.0.0"
 >
-  <ssq-counter
-    _ngcontent-a-c1762976068=""
-    _nghost-a-c3988251285=""
-  >
+  <ssq-counter>
     <output
-      _ngcontent-a-c3988251285=""
       aria-label="Current count"
     >
       0
     </output>
     <button
-      _ngcontent-a-c3988251285=""
       aria-label="Increase"
       class="mdc-fab mat-mdc-fab-base mat-mdc-fab mat-accent mat-mdc-button-base"
       mat-fab=""
@@ -363,7 +25,6 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
         class="mat-mdc-button-persistent-ripple mdc-fab__ripple"
       />
       <mat-icon
-        _ngcontent-a-c3988251285=""
         aria-hidden="true"
         class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color"
         data-mat-icon-name="exposure_plus_1"
@@ -376,14 +37,13 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
         class="mdc-button__label"
       />
       <span
-        class="mat-mdc-focus-indicator"
+        class="mat-focus-indicator"
       />
       <span
         class="mat-mdc-button-touch-target"
       />
     </button>
     <button
-      _ngcontent-a-c3988251285=""
       aria-label="Decrease"
       class="mdc-fab mat-mdc-fab-base mat-mdc-fab mat-accent mat-mdc-button-base"
       mat-fab=""
@@ -397,7 +57,6 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
         class="mat-mdc-button-persistent-ripple mdc-fab__ripple"
       />
       <mat-icon
-        _ngcontent-a-c3988251285=""
         aria-hidden="true"
         class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color"
         data-mat-icon-name="exposure_neg_1"
@@ -410,19 +69,15 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
         class="mdc-button__label"
       />
       <span
-        class="mat-mdc-focus-indicator"
+        class="mat-focus-indicator"
       />
       <span
         class="mat-mdc-button-touch-target"
       />
     </button>
   </ssq-counter>
-  <ssq-github-repos
-    _ngcontent-a-c1762976068=""
-    _nghost-a-c1596711146=""
-  >
+  <ssq-github-repos>
     <mat-progress-bar
-      _ngcontent-a-c1596711146=""
       aria-valuemax="100"
       aria-valuemin="0"
       class="mat-mdc-progress-bar mdc-linear-progress busy-indicator mat-primary mdc-linear-progress--animation-ready mdc-linear-progress--indeterminate"
@@ -461,24 +116,20 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
     </mat-progress-bar>
     <!--container-->
     <mat-list
-      _ngcontent-a-c1596711146=""
       aria-disabled="false"
       class="mat-mdc-list mat-mdc-list-base mdc-list list"
     >
       <div
-        _ngcontent-a-c1596711146=""
         class="mat-mdc-subheader mdc-list-group__subheader"
         mat-subheader=""
       >
         Google Repositories
       </div>
       <mat-list-item
-        _ngcontent-a-c1596711146=""
         aria-disabled="false"
         class="mat-mdc-list-item mdc-list-item list-item skeleton mdc-list-item--with-leading-icon mdc-list-item--with-two-lines"
       >
         <mat-icon
-          _ngcontent-a-c1596711146=""
           aria-hidden="true"
           class="mat-icon notranslate mat-mdc-list-item-icon list-item__icon material-icons mat-ligature-font mat-icon-no-color mdc-list-item__start"
           data-mat-icon-type="font"
@@ -491,26 +142,20 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
           class="mdc-list-item__content"
         >
           <div
-            _ngcontent-a-c1596711146=""
             class="mat-mdc-list-item-title mdc-list-item__primary-text list-item__title"
             matlistitemtitle=""
           >
             <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
               class="skeleton-text-animated"
             >
                
             </ssq-skeleton-text>
           </div>
           <div
-            _ngcontent-a-c1596711146=""
             class="mat-mdc-list-item-line mdc-list-item__secondary-text list-item__description"
             matlistitemline=""
           >
             <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
               class="skeleton-text-animated"
               inlinesize="12rem"
               ng-reflect-inline-size="12rem"
@@ -524,19 +169,17 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
           />
         </span>
         <div
-          class="mat-mdc-focus-indicator"
+          class="mat-focus-indicator"
         />
       </mat-list-item>
       <!--bindings={
   "ng-reflect-ng-template-outlet": "[object Object]"
 }-->
       <mat-list-item
-        _ngcontent-a-c1596711146=""
         aria-disabled="false"
         class="mat-mdc-list-item mdc-list-item list-item skeleton mdc-list-item--with-leading-icon mdc-list-item--with-two-lines"
       >
         <mat-icon
-          _ngcontent-a-c1596711146=""
           aria-hidden="true"
           class="mat-icon notranslate mat-mdc-list-item-icon list-item__icon material-icons mat-ligature-font mat-icon-no-color mdc-list-item__start"
           data-mat-icon-type="font"
@@ -549,26 +192,20 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
           class="mdc-list-item__content"
         >
           <div
-            _ngcontent-a-c1596711146=""
             class="mat-mdc-list-item-title mdc-list-item__primary-text list-item__title"
             matlistitemtitle=""
           >
             <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
               class="skeleton-text-animated"
             >
                
             </ssq-skeleton-text>
           </div>
           <div
-            _ngcontent-a-c1596711146=""
             class="mat-mdc-list-item-line mdc-list-item__secondary-text list-item__description"
             matlistitemline=""
           >
             <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
               class="skeleton-text-animated"
               inlinesize="12rem"
               ng-reflect-inline-size="12rem"
@@ -582,19 +219,17 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
           />
         </span>
         <div
-          class="mat-mdc-focus-indicator"
+          class="mat-focus-indicator"
         />
       </mat-list-item>
       <!--bindings={
   "ng-reflect-ng-template-outlet": "[object Object]"
 }-->
       <mat-list-item
-        _ngcontent-a-c1596711146=""
         aria-disabled="false"
         class="mat-mdc-list-item mdc-list-item list-item skeleton mdc-list-item--with-leading-icon mdc-list-item--with-two-lines"
       >
         <mat-icon
-          _ngcontent-a-c1596711146=""
           aria-hidden="true"
           class="mat-icon notranslate mat-mdc-list-item-icon list-item__icon material-icons mat-ligature-font mat-icon-no-color mdc-list-item__start"
           data-mat-icon-type="font"
@@ -607,26 +242,20 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
           class="mdc-list-item__content"
         >
           <div
-            _ngcontent-a-c1596711146=""
             class="mat-mdc-list-item-title mdc-list-item__primary-text list-item__title"
             matlistitemtitle=""
           >
             <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
               class="skeleton-text-animated"
             >
                
             </ssq-skeleton-text>
           </div>
           <div
-            _ngcontent-a-c1596711146=""
             class="mat-mdc-list-item-line mdc-list-item__secondary-text list-item__description"
             matlistitemline=""
           >
             <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
               class="skeleton-text-animated"
               inlinesize="12rem"
               ng-reflect-inline-size="12rem"
@@ -640,7 +269,7 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
           />
         </span>
         <div
-          class="mat-mdc-focus-indicator"
+          class="mat-focus-indicator"
         />
       </mat-list-item>
       <!--bindings={
@@ -651,347 +280,5 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
     </mat-list>
     <!--container-->
   </ssq-github-repos>
-  <!--container-->
-  <angular-query-devtools
-    _ngcontent-a-c1762976068=""
-    ngskiphydration="true"
-  >
-    <div
-      class="tsqd-parent-container"
-    />
-  </angular-query-devtools>
-  <!--container-->
-</div>
-`;
-
-exports[`GIVEN AppComponent > should create the app 1`] = `
-<div
-  _nghost-a-c1762976068=""
-  id="root0"
-  ng-version="18.2.11"
->
-  <ssq-counter
-    _ngcontent-a-c1762976068=""
-    _nghost-a-c3988251285=""
-  >
-    <output
-      _ngcontent-a-c3988251285=""
-      aria-label="Current count"
-    >
-      0
-    </output>
-    <button
-      _ngcontent-a-c3988251285=""
-      aria-label="Increase"
-      class="mdc-fab mat-mdc-fab-base mat-mdc-fab mat-accent mat-mdc-button-base"
-      mat-fab=""
-      mat-ripple-loader-class-name="mat-mdc-button-ripple"
-      mat-ripple-loader-uninitialized=""
-      ng-reflect-disabled="false"
-      title="Increase"
-      type="button"
-    >
-      <span
-        class="mat-mdc-button-persistent-ripple mdc-fab__ripple"
-      />
-      <mat-icon
-        _ngcontent-a-c3988251285=""
-        aria-hidden="true"
-        class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color"
-        data-mat-icon-name="exposure_plus_1"
-        data-mat-icon-type="font"
-        fonticon="exposure_plus_1"
-        ng-reflect-font-icon="exposure_plus_1"
-        role="img"
-      />
-      <span
-        class="mdc-button__label"
-      />
-      <span
-        class="mat-mdc-focus-indicator"
-      />
-      <span
-        class="mat-mdc-button-touch-target"
-      />
-    </button>
-    <button
-      _ngcontent-a-c3988251285=""
-      aria-label="Decrease"
-      class="mdc-fab mat-mdc-fab-base mat-mdc-fab mat-accent mat-mdc-button-base"
-      mat-fab=""
-      mat-ripple-loader-class-name="mat-mdc-button-ripple"
-      mat-ripple-loader-uninitialized=""
-      ng-reflect-disabled="false"
-      title="Decrease"
-      type="button"
-    >
-      <span
-        class="mat-mdc-button-persistent-ripple mdc-fab__ripple"
-      />
-      <mat-icon
-        _ngcontent-a-c3988251285=""
-        aria-hidden="true"
-        class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color"
-        data-mat-icon-name="exposure_neg_1"
-        data-mat-icon-type="font"
-        fonticon="exposure_neg_1"
-        ng-reflect-font-icon="exposure_neg_1"
-        role="img"
-      />
-      <span
-        class="mdc-button__label"
-      />
-      <span
-        class="mat-mdc-focus-indicator"
-      />
-      <span
-        class="mat-mdc-button-touch-target"
-      />
-    </button>
-  </ssq-counter>
-  <ssq-github-repos
-    _ngcontent-a-c1762976068=""
-    _nghost-a-c1596711146=""
-  >
-    <mat-progress-bar
-      _ngcontent-a-c1596711146=""
-      aria-valuemax="100"
-      aria-valuemin="0"
-      class="mat-mdc-progress-bar mdc-linear-progress busy-indicator mat-primary mdc-linear-progress--animation-ready mdc-linear-progress--indeterminate"
-      mode="indeterminate"
-      ng-reflect-mode="indeterminate"
-      role="progressbar"
-      tabindex="-1"
-    >
-      <div
-        aria-hidden="true"
-        class="mdc-linear-progress__buffer"
-      >
-        <div
-          class="mdc-linear-progress__buffer-bar"
-          style="flex-basis: 100%;"
-        />
-        <!--container-->
-      </div>
-      <div
-        aria-hidden="true"
-        class="mdc-linear-progress__bar mdc-linear-progress__primary-bar"
-        style="transform: scaleX(1);"
-      >
-        <span
-          class="mdc-linear-progress__bar-inner"
-        />
-      </div>
-      <div
-        aria-hidden="true"
-        class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar"
-      >
-        <span
-          class="mdc-linear-progress__bar-inner"
-        />
-      </div>
-    </mat-progress-bar>
-    <!--container-->
-    <mat-list
-      _ngcontent-a-c1596711146=""
-      aria-disabled="false"
-      class="mat-mdc-list mat-mdc-list-base mdc-list list"
-    >
-      <div
-        _ngcontent-a-c1596711146=""
-        class="mat-mdc-subheader mdc-list-group__subheader"
-        mat-subheader=""
-      >
-        Google Repositories
-      </div>
-      <mat-list-item
-        _ngcontent-a-c1596711146=""
-        aria-disabled="false"
-        class="mat-mdc-list-item mdc-list-item list-item skeleton mdc-list-item--with-leading-icon mdc-list-item--with-two-lines"
-      >
-        <mat-icon
-          _ngcontent-a-c1596711146=""
-          aria-hidden="true"
-          class="mat-icon notranslate mat-mdc-list-item-icon list-item__icon material-icons mat-ligature-font mat-icon-no-color mdc-list-item__start"
-          data-mat-icon-type="font"
-          matlistitemicon=""
-          role="img"
-        >
-          folder
-        </mat-icon>
-        <span
-          class="mdc-list-item__content"
-        >
-          <div
-            _ngcontent-a-c1596711146=""
-            class="mat-mdc-list-item-title mdc-list-item__primary-text list-item__title"
-            matlistitemtitle=""
-          >
-            <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
-              class="skeleton-text-animated"
-            >
-               
-            </ssq-skeleton-text>
-          </div>
-          <div
-            _ngcontent-a-c1596711146=""
-            class="mat-mdc-list-item-line mdc-list-item__secondary-text list-item__description"
-            matlistitemline=""
-          >
-            <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
-              class="skeleton-text-animated"
-              inlinesize="12rem"
-              ng-reflect-inline-size="12rem"
-              style="--ssq-skeleton-text-size-x: 12rem;"
-            >
-               
-            </ssq-skeleton-text>
-          </div>
-          <span
-            class="mat-mdc-list-item-unscoped-content"
-          />
-        </span>
-        <div
-          class="mat-mdc-focus-indicator"
-        />
-      </mat-list-item>
-      <!--bindings={
-  "ng-reflect-ng-template-outlet": "[object Object]"
-}-->
-      <mat-list-item
-        _ngcontent-a-c1596711146=""
-        aria-disabled="false"
-        class="mat-mdc-list-item mdc-list-item list-item skeleton mdc-list-item--with-leading-icon mdc-list-item--with-two-lines"
-      >
-        <mat-icon
-          _ngcontent-a-c1596711146=""
-          aria-hidden="true"
-          class="mat-icon notranslate mat-mdc-list-item-icon list-item__icon material-icons mat-ligature-font mat-icon-no-color mdc-list-item__start"
-          data-mat-icon-type="font"
-          matlistitemicon=""
-          role="img"
-        >
-          folder
-        </mat-icon>
-        <span
-          class="mdc-list-item__content"
-        >
-          <div
-            _ngcontent-a-c1596711146=""
-            class="mat-mdc-list-item-title mdc-list-item__primary-text list-item__title"
-            matlistitemtitle=""
-          >
-            <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
-              class="skeleton-text-animated"
-            >
-               
-            </ssq-skeleton-text>
-          </div>
-          <div
-            _ngcontent-a-c1596711146=""
-            class="mat-mdc-list-item-line mdc-list-item__secondary-text list-item__description"
-            matlistitemline=""
-          >
-            <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
-              class="skeleton-text-animated"
-              inlinesize="12rem"
-              ng-reflect-inline-size="12rem"
-              style="--ssq-skeleton-text-size-x: 12rem;"
-            >
-               
-            </ssq-skeleton-text>
-          </div>
-          <span
-            class="mat-mdc-list-item-unscoped-content"
-          />
-        </span>
-        <div
-          class="mat-mdc-focus-indicator"
-        />
-      </mat-list-item>
-      <!--bindings={
-  "ng-reflect-ng-template-outlet": "[object Object]"
-}-->
-      <mat-list-item
-        _ngcontent-a-c1596711146=""
-        aria-disabled="false"
-        class="mat-mdc-list-item mdc-list-item list-item skeleton mdc-list-item--with-leading-icon mdc-list-item--with-two-lines"
-      >
-        <mat-icon
-          _ngcontent-a-c1596711146=""
-          aria-hidden="true"
-          class="mat-icon notranslate mat-mdc-list-item-icon list-item__icon material-icons mat-ligature-font mat-icon-no-color mdc-list-item__start"
-          data-mat-icon-type="font"
-          matlistitemicon=""
-          role="img"
-        >
-          folder
-        </mat-icon>
-        <span
-          class="mdc-list-item__content"
-        >
-          <div
-            _ngcontent-a-c1596711146=""
-            class="mat-mdc-list-item-title mdc-list-item__primary-text list-item__title"
-            matlistitemtitle=""
-          >
-            <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
-              class="skeleton-text-animated"
-            >
-               
-            </ssq-skeleton-text>
-          </div>
-          <div
-            _ngcontent-a-c1596711146=""
-            class="mat-mdc-list-item-line mdc-list-item__secondary-text list-item__description"
-            matlistitemline=""
-          >
-            <ssq-skeleton-text
-              _ngcontent-a-c1596711146=""
-              _nghost-a-c2551475978=""
-              class="skeleton-text-animated"
-              inlinesize="12rem"
-              ng-reflect-inline-size="12rem"
-              style="--ssq-skeleton-text-size-x: 12rem;"
-            >
-               
-            </ssq-skeleton-text>
-          </div>
-          <span
-            class="mat-mdc-list-item-unscoped-content"
-          />
-        </span>
-        <div
-          class="mat-mdc-focus-indicator"
-        />
-      </mat-list-item>
-      <!--bindings={
-  "ng-reflect-ng-template-outlet": "[object Object]"
-}-->
-      <!--container-->
-      <!--container-->
-    </mat-list>
-    <!--container-->
-  </ssq-github-repos>
-  <!--container-->
-  <angular-query-devtools
-    _ngcontent-a-c1762976068=""
-    ngskiphydration="true"
-  >
-    <div
-      class="tsqd-parent-container"
-    />
-  </angular-query-devtools>
-  <!--container-->
 </div>
 `;

@@ -5,11 +5,11 @@ import {
   type WritableStateSource,
 } from '@ngrx/signals';
 import {
-  type CreateMutationOptions,
   type CreateMutationResult,
   type CreateQueryOptions,
   type CreateQueryResult,
-  type QueryClient,
+  type injectMutation,
+  type QueryKey,
 } from '@tanstack/angular-query-experimental';
 
 export type QueryStore<Input extends SignalStoreFeatureResult> = Prettify<
@@ -20,13 +20,18 @@ export type CreateQueryFn<
   TDataFn = unknown,
   TError = Error,
   TData = TDataFn,
+  TQueryKey extends QueryKey = QueryKey,
   Input extends SignalStoreFeatureResult = SignalStoreFeatureResult,
-> = (store: QueryStore<Input>) => (client: QueryClient) => CreateQueryOptions<TDataFn, TError, TData>;
+> = (store: QueryStore<Input>) => () => CreateQueryOptions<TDataFn, TError, TData, TQueryKey>;
 
 export type QueryProp<Name extends string> = `${Uncapitalize<Name>}Query`;
 
 export type QueryMethod<TData = unknown, TError = Error> = (() => CreateQueryResult<TData, TError>) &
   CreateQueryResult<TData, TError>;
+
+type CreateMutationOptions<TData = unknown, TError = Error, TVariables = void, TContext = unknown> = ReturnType<
+  NonNullable<Parameters<typeof injectMutation<TData, TError, TVariables, TContext>>[0]>
+>;
 
 export type CreateMutationFn<
   TData = unknown,
@@ -34,7 +39,7 @@ export type CreateMutationFn<
   TVariables = void,
   TContext = unknown,
   Input extends SignalStoreFeatureResult = SignalStoreFeatureResult,
-> = (store: QueryStore<Input>) => (client: QueryClient) => CreateMutationOptions<TData, TError, TVariables, TContext>;
+> = (store: QueryStore<Input>) => () => CreateMutationOptions<TData, TError, TVariables, TContext>;
 
 export type MutationProp<Name extends string> = `${Uncapitalize<Name>}Mutation`;
 

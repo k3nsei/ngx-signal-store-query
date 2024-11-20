@@ -14,13 +14,15 @@
 :host {
   @include apply-theme;
 
-  inline-size: var(--ssq-skeleton-text-size-x, 8rem);
-  block-size: var(--ssq-skeleton-text-size-y, 1rem);
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-  place-self: center;
-  background-color: var(--ssq-skeleton-text-surface-dim);
+  & {
+    inline-size: var(--ssq-skeleton-text-size-x, 8rem);
+    block-size: var(--ssq-skeleton-text-size-y, 1rem);
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    place-self: center;
+    background-color: var(--ssq-skeleton-text-surface-dim);
+  }
 }
 
 :host(.skeleton-text-animated) {
