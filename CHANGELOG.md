@@ -5,7 +5,7 @@
 
 ### ⚠ BREAKING CHANGES
 
-* bump tanstack angular query to 5.61.0
+* Minimal supporting version of tanstack angular query changed to 5.61.0
 
 ### Features
 
