@@ -4,6 +4,7 @@
   "last-release-sha": "ce0a86eaac2d6d79e4a3e21fc8133584b660f5df",
   "packages": {
     ".": {
+      "package-name": "@ngx-signal-store-query/core",
       "release-type": "node",
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": true,
