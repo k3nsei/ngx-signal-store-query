@@ -1,13 +1,7 @@
-import {
-  type EmptyFeatureResult,
-  signalStoreFeature,
-  type SignalStoreFeature,
-  type SignalStoreFeatureResult,
-  withMethods,
-} from '@ngrx/signals';
-import { injectMutation } from '@tanstack/angular-query-experimental';
+import { type SignalStoreFeatureResult, withProps } from '@ngrx/signals';
+import { type CreateMutationResult, injectMutation } from '@tanstack/angular-query-experimental';
 
-import { type CreateMutationFn, type MutationMethod, type MutationProp, type QueryStore } from './types';
+import { type CreateMutationFn, type MutationProp } from './types';
 import { lowerFirst } from './utils';
 
 export const withMutation = <
@@ -17,33 +11,17 @@ export const withMutation = <
   TVariables = void,
   TContext = unknown,
   Input extends SignalStoreFeatureResult = SignalStoreFeatureResult,
+  Props extends object = Record<MutationProp<Name>, CreateMutationResult<TData, TError, TVariables, TContext>>,
 >(
   name: Name,
-  createMutationFn: CreateMutationFn<TData, TError, TVariables, TContext, NoInfer<Input>>,
-): SignalStoreFeature<
-  Input,
-  EmptyFeatureResult & {
-    methods: Record<
-      MutationProp<NoInfer<Name>>,
-      MutationMethod<NoInfer<TData>, NoInfer<TError>, NoInfer<TVariables>, NoInfer<TContext>>
-    >;
-  }
-> => {
-  const prop: MutationProp<NoInfer<Name>> = `${lowerFirst(name)}Mutation`;
+  createMutationFn: CreateMutationFn<Name, TData, TError, TVariables, TContext, Input>,
+) => {
+  const prop: MutationProp<Name> = `${lowerFirst(name)}Mutation`;
 
-  return signalStoreFeature(
-    withMethods((store) => {
-      const mutation = injectMutation(createMutationFn(store as QueryStore<NoInfer<Input>>));
+  return withProps<Input, Props>((store) => {
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const mutation = injectMutation(createMutationFn(store as any));
 
-      return {
-        [prop]: new Proxy(() => mutation, {
-          get: (_, prop) => Reflect.get(mutation, prop),
-          has: (_, prop) => Reflect.has(mutation, prop),
-        }),
-      } as Record<
-        MutationProp<NoInfer<Name>>,
-        MutationMethod<NoInfer<TData>, NoInfer<TError>, NoInfer<TVariables>, NoInfer<TContext>>
-      >;
-    }),
-  );
+    return { [prop]: mutation } as Props;
+  });
 };
