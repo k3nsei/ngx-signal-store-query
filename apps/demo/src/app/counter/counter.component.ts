@@ -22,6 +22,6 @@ export class CounterComponent {
   protected readonly isBusy = computed(() => this.store.counterMutation.isPending());
 
   protected increaseBy(amount: number): void {
-    this.store.counterMutation.mutate(amount);
+    this.store.increaseBy(amount);
   }
 }

@@ -3,7 +3,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { patchState, signalStore, withState } from '@ngrx/signals';
+import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 import { withMutation } from '@ngx-signal-store-query/core';
 import { lastValueFrom } from 'rxjs';
 
@@ -31,4 +31,9 @@ export const CounterStore = signalStore(
       },
     };
   }),
+  withMethods(({ counterMutation }) => ({
+    increaseBy(amount: number): void {
+      return counterMutation.mutate(amount);
+    },
+  })),
 );
