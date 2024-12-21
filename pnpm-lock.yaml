@@ -45,8 +45,8 @@ importers:
         specifier: ^19.0.1
         version: 19.0.1(3tltse6rekaa6pakct6mm2hr6a)
       '@ngrx/signals':
-        specifier: ^18.1.1
-        version: 18.1.1(@angular/core@19.0.0(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1)
+        specifier: ^19.0.0
+        version: 19.0.0(@angular/core@19.0.0(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1)
       '@tanstack/angular-query-experimental':
         specifier: ^5.61.1
         version: 5.61.1(@angular/common@19.0.0(@angular/core@19.0.0(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1))(@angular/core@19.0.0(rxjs@7.8.1)(zone.js@0.15.0))
@@ -1663,10 +1663,10 @@ packages:
     resolution: {integrity: sha512-zM0mVWSXE0a0h9aKACLwKmD6nHcRiKrPpCfvaKqG1CqDEyjEawId0ocXxVzPMCAm6kkWr2P025msfxXEnt8UGQ==}
     engines: {node: '>= 10'}
 
-  '@ngrx/signals@18.1.1':
-    resolution: {integrity: sha512-7AaFp4VrzYhnDHlF15VZAMvp067zIC5arRRRMV+i+oi95sQVDXezpj74KTIguwRbZ3FU+GKGzFCNrwgYvginSg==}
+  '@ngrx/signals@19.0.0':
+    resolution: {integrity: sha512-Ktgq+wwIVH9HdobLOhrYF6VArIJYZa5lkgajUpSB9QuudpOLja9f7W2RAHQsMUBpQuREgFkTgIEr1vKIzDrGMA==}
     peerDependencies:
-      '@angular/core': ^18.0.0
+      '@angular/core': ^19.0.0
       rxjs: ^6.5.3 || ^7.4.0
     peerDependenciesMeta:
       rxjs:
@@ -7377,7 +7377,7 @@ snapshots:
       '@napi-rs/nice-win32-x64-msvc': 1.0.1
     optional: true
 
-  '@ngrx/signals@18.1.1(@angular/core@19.0.0(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1)':
+  '@ngrx/signals@19.0.0(@angular/core@19.0.0(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1)':
     dependencies:
       '@angular/core': 19.0.0(rxjs@7.8.1)(zone.js@0.15.0)
       tslib: 2.8.1
