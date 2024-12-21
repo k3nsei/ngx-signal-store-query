@@ -1,6 +1,6 @@
 {
   "name": "@ngx-signal-store-query/core",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Signal Store feature that bridges with Angular Query",
   "keywords": [
     "Angular",

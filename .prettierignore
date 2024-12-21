@@ -6,6 +6,8 @@
 /out-tsc
 /bazel-out
 
+CHANGELOG.md
+
 pnpm-lock.yaml
 
 /apps/demo-e2e/playwright/.cache
