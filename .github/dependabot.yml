@@ -36,6 +36,9 @@ updates:
           - 'express'
           - 'ng-packagr'
           - 'rxjs'
+          - 'zone.js'
+          - 'tslib'
+          - 'typescript'
         update-types:
           - 'minor'
           - 'patch'
@@ -57,35 +60,6 @@ updates:
         update-types:
           - 'minor'
           - 'patch'
-      jest:
-        applies-to: 'version-updates'
+      other:
         patterns:
-          - '@types/jest'
-          - 'jest'
-          - 'jest-*'
-          - 'ts-jest'
-        update-types:
-          - 'minor'
-          - 'patch'
-      karma:
-        applies-to: 'version-updates'
-        patterns:
-          - '@types/jasmine'
-          - 'jasmine*'
-          - 'karma*'
-        update-types:
-          - 'minor'
-          - 'patch'
-      typescript:
-        applies-to: 'version-updates'
-        patterns:
-          - 'tslib'
-          - 'typescript'
-        update-types:
-          - 'patch'
-      zonejs:
-        applies-to: 'version-updates'
-        patterns:
-          - 'zone.js'
-        update-types:
-          - 'patch'
+          - '*'
