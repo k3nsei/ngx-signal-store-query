@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.5.0](https://github.com/k3nsei/ngx-signal-store-query/compare/core-v0.5.0...core-v0.5.0) (2024-12-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate to ngrx signals v19
+* bump tanstack angular query to 5.61.0
+
+### Features
+
+* bump tanstack angular query to 5.61.0 ([a73f6df](https://github.com/k3nsei/ngx-signal-store-query/commit/a73f6df44979fbd35b57c36d7e7faf8e3f43212a))
+* migrate to ngrx signals v19 ([1720b42](https://github.com/k3nsei/ngx-signal-store-query/commit/1720b42dba7a00240ce96a4708a7f787cfeaaf5f))
+
 ## 0.5.0 (2024-12-21)
 
 ### ⚠ BREAKING CHANGES
