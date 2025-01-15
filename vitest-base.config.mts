@@ -14,6 +14,7 @@ export default defineConfig({
     pool: 'threads',
     globals: true,
     passWithNoTests: true,
+    silent: true,
     watch: false,
     include: ['**/*.{test,spec}.?(c|m)[jt]s?(x)'],
     reporters: process.env['GITHUB_ACTIONS'] ? ['default', 'github-actions'] : ['default'],

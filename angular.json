@@ -78,7 +78,10 @@
               }
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["apps/demo/src/styles"]
+              "includePaths": ["apps/demo/src/styles"],
+              "sass": {
+                "silenceDeprecations": ["legacy-js-api"]
+              }
             },
             "styles": ["apps/demo/src/global-styles.scss"],
             "scripts": [],
