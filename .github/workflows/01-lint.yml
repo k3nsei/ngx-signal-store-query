@@ -1,0 +1,28 @@
+name: Lint
+
+concurrency:
+  group: ${{ github.workflow }}-lint-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Run Code Style Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        uses: ./.github/actions/install-deps
+
+      - name: Check Format
+        run: pnpm prettier --check --ignore-unknown .
+
+      - name: Lint
+        run: pnpm ng lint

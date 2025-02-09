@@ -1,0 +1,35 @@
+name: Build
+
+concurrency:
+  group: ${{ github.workflow }}-build-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Run Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        uses: ./.github/actions/install-deps
+
+      - name: Build library
+        run: pnpm ng build ngx-signal-store-query --configuration=production
+
+      - name: Build demo application
+        run: pnpm ng build demo --configuration=production --progress=false --verbose
+
+      - name: Upload build artefacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artefacts
+          path: dist/
+          retention-days: 7

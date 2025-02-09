@@ -6,10 +6,6 @@ inputs:
     description: 'Which version of Node.js to install'
     required: false
     default: 'lts/*'
-  pnpm-version:
-    description: 'Which version of PNPM to install'
-    required: false
-    default: '10.x.x'
   registry-url:
     description: 'Which package registry url to use'
     required: false
@@ -21,7 +17,6 @@ runs:
     - name: Setup Package Manager
       uses: pnpm/action-setup@v4
       with:
-        version: ${{ inputs.pnpm-version }}
         run_install: false
 
     - name: Setup Node.js

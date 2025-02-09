@@ -1,78 +1,34 @@
 name: Pull Request
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-pr-${{ github.ref }}
   cancel-in-progress: true
 
 on:
   pull_request:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: Why was the workflow triggered manually?
+        required: true
+        type: string
 
 permissions:
   contents: read
 
 jobs:
-  build_test:
-    name: Run build and unit tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+  lint:
+    uses: ./.github/workflows/01-lint.yml
 
-      - name: Install dependencies
-        uses: ./.github/actions/install-deps
+  build:
+    needs: lint
+    uses: ./.github/workflows/02-build.yml
 
-      - name: Check Format
-        run: pnpm prettier --check --ignore-unknown .
-
-      - name: Lint
-        run: pnpm ng lint
-
-      - name: Build
-        run: |
-          pnpm ng build ngx-signal-store-query --configuration=production
-          pnpm ng build demo --configuration=production --progress=false --verbose
-
-      - name: Test
-        run: |
-          pnpm run test ngx-signal-store-query
-          pnpm run test demo
-
-      - name: Upload build artefacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-artefacts
-          path: dist/
-          retention-days: 7
+  test:
+    needs: build
+    uses: ./.github/workflows/03-test.yml
 
   e2e:
-    name: Run E2E tests
-    runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.50.1-noble
-    timeout-minutes: 10
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: ['chromium', 'firefox', 'webkit']
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install dependencies
-        uses: ./.github/actions/install-deps
-
-      - name: Run tests
-        env:
-          HOME: /root
-        working-directory: apps/demo-e2e
-        run: pnpm playwright test --project=${{ matrix.browser }}
-
-      - name: Upload test report
-        if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-${{ matrix.browser }}-report
-          path: |
-            apps/demo-e2e/playwright-report/
-            apps/demo-e2e/test-results/
-          retention-days: 7
+    needs: build
+    uses: ./.github/workflows/04-e2e.yml
