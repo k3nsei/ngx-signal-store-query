@@ -64,3 +64,5 @@ export class ExampleComponent {
 }
 ```
 <!-- prettier-ignore-end -->
+
+check branch rules
