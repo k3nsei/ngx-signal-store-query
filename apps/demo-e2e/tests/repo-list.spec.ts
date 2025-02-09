@@ -5,9 +5,9 @@ const { step } = test;
 test('Repository List', async ({ page }) => {
   const googleResponses = page.waitForResponse(
     (res) =>
-      res.request().url().endsWith('gh-org-repos-google.json') &&
-      res.request().method() === 'GET' &&
-      res.status() === 200,
+      res.request().url().endsWith('gh-org-repos-google.json')
+      && res.request().method() === 'GET'
+      && res.status() === 200,
   );
 
   await step('has proper url', async () => {
@@ -41,9 +41,9 @@ test('Repository List', async ({ page }) => {
 
   const angularResponses = page.waitForResponse(
     (res) =>
-      res.request().url().endsWith('gh-org-repos-angular.json') &&
-      res.request().method() === 'GET' &&
-      res.status() === 200,
+      res.request().url().endsWith('gh-org-repos-angular.json')
+      && res.request().method() === 'GET'
+      && res.status() === 200,
   );
 
   await step('has proper header', async () => {

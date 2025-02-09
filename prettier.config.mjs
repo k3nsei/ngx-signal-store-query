@@ -14,8 +14,10 @@ const config = {
   bracketSameLine: true,
   arrowParens: 'always',
   proseWrap: 'preserve',
-  htmlWhitespaceSensitivity: 'strict',
+  objectWrap: 'preserve',
   endOfLine: 'lf',
+  htmlWhitespaceSensitivity: 'strict',
+  experimentalOperatorPosition: 'start',
   plugins: ['prettier-plugin-packagejson', 'prettier-plugin-sh'],
 };
 
