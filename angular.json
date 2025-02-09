@@ -8,7 +8,7 @@
       "environment": "local"
     },
     "packageManager": "pnpm",
-    "schematicCollections": ["@angular-eslint/schematics"],
+    "schematicCollections": ["angular-eslint"],
     "warnings": {
       "versionMismatch": true
     }
