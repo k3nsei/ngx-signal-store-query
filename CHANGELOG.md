@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.6.0](https://github.com/k3nsei/ngx-signal-store-query/compare/v0.5.0...v0.6.0) (2025-02-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** Stopped supporting versions of @ngrx/signals that are older than v19.0.1
+
+### Miscellaneous Chores
+
+* **deps:** bump @ngrx/signals from v19.0.0 to v19.0.1 ([5d91d7a](https://github.com/k3nsei/ngx-signal-store-query/commit/5d91d7a442bae340f6085fd39b85933fd80e40b6))
+
 ## 0.5.0 (2024-12-21)
 
 ### ⚠ BREAKING CHANGES
