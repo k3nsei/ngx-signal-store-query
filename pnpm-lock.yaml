@@ -64,11 +64,11 @@ importers:
         version: 0.15.0
     devDependencies:
       '@analogjs/vite-plugin-angular':
-        specifier: ^1.14.0-beta.1
-        version: 1.14.0-beta.1(@angular-devkit/build-angular@19.2.0-rc.0(d673de081a69eb6fd5f5bd575186aa5b))
+        specifier: ^2.0.0-alpha.4
+        version: 2.0.0-alpha.4(@angular-devkit/build-angular@19.2.0-rc.0(d673de081a69eb6fd5f5bd575186aa5b))
       '@analogjs/vitest-angular':
-        specifier: ^1.14.0-beta.1
-        version: 1.14.0-beta.1(@analogjs/vite-plugin-angular@1.14.0-beta.1(@angular-devkit/build-angular@19.2.0-rc.0(d673de081a69eb6fd5f5bd575186aa5b)))(@angular-devkit/architect@0.1902.0-rc.0(chokidar@4.0.3))(vitest@3.0.6(@types/node@22.13.4)(jiti@2.4.2)(jsdom@26.0.0)(less@4.2.2)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))
+        specifier: ^2.0.0-alpha.4
+        version: 2.0.0-alpha.4(@analogjs/vite-plugin-angular@2.0.0-alpha.4(@angular-devkit/build-angular@19.2.0-rc.0(d673de081a69eb6fd5f5bd575186aa5b)))(vitest@3.0.6(@types/node@22.13.4)(jiti@2.4.2)(jsdom@26.0.0)(less@4.2.2)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))
       '@angular-devkit/build-angular':
         specifier: ^19.2.0-rc.0
         version: 19.2.0-rc.0(d673de081a69eb6fd5f5bd575186aa5b)
@@ -175,8 +175,8 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
-  '@analogjs/vite-plugin-angular@1.14.0-beta.1':
-    resolution: {integrity: sha512-tHHgtdNQ/fHed5hA20/rMvAYMy/c4Lvq9u99eu9o8pkZ1WqC1tbAKW7/zV9ZLkTcINOxhOTmgfGppxXJL1QdpA==}
+  '@analogjs/vite-plugin-angular@2.0.0-alpha.4':
+    resolution: {integrity: sha512-nL1oteWj8z0PJs++1bhD0IpXV4RlWmeDEzAO67woYIsj+dm7N2M0Jj9hlaeZ1//wNZfJ53yLUXSopfEHqTX5rQ==}
     peerDependencies:
       '@angular-devkit/build-angular': ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       '@angular/build': ^18.0.0 || ^19.0.0
@@ -186,11 +186,11 @@ packages:
       '@angular/build':
         optional: true
 
-  '@analogjs/vitest-angular@1.14.0-beta.1':
-    resolution: {integrity: sha512-5wXM3RiyNRy0EvQ0THoNFmla9/EpXATSb1mGIVBQMeT1uTZVuxyfIxWw26rWOzvR5Cm5D8GSBBOVfWXM9X1z4Q==}
+  '@analogjs/vitest-angular@2.0.0-alpha.4':
+    resolution: {integrity: sha512-XTwai4745ULTDWBVfhxrvA4tWzL2d/sh0cViNKrpU5wjuKkKtx0IE6g6t71raOUsatbaNALZZEQYVE98r4STLw==}
     peerDependencies:
       '@analogjs/vite-plugin-angular': '*'
-      '@angular-devkit/architect': '>=0.1500.0 < 0.2000.0'
+      '@angular-devkit/architect': ^0.1500.0 || ^0.1600.0 || ^0.1700.0 || ^0.1800.0 || ^0.1900.0 || next
       vitest: ^1.3.1 || ^2.0.0 || ^3.0.0
 
   '@angular-devkit/architect@0.1901.8':
@@ -5829,17 +5829,16 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@analogjs/vite-plugin-angular@1.14.0-beta.1(@angular-devkit/build-angular@19.2.0-rc.0(d673de081a69eb6fd5f5bd575186aa5b))':
+  '@analogjs/vite-plugin-angular@2.0.0-alpha.4(@angular-devkit/build-angular@19.2.0-rc.0(d673de081a69eb6fd5f5bd575186aa5b))':
     dependencies:
       ts-morph: 21.0.1
       vfile: 6.0.3
     optionalDependencies:
       '@angular-devkit/build-angular': 19.2.0-rc.0(d673de081a69eb6fd5f5bd575186aa5b)
 
-  '@analogjs/vitest-angular@1.14.0-beta.1(@analogjs/vite-plugin-angular@1.14.0-beta.1(@angular-devkit/build-angular@19.2.0-rc.0(d673de081a69eb6fd5f5bd575186aa5b)))(@angular-devkit/architect@0.1902.0-rc.0(chokidar@4.0.3))(vitest@3.0.6(@types/node@22.13.4)(jiti@2.4.2)(jsdom@26.0.0)(less@4.2.2)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))':
+  '@analogjs/vitest-angular@2.0.0-alpha.4(@analogjs/vite-plugin-angular@2.0.0-alpha.4(@angular-devkit/build-angular@19.2.0-rc.0(d673de081a69eb6fd5f5bd575186aa5b)))(vitest@3.0.6(@types/node@22.13.4)(jiti@2.4.2)(jsdom@26.0.0)(less@4.2.2)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0))':
     dependencies:
-      '@analogjs/vite-plugin-angular': 1.14.0-beta.1(@angular-devkit/build-angular@19.2.0-rc.0(d673de081a69eb6fd5f5bd575186aa5b))
-      '@angular-devkit/architect': 0.1902.0-rc.0(chokidar@4.0.3)
+      '@analogjs/vite-plugin-angular': 2.0.0-alpha.4(@angular-devkit/build-angular@19.2.0-rc.0(d673de081a69eb6fd5f5bd575186aa5b))
       vitest: 3.0.6(@types/node@22.13.4)(jiti@2.4.2)(jsdom@26.0.0)(less@4.2.2)(sass@1.85.0)(terser@5.39.0)(yaml@2.7.0)
 
   '@angular-devkit/architect@0.1901.8(chokidar@4.0.3)':
