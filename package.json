@@ -3,7 +3,7 @@
   "version": "0.6.0",
   "private": true,
   "scripts": {
-    "build": "ng build ngx-signal-store-query --configuration=production",
+        "build": "ng build ngx-signal-store-query --configuration=production",
     "e2e:install-browsers": "pnpm run --dir=apps/demo-e2e install-browsers",
     "e2e:test": "pnpm run --dir=apps/demo-e2e test",
     "e2e:test-with-ui": "pnpm run --dir=apps/demo-e2e test --ui",

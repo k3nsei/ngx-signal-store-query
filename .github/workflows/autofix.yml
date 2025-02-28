@@ -1,0 +1,36 @@
+name: autofix.ci
+
+concurrency:
+  group: ${{ github.workflow }}-autofix-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  autofix:
+    name: Run Autofix
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        uses: ./.github/actions/install-deps
+
+      - name: Fix linting issues
+        continue-on-error: true
+        run: pnpm ng lint --fix
+
+      - name: Fix formatting issues
+        continue-on-error: true
+        run: pnpm prettier --write --ignore-unknown .
+
+      - uses: autofix-ci/action@v1
+        with:
+          fail-fast: false
+          commit-message: 'chore(autofix): apply automated fixes'
