@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.7.0](https://github.com/k3nsei/ngx-signal-store-query/compare/v0.6.0...v0.7.0) (2025-03-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** Versions of `@tanstack/angular-query-experimental` older than v5.69.2 are no longer supported
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump angular cli from v19.2.0 to v19.2.5 ([3bcfec9](https://github.com/k3nsei/ngx-signal-store-query/commit/3bcfec9a82787c226eca26091b0b20781937691b))
+* **deps:** bump @tanstack/angular-query-experimental from v5.66.9 to v5.69.2 ([3bcfec9](https://github.com/k3nsei/ngx-signal-store-query/commit/3bcfec9a82787c226eca26091b0b20781937691b))
+
 ## [0.6.0](https://github.com/k3nsei/ngx-signal-store-query/compare/v0.5.0...v0.6.0) (2025-02-21)
 
 
