@@ -1,3 +1,5 @@
+import { inject, Injector, runInInjectionContext } from '@angular/core';
+
 import { type SignalStoreFeatureResult, withProps } from '@ngrx/signals';
 import { type CreateQueryResult, injectQuery, type QueryKey } from '@tanstack/angular-query-experimental';
 
@@ -19,8 +21,11 @@ export const withQuery = <
   const prop: QueryProp<Name> = `${lowerFirst(name)}Query`;
 
   return withProps<Input, Props>((store) => {
-    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-    const query = injectQuery(createQueryFn(store as any));
+    const injector = inject(Injector);
+    const query = injectQuery((...args) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      return runInInjectionContext(injector, () => createQueryFn(store as any)(...args));
+    });
 
     return { [prop]: query } as Props;
   });
