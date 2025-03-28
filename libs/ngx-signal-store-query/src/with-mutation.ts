@@ -1,3 +1,5 @@
+import { inject, Injector, runInInjectionContext } from '@angular/core';
+
 import { type SignalStoreFeatureResult, withProps } from '@ngrx/signals';
 import { type CreateMutationResult, injectMutation } from '@tanstack/angular-query-experimental';
 
@@ -19,8 +21,11 @@ export const withMutation = <
   const prop: MutationProp<Name> = `${lowerFirst(name)}Mutation`;
 
   return withProps<Input, Props>((store) => {
-    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-    const mutation = injectMutation(createMutationFn(store as any));
+    const injector = inject(Injector);
+    const mutation = injectMutation((...args) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      return runInInjectionContext(injector, () => createMutationFn(store as any)(...args));
+    });
 
     return { [prop]: mutation } as Props;
   });
