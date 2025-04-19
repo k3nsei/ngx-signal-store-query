@@ -54,7 +54,7 @@
     "angular-eslint": "19.3.0",
     "cross-env": "^7.0.3",
     "esbuild": "~0.25.2",
-    "eslint": "^9.24.0",
+    "eslint": "^9.25.0",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.6",
