@@ -32,7 +32,7 @@
     "@angular/ssr": "^19.2.10",
     "@ngrx/signals": "^19.1.0",
     "@tanstack/angular-query-experimental": "^5.75.0",
-    "express": "^4.21.2",
+    "express": "^5.1.0",
     "rxjs": "~7.8.2",
     "tslib": "^2.8.1",
     "zone.js": "~0.15.0"
@@ -48,7 +48,7 @@
     "@eslint/js": "^9.26.0",
     "@octokit/types": "^14.0.0",
     "@playwright/test": "1.52.0",
-    "@types/express": "4.17.21",
+    "@types/express": "5.0.1",
     "@types/node": "22.15.3",
     "@vitest/coverage-v8": "^3.1.2",
     "angular-eslint": "19.3.0",
