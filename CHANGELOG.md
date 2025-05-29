@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.1](https://github.com/k3nsei/ngx-signal-store-query/compare/v0.7.0...v0.7.1) (2025-05-29)
+
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump angular cli from v19.2.10 to v20.0.0 ([339e024](https://github.com/k3nsei/ngx-signal-store-query/commit/339e0248c7988d0d95f9f54caf38d272ac5a6bce))
+
 ## [0.7.0](https://github.com/k3nsei/ngx-signal-store-query/compare/v0.6.0...v0.7.0) (2025-03-28)
 
 
