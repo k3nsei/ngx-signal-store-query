@@ -25,9 +25,9 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@angular/common": "^19.0.0 || >=20.0.0 || next",
-    "@angular/core": "^19.0.0 || >=20.0.0 || next",
-    "@ngrx/signals": "^19.0.1 || >=20.0.0 || next",
+    "@angular/common": "^19.0.0 || ^20.0.0 || >=21.0.0 || next",
+    "@angular/core": "^19.0.0 || ^20.0.0 || >=21.0.0 || next",
+    "@ngrx/signals": "^19.0.0 || ^20.0.0 || >=21.0.0 || next",
     "@tanstack/angular-query-experimental": "^5.69.2"
   }
 }

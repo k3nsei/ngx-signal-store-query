@@ -42,7 +42,7 @@ export const GithubStore = signalStore(
             api.fetchOrganizationRepositoryList$(organization, delay).pipe(takeUntilDestroyed(destroyRef)),
           ).catch((error: HttpErrorResponse | Error) => {
             snackBar.open(error.message, '', {
-              panelClass: 'popover-error',
+              panelClass: 'toast--error',
               duration: 5000,
             });
 

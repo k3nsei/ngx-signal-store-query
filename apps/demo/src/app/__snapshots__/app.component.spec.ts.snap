@@ -3,7 +3,7 @@
 exports[`GIVEN AppComponent > WHEN component was initialized > THEN component should be rendered 1`] = `
 <div
   id="root1"
-  ng-version="19.2.9"
+  ng-version="20.0.0"
 >
   <ssq-counter>
     <output
@@ -13,11 +13,10 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
     </output>
     <button
       aria-label="Increase"
-      class="mdc-fab mat-mdc-fab-base mat-mdc-fab mat-accent mat-mdc-button-base"
+      class="mdc-fab mat-mdc-fab-base mat-mdc-fab mat-mdc-button-base mat-accent"
       mat-fab=""
       mat-ripple-loader-class-name="mat-mdc-button-ripple"
       mat-ripple-loader-uninitialized=""
-      ng-reflect-disabled="false"
       title="Increase"
       type="button"
     >
@@ -30,7 +29,6 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
         data-mat-icon-name="exposure_plus_1"
         data-mat-icon-type="font"
         fonticon="exposure_plus_1"
-        ng-reflect-font-icon="exposure_plus_1"
         role="img"
       />
       <span
@@ -45,11 +43,10 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
     </button>
     <button
       aria-label="Decrease"
-      class="mdc-fab mat-mdc-fab-base mat-mdc-fab mat-accent mat-mdc-button-base"
+      class="mdc-fab mat-mdc-fab-base mat-mdc-fab mat-mdc-button-base mat-accent"
       mat-fab=""
       mat-ripple-loader-class-name="mat-mdc-button-ripple"
       mat-ripple-loader-uninitialized=""
-      ng-reflect-disabled="false"
       title="Decrease"
       type="button"
     >
@@ -62,7 +59,6 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
         data-mat-icon-name="exposure_neg_1"
         data-mat-icon-type="font"
         fonticon="exposure_neg_1"
-        ng-reflect-font-icon="exposure_neg_1"
         role="img"
       />
       <span
@@ -82,7 +78,6 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
       aria-valuemin="0"
       class="mat-mdc-progress-bar mdc-linear-progress busy-indicator mat-primary mdc-linear-progress--animation-ready mdc-linear-progress--indeterminate"
       mode="indeterminate"
-      ng-reflect-mode="indeterminate"
       role="progressbar"
       tabindex="-1"
     >
@@ -158,7 +153,6 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
             <ssq-skeleton-text
               class="skeleton-text-animated"
               inlinesize="12rem"
-              ng-reflect-inline-size="12rem"
               style="--ssq-skeleton-text-size-x: 12rem;"
             >
                
@@ -172,9 +166,7 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
           class="mat-focus-indicator"
         />
       </mat-list-item>
-      <!--bindings={
-  "ng-reflect-ng-template-outlet": "[object Object]"
-}-->
+      <!--container-->
       <mat-list-item
         aria-disabled="false"
         class="mat-mdc-list-item mdc-list-item list-item skeleton mdc-list-item--with-leading-icon mdc-list-item--with-two-lines"
@@ -208,7 +200,6 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
             <ssq-skeleton-text
               class="skeleton-text-animated"
               inlinesize="12rem"
-              ng-reflect-inline-size="12rem"
               style="--ssq-skeleton-text-size-x: 12rem;"
             >
                
@@ -222,9 +213,7 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
           class="mat-focus-indicator"
         />
       </mat-list-item>
-      <!--bindings={
-  "ng-reflect-ng-template-outlet": "[object Object]"
-}-->
+      <!--container-->
       <mat-list-item
         aria-disabled="false"
         class="mat-mdc-list-item mdc-list-item list-item skeleton mdc-list-item--with-leading-icon mdc-list-item--with-two-lines"
@@ -258,7 +247,6 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
             <ssq-skeleton-text
               class="skeleton-text-animated"
               inlinesize="12rem"
-              ng-reflect-inline-size="12rem"
               style="--ssq-skeleton-text-size-x: 12rem;"
             >
                
@@ -272,9 +260,7 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
           class="mat-focus-indicator"
         />
       </mat-list-item>
-      <!--bindings={
-  "ng-reflect-ng-template-outlet": "[object Object]"
-}-->
+      <!--container-->
       <!--container-->
       <!--container-->
     </mat-list>

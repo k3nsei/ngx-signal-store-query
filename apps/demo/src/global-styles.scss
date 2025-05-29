@@ -3,65 +3,88 @@
 
 @use './styles/theme' as *;
 
-:root {
-  accent-color: var(--ssq-primary);
-  color-scheme: light dark;
-}
+@layer properties, theme, base, components, utilities;
 
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-a {
-  color: var(--ssq-primary);
-  text-decoration: none;
-
-  &:hover {
-    color: light-dark(oklab(from var(--ssq-primary) 0.25 a b), oklab(from var(--ssq-primary) 0.75 a b));
-  }
-
-  &:active {
-    color: hsl(from var(--ssq-primary) calc(h + 25) s l);
+@layer properties {
+  @property --ssq-primary {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: red;
   }
 }
 
-@include mat.core();
+@layer theme {
+  :root {
+    --ssq-primary: #{mat.get-theme-color($light-theme, primary)};
 
-:root {
-  --ssq-primary: #{mat.get-theme-color($light-theme, primary)};
+    @include mat.fab-theme($light-theme);
+    @include mat.icon-theme($light-theme);
+    @include mat.list-theme($light-theme);
+    @include mat.progress-bar-theme($light-theme);
+    @include mat.snack-bar-theme($light-theme);
 
-  @include mat.core-theme($light-theme);
-  @include mat.fab-theme($light-theme);
-  @include mat.icon-theme($light-theme);
-  @include mat.list-theme($light-theme);
-  @include mat.progress-bar-theme($light-theme);
-  @include mat.snack-bar-theme($light-theme);
+    @media (prefers-color-scheme: dark) {
+      --ssq-primary: #{mat.get-theme-color($dark-theme, primary)};
 
-  @media (prefers-color-scheme: dark) {
-    --ssq-primary: #{mat.get-theme-color($dark-theme, primary)};
-
-    @include mat.core-color($dark-theme);
-    @include mat.fab-color($dark-theme);
-    @include mat.icon-color($dark-theme);
-    @include mat.list-color($dark-theme);
-    @include mat.progress-bar-color($dark-theme);
-    @include mat.snack-bar-color($dark-theme);
+      @include mat.fab-color($dark-theme);
+      @include mat.icon-color($dark-theme);
+      @include mat.list-color($dark-theme);
+      @include mat.progress-bar-color($dark-theme);
+      @include mat.snack-bar-color($dark-theme);
+    }
   }
 }
 
-.popover-error {
-  --mdc-snackbar-container-color: #{mat.get-theme-color($light-theme, error)};
-  --mdc-snackbar-supporting-text-color: #{mat.get-theme-color($light-theme, on-error)};
+@layer base {
+  html {
+    accent-color: var(--ssq-primary);
+    color-scheme: light dark;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  a {
+    color: var(--ssq-primary);
+    text-decoration: none;
+
+    &:hover {
+      color: light-dark(oklab(from var(--ssq-primary) 0.25 a b), oklab(from var(--ssq-primary) 0.75 a b));
+    }
+
+    &:active {
+      color: hsl(from var(--ssq-primary) calc(h + 25) s l);
+    }
+  }
+}
+
+@layer components {
+  .toast {
+    &--error {
+      @include mat.snack-bar-overrides(
+        (
+          container-color: mat.get-theme-color($light-theme, error),
+          supporting-text-color: mat.get-theme-color($light-theme, on-error),
+        )
+      );
+    }
+  }
+}
+
+@layer utilities {
+  @include mat.app-background();
+  @include mat.elevation-classes();
 }
