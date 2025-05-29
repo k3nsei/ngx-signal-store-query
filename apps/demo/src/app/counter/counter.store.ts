@@ -25,7 +25,7 @@ export const CounterStore = signalStore(
       },
       onError(error: Error): void {
         snackBar.open(error.message, '', {
-          panelClass: 'popover-error',
+          panelClass: 'toast--error',
           duration: 5000,
         });
       },
