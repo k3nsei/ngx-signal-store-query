@@ -48,8 +48,8 @@ importers:
         specifier: ^19.2.1
         version: 19.2.1(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
       '@tanstack/angular-query-experimental':
-        specifier: ^5.80.7
-        version: 5.80.7(@angular/common@20.0.3(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2)(zone.js@0.15.1))
+        specifier: ^5.80.10
+        version: 5.80.10(@angular/common@20.0.3(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2)(zone.js@0.15.1))
       express:
         specifier: ^5.1.0
         version: 5.1.0
@@ -1571,14 +1571,14 @@ packages:
     resolution: {integrity: sha512-hVJD77oT67aowHxwT4+M6PGOp+E2LtLdTK3+FC0lBO9T7sYwItDMXZ7Z07IDCvR1M717a4axbIWckrW67KMP/w==}
     engines: {node: ^18.17.0 || >=20.5.0}
 
-  '@tanstack/angular-query-experimental@5.80.7':
-    resolution: {integrity: sha512-eO23TFVliEzZ3A1PFbegddN8UKXqg02BX6azktUP48Zsqq8OTAK74VvReNfKFm5muTnchbRAbKg3Qeg/GGdFVw==}
+  '@tanstack/angular-query-experimental@5.80.10':
+    resolution: {integrity: sha512-4GioADPuUpPMVVTNvScSai9anBY3HrWyglP6/hfx4GKsO44EFL9xX4iUG6rJG7MjtxkbrgVxcu6v0+8stCw2hg==}
     peerDependencies:
       '@angular/common': '>=16.0.0'
       '@angular/core': '>=16.0.0'
 
-  '@tanstack/query-core@5.80.7':
-    resolution: {integrity: sha512-s09l5zeUKC8q7DCCCIkVSns8zZrK4ZDT6ryEjxNBFi68G4z2EBobBS7rdOY3r6W1WbUDpc1fe5oY+YO/+2UVUg==}
+  '@tanstack/query-core@5.80.10':
+    resolution: {integrity: sha512-mUNQOtzxkjL6jLbyChZoSBP6A5gQDVRUiPvW+/zw/9ftOAz+H754zCj3D8PwnzPKyHzGkQ9JbH48ukhym9LK1Q==}
 
   '@tanstack/query-devtools@5.80.0':
     resolution: {integrity: sha512-D6gH4asyjaoXrCOt5vG5Og/YSj0D/TxwNQgtLJIgWbhbWCC/emu2E92EFoVHh4ppVWg1qT2gKHvKyQBEFZhCuA==}
@@ -5675,14 +5675,14 @@ snapshots:
       '@sigstore/core': 2.0.0
       '@sigstore/protobuf-specs': 0.4.3
 
-  '@tanstack/angular-query-experimental@5.80.7(@angular/common@20.0.3(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2)(zone.js@0.15.1))':
+  '@tanstack/angular-query-experimental@5.80.10(@angular/common@20.0.3(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2)(zone.js@0.15.1))':
     dependencies:
       '@angular/common': 20.0.3(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
       '@angular/core': 20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2)(zone.js@0.15.1)
-      '@tanstack/query-core': 5.80.7
+      '@tanstack/query-core': 5.80.10
       '@tanstack/query-devtools': 5.80.0
 
-  '@tanstack/query-core@5.80.7': {}
+  '@tanstack/query-core@5.80.10': {}
 
   '@tanstack/query-devtools@5.80.0': {}
 
