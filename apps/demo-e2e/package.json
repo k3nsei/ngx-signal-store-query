@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@playwright/test": "1.54.2",
-    "@types/node": "24.1.0"
+    "@types/node": "24.2.1"
   },
   "volta": {
     "extends": "../../package.json"
