@@ -48,8 +48,8 @@ importers:
         specifier: ^20.0.0
         version: 20.0.0(@angular/core@20.1.6(@angular/compiler@20.1.6)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
       '@tanstack/angular-query-experimental':
-        specifier: ^5.84.2
-        version: 5.84.2(@angular/common@20.1.6(@angular/core@20.1.6(@angular/compiler@20.1.6)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.6(@angular/compiler@20.1.6)(rxjs@7.8.2)(zone.js@0.15.1))
+        specifier: ^5.85.0
+        version: 5.85.0(@angular/common@20.1.6(@angular/core@20.1.6(@angular/compiler@20.1.6)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.6(@angular/compiler@20.1.6)(rxjs@7.8.2)(zone.js@0.15.1))
       express:
         specifier: ^5.1.0
         version: 5.1.0
@@ -1787,8 +1787,8 @@ packages:
     resolution: {integrity: sha512-hVJD77oT67aowHxwT4+M6PGOp+E2LtLdTK3+FC0lBO9T7sYwItDMXZ7Z07IDCvR1M717a4axbIWckrW67KMP/w==}
     engines: {node: ^18.17.0 || >=20.5.0}
 
-  '@tanstack/angular-query-experimental@5.84.2':
-    resolution: {integrity: sha512-4qosWr5FiLB+Tn0Wbl/wMzxvZDB9Ulk325TSB2o4OrPIm0rSh2WM96a3vnbsy0NnPzjDQMvB42Wn+U6NYtMtKw==}
+  '@tanstack/angular-query-experimental@5.85.0':
+    resolution: {integrity: sha512-TcQwZS4OVNWV572hhfbgYJWdk6zEX7f7HIlPO6atuZfALijrHIUHdtTiX7xOtdAejp1Wc9nUblFwJdTm/BQYzA==}
     peerDependencies:
       '@angular/common': '>=16.0.0'
       '@angular/core': '>=16.0.0'
@@ -6137,7 +6137,7 @@ snapshots:
       '@sigstore/core': 2.0.0
       '@sigstore/protobuf-specs': 0.4.3
 
-  '@tanstack/angular-query-experimental@5.84.2(@angular/common@20.1.6(@angular/core@20.1.6(@angular/compiler@20.1.6)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.6(@angular/compiler@20.1.6)(rxjs@7.8.2)(zone.js@0.15.1))':
+  '@tanstack/angular-query-experimental@5.85.0(@angular/common@20.1.6(@angular/core@20.1.6(@angular/compiler@20.1.6)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@20.1.6(@angular/compiler@20.1.6)(rxjs@7.8.2)(zone.js@0.15.1))':
     dependencies:
       '@angular/common': 20.1.6(@angular/core@20.1.6(@angular/compiler@20.1.6)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
       '@angular/core': 20.1.6(@angular/compiler@20.1.6)(rxjs@7.8.2)(zone.js@0.15.1)
