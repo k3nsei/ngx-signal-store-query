@@ -20,7 +20,7 @@ updates:
       prefix: 'chore'
       prefix-development: 'chore'
       include: 'scope'
-    open-pull-requests-limit: 20
+    open-pull-requests-limit: 5
     schedule:
       interval: 'weekly'
       timezone: 'Europe/Warsaw'
@@ -29,6 +29,7 @@ updates:
     groups:
       angular:
         applies-to: 'version-updates'
+        update-types: ['minor', 'patch']
         patterns:
           - '@angular/*'
           - '@angular-devkit/*'
@@ -37,29 +38,34 @@ updates:
           - 'ng-packagr'
           - 'rxjs'
           - 'zone.js'
-          - 'tslib'
-          - 'typescript'
-        update-types:
-          - 'minor'
-          - 'patch'
       angular-eslint:
         applies-to: 'version-updates'
+        update-types: ['minor', 'patch']
         patterns:
           - '@angular-eslint/*'
           - 'angular-eslint'
           - 'eslint'
           - 'eslint-*'
           - 'typescript-eslint'
-        update-types:
-          - 'minor'
-          - 'patch'
       angular-query:
         applies-to: 'version-updates'
+        update-types: ['minor', 'patch']
         patterns:
           - '@tanstack/angular-query*'
-        update-types:
-          - 'minor'
-          - 'patch'
-      other:
-        patterns:
-          - '*'
+    ignore:
+      - dependency-name: '@angular/*'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular-devkit/*'
+        update-types: ['version-update:semver-major']
+      - dependency-name: 'ng-packagr'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular-eslint/*'
+        update-types: ['version-update:semver-major']
+      - dependency-name: 'angular-eslint'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@tanstack/angular-query*'
+        update-types: ['version-update:semver-major']
+      - dependency-name: 'typescript'
+        update-types: ['version-update:semver-major', 'version-update:semver-minor']
+      - dependency-name: 'tslib'
+        update-types: ['version-update:semver-major']
