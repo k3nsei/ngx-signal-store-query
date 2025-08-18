@@ -38,7 +38,6 @@ updates:
           - 'rxjs'
           - 'zone.js'
           - 'tslib'
-          - 'typescript'
         update-types:
           - 'minor'
           - 'patch'
@@ -59,6 +58,12 @@ updates:
           - '@tanstack/angular-query*'
         update-types:
           - 'minor'
+          - 'patch'
+      typescript:
+        applies-to: 'version-updates'
+        patterns:
+          - 'typescript'
+        update-types:
           - 'patch'
       other:
         patterns:
