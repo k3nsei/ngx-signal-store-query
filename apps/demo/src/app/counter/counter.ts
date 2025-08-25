@@ -3,18 +3,18 @@ import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/c
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
-import { CounterApiService } from './counter-api.service';
+import { CounterApi } from './counter-api';
 import { CounterStore } from './counter.store';
 
 @Component({
   selector: 'ssq-counter',
-  templateUrl: './counter.component.html',
-  styleUrl: './counter.component.scss',
+  templateUrl: './counter.html',
+  styleUrl: './counter.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [CounterApiService, CounterStore],
+  providers: [CounterApi, CounterStore],
   imports: [MatButtonModule, MatIconModule],
 })
-export class CounterComponent {
+export class Counter {
   private readonly store = inject(CounterStore);
 
   protected readonly value = computed(() => this.store.count());

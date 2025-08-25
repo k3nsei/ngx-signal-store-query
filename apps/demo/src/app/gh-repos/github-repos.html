@@ -1,0 +1,38 @@
+@if (isBusy()) {
+<mat-progress-bar class="busy-indicator" mode="indeterminate" />
+}
+
+<mat-list class="list">
+  <div mat-subheader>{{ organization() | titlecase }} Repositories</div>
+
+  @if (isBusy()) {
+  <ng-container *ngTemplateOutlet="skeleton" />
+  <ng-container *ngTemplateOutlet="skeleton" />
+  <ng-container *ngTemplateOutlet="skeleton" />
+  } @else { @for (repo of data(); track repo) {
+  <mat-list-item class="list-item">
+    <mat-icon class="list-item__icon" matListItemIcon>folder</mat-icon>
+    <div class="list-item__title" matListItemTitle>
+      <a class="list-item__link" [href]="repo.html_url" target="_blank" rel="external nofollow noopener noreferrer">
+        {{ repo.name }}
+      </a>
+      <span class="list-item__pill">{{ repo.private ? 'Private' : 'Public' }}</span>
+    </div>
+    <div class="list-item__description" matListItemLine> {{ repo.description }} </div>
+  </mat-list-item>
+  } @empty {
+  <div class="no-records">No repositories found</div>
+  } }
+</mat-list>
+
+<ng-template #skeleton>
+  <mat-list-item class="list-item skeleton">
+    <mat-icon class="list-item__icon" matListItemIcon>folder</mat-icon>
+    <div class="list-item__title" matListItemTitle>
+      <ssq-skeleton-text />
+    </div>
+    <div class="list-item__description" matListItemLine>
+      <ssq-skeleton-text inlineSize="12rem" />
+    </div>
+  </mat-list-item>
+</ng-template>

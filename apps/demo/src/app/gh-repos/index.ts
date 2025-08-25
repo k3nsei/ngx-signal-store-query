@@ -1,2 +1,2 @@
-export { githubApiInterceptor } from './github-api.service';
-export * from './github-repos.component';
+export { githubApiInterceptor } from './github-api';
+export * from './github-repos';

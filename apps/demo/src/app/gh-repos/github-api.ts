@@ -6,7 +6,7 @@ import { type Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
 @Injectable()
-export class GithubApiService {
+export class GithubApi {
   protected httpClient = inject(HttpClient);
 
   public fetchOrganizationRepositoryList$(

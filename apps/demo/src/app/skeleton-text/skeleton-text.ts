@@ -3,7 +3,7 @@ import { booleanAttribute, ChangeDetectionStrategy, Component, input } from '@an
 @Component({
   selector: 'ssq-skeleton-text',
   template: `&nbsp;`,
-  styleUrl: './skeleton-text.component.scss',
+  styleUrl: './skeleton-text.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     '[style.--ssq-skeleton-text-size-x]': 'inlineSize()',
@@ -11,7 +11,7 @@ import { booleanAttribute, ChangeDetectionStrategy, Component, input } from '@an
     '[class.skeleton-text-animated]': 'animated()',
   },
 })
-export class SkeletonTextComponent {
+export class SkeletonText {
   public inlineSize = input<string>();
 
   public blockSize = input<string>();

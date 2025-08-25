@@ -13,20 +13,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
-import { SkeletonTextComponent } from '../skeleton-text';
+import { SkeletonText } from '../skeleton-text';
 
-import { GithubApiService } from './github-api.service';
+import { GithubApi } from './github-api';
 import { GithubStore } from './github.store';
 
 @Component({
   selector: 'ssq-github-repos',
-  templateUrl: './github-repos.component.html',
-  styleUrl: './github-repos.component.scss',
+  templateUrl: './github-repos.html',
+  styleUrl: './github-repos.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [GithubApiService, GithubStore],
-  imports: [NgTemplateOutlet, TitleCasePipe, MatIconModule, MatListModule, MatProgressBarModule, SkeletonTextComponent],
+  providers: [GithubApi, GithubStore],
+  imports: [NgTemplateOutlet, TitleCasePipe, MatIconModule, MatListModule, MatProgressBarModule, SkeletonText],
 })
-export class GithubReposComponent implements OnInit {
+export class GithubRepos implements OnInit {
   private readonly destroyRef = inject(DestroyRef);
 
   private readonly platformId = inject(PLATFORM_ID);

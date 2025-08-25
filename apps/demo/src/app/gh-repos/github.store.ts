@@ -9,7 +9,7 @@ import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 import { withQuery } from '@ngx-signal-store-query/core';
 import { lastValueFrom } from 'rxjs';
 
-import { GithubApiService } from './github-api.service';
+import { GithubApi } from './github-api';
 
 export const GithubStore = signalStore(
   withState(() => {
@@ -28,7 +28,7 @@ export const GithubStore = signalStore(
   withQuery('github', (store) => {
     const destroyRef = inject(DestroyRef);
     const snackBar = inject(MatSnackBar);
-    const api = inject(GithubApiService);
+    const api = inject(GithubApi);
 
     return () => {
       const organization = store.organization();

@@ -1,1 +1,1 @@
-export * from './skeleton-text.component';
+export * from './skeleton-text';
