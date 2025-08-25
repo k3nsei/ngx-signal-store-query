@@ -7,14 +7,14 @@ import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 import { withMutation } from '@ngx-signal-store-query/core';
 import { lastValueFrom } from 'rxjs';
 
-import { CounterApiService } from './counter-api.service';
+import { CounterApi } from './counter-api';
 
 export const CounterStore = signalStore(
   withState({ count: 0 }),
   withMutation('counter', (store) => () => {
     const destroyRef = inject(DestroyRef);
     const snackBar = inject(MatSnackBar);
-    const api = inject(CounterApiService);
+    const api = inject(CounterApi);
 
     return {
       mutationFn(amount: number) {

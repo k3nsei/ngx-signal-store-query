@@ -60,10 +60,8 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/apps/demo",
-            "index": "apps/demo/src/index.html",
             "browser": "apps/demo/src/main.ts",
-            "polyfills": ["zone.js"],
+            "server": "apps/demo/src/main.server.ts",
             "tsConfig": "apps/demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -80,8 +78,7 @@
             },
             "styles": ["apps/demo/src/global-styles.scss"],
             "scripts": [],
-            "server": "apps/demo/src/main.server.ts",
-            "prerender": true,
+            "outputMode": "server",
             "ssr": {
               "entry": "apps/demo/src/server.ts"
             }
@@ -105,9 +102,7 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true,
-              "ssr": false,
-              "prerender": false
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
