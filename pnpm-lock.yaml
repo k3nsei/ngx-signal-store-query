@@ -64,8 +64,8 @@ importers:
         specifier: ^1.20.2
         version: 1.20.2(@angular/build@20.3.1(62109d35dd8a4171f6e4926fda02b3c0))
       '@analogjs/vitest-angular':
-        specifier: ^1.20.2
-        version: 1.20.2(@analogjs/vite-plugin-angular@1.20.2(@angular/build@20.3.1(62109d35dd8a4171f6e4926fda02b3c0)))(@angular-devkit/architect@0.2003.1(chokidar@4.0.3))(vitest@3.2.4(@types/node@24.3.1)(jiti@2.5.1)(jsdom@26.1.0)(less@4.4.1)(sass@1.90.0)(yaml@2.8.1))
+        specifier: ^1.21.0
+        version: 1.21.0(@analogjs/vite-plugin-angular@1.20.2(@angular/build@20.3.1(62109d35dd8a4171f6e4926fda02b3c0)))(@angular-devkit/architect@0.2003.1(chokidar@4.0.3))(vitest@3.2.4(@types/node@24.3.1)(jiti@2.5.1)(jsdom@26.1.0)(less@4.4.1)(sass@1.90.0)(yaml@2.8.1))
       '@angular/build':
         specifier: ^20.3.1
         version: 20.3.1(62109d35dd8a4171f6e4926fda02b3c0)
@@ -239,8 +239,8 @@ packages:
       '@angular/build':
         optional: true
 
-  '@analogjs/vitest-angular@1.20.2':
-    resolution: {integrity: sha512-XhZLzNHY/wAERt47HkG8MAGaDnGvujCCM9dQDzl4kqM73mMZHmIW8c+pv23pY6AYWQFRIAMtLlQp/A5UIkLTtQ==}
+  '@analogjs/vitest-angular@1.21.0':
+    resolution: {integrity: sha512-Ma6IVJqpaURddZaZ9iAa3ssxgyxWM9MtvebF/DBhJGGgm3WPYOwn6JOmy+Q+hUhAXhU4CipoZ1O0jCt+zsBPsQ==}
     peerDependencies:
       '@analogjs/vite-plugin-angular': '*'
       '@angular-devkit/architect': '>=0.1500.0 < 0.2100.0'
@@ -4534,7 +4534,7 @@ snapshots:
     optionalDependencies:
       '@angular/build': 20.3.1(62109d35dd8a4171f6e4926fda02b3c0)
 
-  '@analogjs/vitest-angular@1.20.2(@analogjs/vite-plugin-angular@1.20.2(@angular/build@20.3.1(62109d35dd8a4171f6e4926fda02b3c0)))(@angular-devkit/architect@0.2003.1(chokidar@4.0.3))(vitest@3.2.4(@types/node@24.3.1)(jiti@2.5.1)(jsdom@26.1.0)(less@4.4.1)(sass@1.90.0)(yaml@2.8.1))':
+  '@analogjs/vitest-angular@1.21.0(@analogjs/vite-plugin-angular@1.20.2(@angular/build@20.3.1(62109d35dd8a4171f6e4926fda02b3c0)))(@angular-devkit/architect@0.2003.1(chokidar@4.0.3))(vitest@3.2.4(@types/node@24.3.1)(jiti@2.5.1)(jsdom@26.1.0)(less@4.4.1)(sass@1.90.0)(yaml@2.8.1))':
     dependencies:
       '@analogjs/vite-plugin-angular': 1.20.2(@angular/build@20.3.1(62109d35dd8a4171f6e4926fda02b3c0))
       '@angular-devkit/architect': 0.2003.1(chokidar@4.0.3)
