@@ -18,12 +18,12 @@
     "test:clear-snapshots": "rimraf -g \"{apps,libs}/**/__snapshots__\""
   },
   "dependencies": {
-    "@angular/cdk": "^20.2.2",
+    "@angular/cdk": "^20.2.3",
     "@angular/common": "^20.3.0",
     "@angular/compiler": "^20.3.0",
     "@angular/core": "^20.3.0",
     "@angular/forms": "^20.3.0",
-    "@angular/material": "^20.2.2",
+    "@angular/material": "^20.2.3",
     "@angular/platform-browser": "^20.3.0",
     "@angular/platform-browser-dynamic": "^20.3.0",
     "@angular/platform-server": "^20.3.0",
