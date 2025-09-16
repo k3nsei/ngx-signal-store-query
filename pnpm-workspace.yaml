@@ -1,3 +1,7 @@
+minimumReleaseAge: 1440 # 1 day in minutes of delay before a package can be installed after it's release
+minimumReleaseAgeExclude:
+  - '@angular/*'
+  - '@tanstack/angular-query-experimental'
 packages:
-  - 'apps/demo-e2e'
+  - apps/demo-e2e
   - '!libs/**'
