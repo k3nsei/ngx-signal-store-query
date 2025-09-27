@@ -12,8 +12,8 @@ updates:
     schedule:
       interval: 'weekly'
       timezone: 'Europe/Warsaw'
-      day: 'saturday'
-      time: '06:00'
+      day: 'monday'
+      time: '09:00'
 
   - package-ecosystem: 'npm'
     directory: '/'
@@ -26,8 +26,10 @@ updates:
     schedule:
       interval: 'weekly'
       timezone: 'Europe/Warsaw'
-      day: 'saturday'
-      time: '06:00'
+      day: 'monday'
+      time: '09:00'
+    cooldown:
+      default-days: 2
     groups:
       angular:
         applies-to: 'version-updates'
