@@ -1,6 +1,11 @@
-minimumReleaseAge: 1440 # 1 day in minutes of delay before a package can be installed after it's release
+minimumReleaseAge: 2880 # 2 days in minutes of delay before a package can be installed after it's release
 minimumReleaseAgeExclude:
   - '@angular/*'
+  - '@angular-devkit/*'
+  - '@schematics/angular'
+  - 'ng-packagr'
+  - '@analogjs/vitest-angular'
+  - '@analogjs/vite-plugin-angular'
   - '@tanstack/angular-query-experimental'
   - '@tanstack/query-core'
   - '@tanstack/query-devtools'
