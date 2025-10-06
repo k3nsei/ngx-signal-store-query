@@ -45,7 +45,7 @@
     "@angular/compiler-cli": "^20.3.3",
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
-    "@eslint/js": "^9.36.0",
+    "@eslint/js": "^9.37.0",
     "@octokit/types": "^15.0.0",
     "@playwright/test": "1.55.1",
     "@types/express": "^5.0.3",
