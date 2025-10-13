@@ -59,7 +59,7 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.4",
     "jsdom": "^27.0.0",
-    "lint-staged": "^16.2.3",
+    "lint-staged": "^16.2.4",
     "ng-packagr": "^20.3.0",
     "prettier": "3.6.2",
     "prettier-plugin-packagejson": "2.5.19",
