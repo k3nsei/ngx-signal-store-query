@@ -22,12 +22,12 @@
   "author": "Piotr Stępniewski (k3nsei)",
   "sideEffects": false,
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "^2.8.1"
   },
   "peerDependencies": {
     "@angular/common": "^19.0.0 || ^20.0.0 || >=21.0.0 || next",
     "@angular/core": "^19.0.0 || ^20.0.0 || >=21.0.0 || next",
     "@ngrx/signals": "^19.0.0 || ^20.0.0 || >=21.0.0 || next",
-    "@tanstack/angular-query-experimental": "^5.69.2"
+    "@tanstack/angular-query-experimental": "^5.90.7"
   }
 }
