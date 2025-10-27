@@ -29,7 +29,7 @@
     "@angular/platform-server": "^20.3.6",
     "@angular/router": "^20.3.6",
     "@angular/ssr": "^20.3.6",
-    "@ngrx/signals": "^20.0.1",
+    "@ngrx/signals": "^20.1.0",
     "@tanstack/angular-query-experimental": "^5.90.5",
     "@tanstack/query-devtools": "^5.90.1",
     "express": "^5.1.0",
