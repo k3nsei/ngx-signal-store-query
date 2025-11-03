@@ -65,13 +65,13 @@ importers:
     devDependencies:
       '@analogjs/vite-plugin-angular':
         specifier: ^1.22.1
-        version: 1.22.1(@angular/build@20.3.7(7a0f89f96888d6bb5f1e0ebb2e80dbc4))
+        version: 1.22.1(@angular/build@20.3.7(f28ae7bd2709c083c52d0c779f8d08e7))
       '@analogjs/vitest-angular':
         specifier: ^1.22.1
-        version: 1.22.1(@analogjs/vite-plugin-angular@1.22.1(@angular/build@20.3.7(7a0f89f96888d6bb5f1e0ebb2e80dbc4)))(@angular-devkit/architect@0.2003.7(chokidar@4.0.3))(vitest@4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(less@4.4.2)(sass@1.90.0)(yaml@2.8.1))
+        version: 1.22.1(@analogjs/vite-plugin-angular@1.22.1(@angular/build@20.3.7(f28ae7bd2709c083c52d0c779f8d08e7)))(@angular-devkit/architect@0.2003.7(chokidar@4.0.3))(vitest@4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.1.0)(less@4.4.2)(sass@1.90.0)(yaml@2.8.1))
       '@angular/build':
         specifier: ^20.3.7
-        version: 20.3.7(7a0f89f96888d6bb5f1e0ebb2e80dbc4)
+        version: 20.3.7(f28ae7bd2709c083c52d0c779f8d08e7)
       '@angular/cli':
         specifier: ^20.3.7
         version: 20.3.7(@types/node@24.9.1)(chokidar@4.0.3)
@@ -101,7 +101,7 @@ importers:
         version: 24.9.1
       '@vitest/coverage-v8':
         specifier: ^4.0.3
-        version: 4.0.3(vitest@4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(less@4.4.2)(sass@1.90.0)(yaml@2.8.1))
+        version: 4.0.3(vitest@4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.1.0)(less@4.4.2)(sass@1.90.0)(yaml@2.8.1))
       angular-eslint:
         specifier: 20.4.0
         version: 20.4.0(chokidar@4.0.3)(eslint@9.38.0(jiti@2.6.1))(typescript-eslint@8.46.2(eslint@9.38.0(jiti@2.6.1))(typescript@5.9.3))(typescript@5.9.3)
@@ -124,8 +124,8 @@ importers:
         specifier: ^5.5.4
         version: 5.5.4(eslint-config-prettier@10.1.8(eslint@9.38.0(jiti@2.6.1)))(eslint@9.38.0(jiti@2.6.1))(prettier@3.6.2)
       jsdom:
-        specifier: ^27.0.1
-        version: 27.0.1(postcss@8.5.6)
+        specifier: ^27.1.0
+        version: 27.1.0
       lint-staged:
         specifier: ^16.2.6
         version: 16.2.6
@@ -158,7 +158,7 @@ importers:
         version: 5.1.4(typescript@5.9.3)(vite@7.1.12(@types/node@24.9.1)(jiti@2.6.1)(less@4.4.2)(sass@1.90.0)(yaml@2.8.1))
       vitest:
         specifier: ^4.0.3
-        version: 4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(less@4.4.2)(sass@1.90.0)(yaml@2.8.1)
+        version: 4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.1.0)(less@4.4.2)(sass@1.90.0)(yaml@2.8.1)
 
   apps/demo-e2e:
     devDependencies:
@@ -170,6 +170,9 @@ importers:
         version: 24.9.1
 
 packages:
+
+  '@acemir/cssom@0.9.19':
+    resolution: {integrity: sha512-Pp2gAQXPZ2o7lt4j0IMwNRXqQ3pagxtDj5wctL5U2Lz4oV0ocDNlkgx4DpxfyKav4S/bePuI+SMqcBSUHLy9kg==}
 
   '@algolia/abtesting@1.1.0':
     resolution: {integrity: sha512-sEyWjw28a/9iluA37KLGu8vjxEIlb60uxznfTUmXImy7H5NvbpSO6yYgmgH5KiD7j+zTUUihiST0jEP12IoXow==}
@@ -472,8 +475,8 @@ packages:
   '@asamuzakjp/css-color@4.0.5':
     resolution: {integrity: sha512-lMrXidNhPGsDjytDy11Vwlb6OIGrT3CmLg3VWNFyWkLWtijKl7xjvForlh8vuj0SHGjgl4qZEQzUmYTeQA2JFQ==}
 
-  '@asamuzakjp/dom-selector@6.7.3':
-    resolution: {integrity: sha512-kiGFeY+Hxf5KbPpjRLf+ffWbkos1aGo8MBfd91oxS3O57RgU3XhZrt/6UzoVF9VMpWbC3v87SRc9jxGrc9qHtQ==}
+  '@asamuzakjp/dom-selector@6.7.4':
+    resolution: {integrity: sha512-buQDjkm+wDPXd6c13534URWZqbz0RP5PAhXZ+LIoa5LgwInT9HVJvGIJivg75vi8I13CxDGdTnz+aY5YUJlIAA==}
 
   '@asamuzakjp/nwsapi@2.3.9':
     resolution: {integrity: sha512-n8GuYSrI9bF7FFZ/SjhwevlHc8xaVlb/7HmHelnc/PZXBD2ZR49NnN9sMMuDdEGPeeRQ5d0hqlSlEpgCX3Wl0Q==}
@@ -650,11 +653,9 @@ packages:
     peerDependencies:
       '@csstools/css-tokenizer': ^3.0.4
 
-  '@csstools/css-syntax-patches-for-csstree@1.0.14':
-    resolution: {integrity: sha512-zSlIxa20WvMojjpCSy8WrNpcZ61RqfTfX3XTaOeVlGJrt/8HF3YbzgFZa01yTbT4GWQLwfTcC3EB8i3XnB647Q==}
+  '@csstools/css-syntax-patches-for-csstree@1.0.15':
+    resolution: {integrity: sha512-q0p6zkVq2lJnmzZVPR33doA51G7YOja+FBvRdp5ISIthL0MtFCgYHHhR563z9WFGxcOn0WfjSkPDJ5Qig3H3Sw==}
     engines: {node: '>=18'}
-    peerDependencies:
-      postcss: ^8.4
 
   '@csstools/css-tokenizer@3.0.4':
     resolution: {integrity: sha512-Vd/9EVDiu6PPJt9yAh6roZP6El1xHrdvIVGjyBsHR0RYwNHgL7FJPyIIW4fANJNG6FtyZfvlRPpFI4ZM/lubvw==}
@@ -2402,8 +2403,8 @@ packages:
     resolution: {integrity: sha512-wD5oz5xibMOPHzy13CyGmogB3phdvcDaB5t0W/Nr5Z2O/agcB8YwOz6e2Lsp10pNDzBoDO9nVa3RGs/2BttpHQ==}
     engines: {node: '>= 6'}
 
-  cssstyle@5.3.1:
-    resolution: {integrity: sha512-g5PC9Aiph9eiczFpcgUhd9S4UUO3F+LHGRIi5NUMZ+4xtoIYbHNZwZnWA2JsFGe8OU8nl4WyaEFiZuGuxlutJQ==}
+  cssstyle@5.3.2:
+    resolution: {integrity: sha512-zDMqXh8Vs1CdRYZQ2M633m/SFgcjlu8RB8b/1h82i+6vpArF507NSYIWJHGlJaTWoS+imcnctmEz43txhbVkOw==}
     engines: {node: '>=20'}
 
   dargs@8.1.0:
@@ -3259,9 +3260,9 @@ packages:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
     hasBin: true
 
-  jsdom@27.0.1:
-    resolution: {integrity: sha512-SNSQteBL1IlV2zqhwwolaG9CwhIhTvVHWg3kTss/cLE7H/X4644mtPQqYvCfsSrGQWt9hSZcgOXX8bOZaMN+kA==}
-    engines: {node: '>=20'}
+  jsdom@27.1.0:
+    resolution: {integrity: sha512-Pcfm3eZ+eO4JdZCXthW9tCDT3nF4K+9dmeZ+5X39n+Kqz0DDIABRP5CAEOHRFZk8RGuC2efksTJxrjp8EXCunQ==}
+    engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
     peerDependencies:
       canvas: ^3.0.0
     peerDependenciesMeta:
@@ -3970,9 +3971,6 @@ packages:
   router@2.2.0:
     resolution: {integrity: sha512-nLTrUKm2UyiL7rlhapu/Zl45FwNgkZGaCpZbIHajDYgwlJCOzLSk+cIPAnsEqV955GjILJnKbdQC1nVPz+gAYQ==}
     engines: {node: '>= 18'}
-
-  rrweb-cssom@0.8.0:
-    resolution: {integrity: sha512-guoltQEx+9aMf2gDZ0s62EcV8lsXR+0w8915TC3ITdn2YueuNjdAYh/levpU9nFaoChh9RUS5ZdQMrKfVEN9tw==}
 
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
@@ -4705,6 +4703,8 @@ packages:
 
 snapshots:
 
+  '@acemir/cssom@0.9.19': {}
+
   '@algolia/abtesting@1.1.0':
     dependencies:
       '@algolia/client-common': 5.35.0
@@ -4794,18 +4794,18 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.31
 
-  '@analogjs/vite-plugin-angular@1.22.1(@angular/build@20.3.7(7a0f89f96888d6bb5f1e0ebb2e80dbc4))':
+  '@analogjs/vite-plugin-angular@1.22.1(@angular/build@20.3.7(f28ae7bd2709c083c52d0c779f8d08e7))':
     dependencies:
       ts-morph: 21.0.1
       vfile: 6.0.3
     optionalDependencies:
-      '@angular/build': 20.3.7(7a0f89f96888d6bb5f1e0ebb2e80dbc4)
+      '@angular/build': 20.3.7(f28ae7bd2709c083c52d0c779f8d08e7)
 
-  '@analogjs/vitest-angular@1.22.1(@analogjs/vite-plugin-angular@1.22.1(@angular/build@20.3.7(7a0f89f96888d6bb5f1e0ebb2e80dbc4)))(@angular-devkit/architect@0.2003.7(chokidar@4.0.3))(vitest@4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(less@4.4.2)(sass@1.90.0)(yaml@2.8.1))':
+  '@analogjs/vitest-angular@1.22.1(@analogjs/vite-plugin-angular@1.22.1(@angular/build@20.3.7(f28ae7bd2709c083c52d0c779f8d08e7)))(@angular-devkit/architect@0.2003.7(chokidar@4.0.3))(vitest@4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.1.0)(less@4.4.2)(sass@1.90.0)(yaml@2.8.1))':
     dependencies:
-      '@analogjs/vite-plugin-angular': 1.22.1(@angular/build@20.3.7(7a0f89f96888d6bb5f1e0ebb2e80dbc4))
+      '@analogjs/vite-plugin-angular': 1.22.1(@angular/build@20.3.7(f28ae7bd2709c083c52d0c779f8d08e7))
       '@angular-devkit/architect': 0.2003.7(chokidar@4.0.3)
-      vitest: 4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(less@4.4.2)(sass@1.90.0)(yaml@2.8.1)
+      vitest: 4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.1.0)(less@4.4.2)(sass@1.90.0)(yaml@2.8.1)
 
   '@angular-devkit/architect@0.2003.7(chokidar@4.0.3)':
     dependencies:
@@ -4898,7 +4898,7 @@ snapshots:
       eslint: 9.38.0(jiti@2.6.1)
       typescript: 5.9.3
 
-  '@angular/build@20.3.7(7a0f89f96888d6bb5f1e0ebb2e80dbc4)':
+  '@angular/build@20.3.7(f28ae7bd2709c083c52d0c779f8d08e7)':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@angular-devkit/architect': 0.2003.7(chokidar@4.0.3)
@@ -4939,7 +4939,7 @@ snapshots:
       lmdb: 3.4.2
       ng-packagr: 20.3.0(@angular/compiler-cli@20.3.7(@angular/compiler@20.3.7)(typescript@5.9.3))(tslib@2.8.1)(typescript@5.9.3)
       postcss: 8.5.6
-      vitest: 4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(less@4.4.2)(sass@1.90.0)(yaml@2.8.1)
+      vitest: 4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.1.0)(less@4.4.2)(sass@1.90.0)(yaml@2.8.1)
     transitivePeerDependencies:
       - '@types/node'
       - chokidar
@@ -5087,7 +5087,7 @@ snapshots:
       '@csstools/css-tokenizer': 3.0.4
       lru-cache: 11.2.2
 
-  '@asamuzakjp/dom-selector@6.7.3':
+  '@asamuzakjp/dom-selector@6.7.4':
     dependencies:
       '@asamuzakjp/nwsapi': 2.3.9
       bidi-js: 1.0.3
@@ -5335,9 +5335,7 @@ snapshots:
     dependencies:
       '@csstools/css-tokenizer': 3.0.4
 
-  '@csstools/css-syntax-patches-for-csstree@1.0.14(postcss@8.5.6)':
-    dependencies:
-      postcss: 8.5.6
+  '@csstools/css-syntax-patches-for-csstree@1.0.15': {}
 
   '@csstools/css-tokenizer@3.0.4': {}
 
@@ -6402,7 +6400,7 @@ snapshots:
     dependencies:
       vite: 7.1.11(@types/node@24.9.1)(jiti@2.6.1)(less@4.4.2)(sass@1.90.0)(yaml@2.8.1)
 
-  '@vitest/coverage-v8@4.0.3(vitest@4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(less@4.4.2)(sass@1.90.0)(yaml@2.8.1))':
+  '@vitest/coverage-v8@4.0.3(vitest@4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.1.0)(less@4.4.2)(sass@1.90.0)(yaml@2.8.1))':
     dependencies:
       '@bcoe/v8-coverage': 1.0.2
       '@vitest/utils': 4.0.3
@@ -6415,7 +6413,7 @@ snapshots:
       magicast: 0.3.5
       std-env: 3.10.0
       tinyrainbow: 3.0.3
-      vitest: 4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(less@4.4.2)(sass@1.90.0)(yaml@2.8.1)
+      vitest: 4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.1.0)(less@4.4.2)(sass@1.90.0)(yaml@2.8.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -6867,13 +6865,11 @@ snapshots:
 
   css-what@7.0.0: {}
 
-  cssstyle@5.3.1(postcss@8.5.6):
+  cssstyle@5.3.2:
     dependencies:
       '@asamuzakjp/css-color': 4.0.5
-      '@csstools/css-syntax-patches-for-csstree': 1.0.14(postcss@8.5.6)
+      '@csstools/css-syntax-patches-for-csstree': 1.0.15
       css-tree: 3.1.0
-    transitivePeerDependencies:
-      - postcss
 
   dargs@8.1.0: {}
 
@@ -7849,10 +7845,11 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  jsdom@27.0.1(postcss@8.5.6):
+  jsdom@27.1.0:
     dependencies:
-      '@asamuzakjp/dom-selector': 6.7.3
-      cssstyle: 5.3.1(postcss@8.5.6)
+      '@acemir/cssom': 0.9.19
+      '@asamuzakjp/dom-selector': 6.7.4
+      cssstyle: 5.3.2
       data-urls: 6.0.0
       decimal.js: 10.6.0
       html-encoding-sniffer: 4.0.0
@@ -7860,7 +7857,6 @@ snapshots:
       https-proxy-agent: 7.0.6
       is-potential-custom-element-name: 1.0.1
       parse5: 8.0.0
-      rrweb-cssom: 0.8.0
       saxes: 6.0.0
       symbol-tree: 3.2.4
       tough-cookie: 6.0.0
@@ -7873,7 +7869,6 @@ snapshots:
       xml-name-validator: 5.0.0
     transitivePeerDependencies:
       - bufferutil
-      - postcss
       - supports-color
       - utf-8-validate
 
@@ -8696,8 +8691,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  rrweb-cssom@0.8.0: {}
-
   run-parallel@1.2.0:
     dependencies:
       queue-microtask: 1.2.3
@@ -9260,7 +9253,7 @@ snapshots:
       sass: 1.90.0
       yaml: 2.8.1
 
-  vitest@4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(less@4.4.2)(sass@1.90.0)(yaml@2.8.1):
+  vitest@4.0.3(@types/node@24.9.1)(jiti@2.6.1)(jsdom@27.1.0)(less@4.4.2)(sass@1.90.0)(yaml@2.8.1):
     dependencies:
       '@vitest/expect': 4.0.3
       '@vitest/mocker': 4.0.3(vite@7.1.12(@types/node@24.9.1)(jiti@2.6.1)(less@4.4.2)(sass@1.90.0)(yaml@2.8.1))
@@ -9284,7 +9277,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 24.9.1
-      jsdom: 27.0.1(postcss@8.5.6)
+      jsdom: 27.1.0
     transitivePeerDependencies:
       - jiti
       - less
