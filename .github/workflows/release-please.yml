@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Prepare release PR or move on with release when PR was accepted
         id: release
-        uses: googleapis/release-please-action@c2a5a2bd6a758a0937f1ddb1e8950609867ed15c # v4.3.0
+        uses: googleapis/release-please-action@16a9c90856f42705d54a6fda1823352bdc62cf38 # v4.4.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           config-file: .release-please-config.json
@@ -29,7 +29,7 @@ jobs:
 
       - name: Checkout repository
         if: ${{ steps.release.outputs.release_created }}
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
       - name: Install dependencies
         if: ${{ steps.release.outputs.release_created }}
