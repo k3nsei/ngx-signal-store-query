@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.8.0](https://github.com/k3nsei/ngx-signal-store-query/compare/v0.7.1...v0.8.0) (2026-01-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** Added support for Angular v21
+* **deps:** The minimum required version of `@tanstack/angular-query-experimental` was bumped from `v5.90.7` to `v5.90.20`
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump angular cli from v20.3.7 to v21.0.4 ([10c5ee5](https://github.com/k3nsei/ngx-signal-store-query/commit/10c5ee590048d577c8d03e0d25c3301016a42fa1))
+* **deps:** bump angular from v20.3.7 to v21.0.6 ([10c5ee5](https://github.com/k3nsei/ngx-signal-store-query/commit/10c5ee590048d577c8d03e0d25c3301016a42fa1))
+* **deps:** bump angular material from v20.2.10 to v21.0.5 ([10c5ee5](https://github.com/k3nsei/ngx-signal-store-query/commit/10c5ee590048d577c8d03e0d25c3301016a42fa1))
+* **deps:** bump tanstack query from v5.90.7 to v5.90.20 ([10c5ee5](https://github.com/k3nsei/ngx-signal-store-query/commit/10c5ee590048d577c8d03e0d25c3301016a42fa1))
+
 ## [0.7.1](https://github.com/k3nsei/ngx-signal-store-query/compare/v0.7.0...v0.7.1) (2025-05-29)
 
 
