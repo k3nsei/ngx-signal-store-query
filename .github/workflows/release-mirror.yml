@@ -1,7 +1,7 @@
 name: release-mirror
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-release-mirror-${{ github.ref }}
   cancel-in-progress: false
 
 on:
@@ -11,6 +11,15 @@ on:
       - 'v[0-9]+.[0-9]+.[0-9]+-beta.[0-9]+'
       - 'v[0-9]+.[0-9]+.[0-9]+-rc.[0-9]+'
       - 'v[0-9]+.[0-9]+.[0-9]+-next.[0-9]+'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version to publish (must match an existing release tag in vX.Y.Z format, e.g., v0.8.0)
+        required: true
+      reason:
+        description: Why was the workflow triggered manually?
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -20,11 +29,14 @@ permissions:
 jobs:
   publish-github-mirror:
     runs-on: ubuntu-latest
+    env:
+      TAG_REF: ${{ (github.event_name == 'workflow_dispatch' && format('refs/tags/{0}', inputs.version)) || github.ref }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           fetch-depth: 0
+          ref: ${{ env.TAG_REF }}
 
       - name: Install dependencies
         uses: ./.github/actions/install-deps
