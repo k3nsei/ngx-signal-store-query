@@ -18,7 +18,7 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
-    "lib": ["ES2022", "DOM"],
+    "lib": ["ES2024", "DOM"],
     "paths": {
       "@ngx-signal-store-query/core": ["./libs/ngx-signal-store-query/src/public-api.ts"]
     }
