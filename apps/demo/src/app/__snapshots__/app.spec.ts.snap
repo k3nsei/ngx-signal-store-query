@@ -3,7 +3,7 @@
 exports[`GIVEN AppComponent > WHEN component was initialized > THEN component should be rendered 1`] = `
 <div
   id="root1"
-  ng-version="21.0.6"
+  ng-version="21.0.7"
 >
   <ssq-counter>
     <output
