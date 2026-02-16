@@ -50,7 +50,7 @@
     "@octokit/types": "16.0.0",
     "@playwright/test": "1.58.2",
     "@types/express": "5.0.6",
-    "@types/node": "25.2.2",
+    "@types/node": "25.2.3",
     "@vitest/coverage-v8": "4.0.18",
     "angular-eslint": "21.2.0",
     "cross-env": "10.1.0",
