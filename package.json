@@ -40,7 +40,7 @@
   "devDependencies": {
     "@analogjs/vite-plugin-angular": "2.3.0",
     "@analogjs/vitest-angular": "2.3.0",
-    "@angular-eslint/builder": "21.2.0",
+    "@angular-eslint/builder": "21.3.0",
     "@angular/build": "21.2.0",
     "@angular/cli": "21.2.0",
     "@angular/compiler-cli": "21.2.0",
@@ -52,7 +52,7 @@
     "@types/express": "5.0.6",
     "@types/node": "25.3.2",
     "@vitest/coverage-v8": "4.0.18",
-    "angular-eslint": "21.2.0",
+    "angular-eslint": "21.3.0",
     "cross-env": "10.1.0",
     "esbuild": "0.27.3",
     "eslint": "^9.39.3",
