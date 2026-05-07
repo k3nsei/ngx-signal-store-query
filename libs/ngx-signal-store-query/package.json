@@ -28,6 +28,6 @@
     "@angular/common": "^19.0.0 || ^20.0.0 || ^21.0.0 || >=22.0.0 || next",
     "@angular/core": "^19.0.0 || ^20.0.0 || ^21.0.0 || >=22.0.0 || next",
     "@ngrx/signals": "^19.0.0 || ^20.0.0 || ^21.0.0 || >=22.0.0 || next",
-    "@tanstack/angular-query-experimental": "^5.90.20"
+    "@tanstack/angular-query-experimental": "^5.100.9"
   }
 }

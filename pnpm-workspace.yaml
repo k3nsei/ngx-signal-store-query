@@ -3,3 +3,9 @@ minimumReleaseAge: 2880
 packages:
   - 'apps/demo-e2e'
   - '!libs/**'
+
+allowBuilds:
+  '@parcel/watcher': false
+  esbuild: true
+  lmdb: false
+  msgpackr-extract: false
