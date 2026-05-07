@@ -7,7 +7,7 @@ import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 import { withMutation } from '@ngx-signal-store-query/core';
 import { lastValueFrom } from 'rxjs';
 
-import { CounterApi } from './counter-api';
+import { CounterApi, type CounterApiResponse } from './counter-api';
 
 export const CounterStore = signalStore(
   withState({ count: 0 }),
@@ -17,10 +17,10 @@ export const CounterStore = signalStore(
     const api = inject(CounterApi);
 
     return {
-      mutationFn(amount: number) {
+      mutationFn(amount: number): Promise<CounterApiResponse> {
         return lastValueFrom(api.increaseBy$(amount, store.count()).pipe(takeUntilDestroyed(destroyRef)));
       },
-      onSuccess({ count }): void {
+      onSuccess({ count }: CounterApiResponse): void {
         return patchState(store, { count });
       },
       onError(error: Error): void {
