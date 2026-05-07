@@ -11,14 +11,27 @@ on:
       - 'v[0-9]+.[0-9]+.[0-9]+-beta.[0-9]+'
       - 'v[0-9]+.[0-9]+.[0-9]+-rc.[0-9]+'
       - 'v[0-9]+.[0-9]+.[0-9]+-next.[0-9]+'
+  workflow_call:
+    inputs:
+      version:
+        description: Version to publish (must match an existing release tag in vX.Y.Z format, e.g., v0.8.0)
+        required: true
+        type: string
+      reason:
+        description: Why was the workflow triggered manually?
+        default: 'Publish latest package to mirror registry'
+        required: false
+        type: string
   workflow_dispatch:
     inputs:
       version:
         description: Version to publish (must match an existing release tag in vX.Y.Z format, e.g., v0.8.0)
         required: true
+        type: string
       reason:
         description: Why was the workflow triggered manually?
-        required: true
+        default: 'Publish package to mirror registry'
+        required: false
         type: string
 
 permissions:
@@ -30,7 +43,7 @@ jobs:
   publish-github-mirror:
     runs-on: ubuntu-latest
     env:
-      TAG_REF: ${{ (github.event_name == 'workflow_dispatch' && format('refs/tags/{0}', inputs.version)) || github.ref }}
+      TAG_REF: ${{ ((github.event_name == 'workflow_call' || github.event_name == 'workflow_dispatch') && format('refs/tags/{0}', inputs.version)) || github.ref }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
