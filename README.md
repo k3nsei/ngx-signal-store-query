@@ -2,7 +2,9 @@
 
 Signal Store feature that bridges with Angular Query
 
-## Minimal setup (once)
+## Usage Example
+
+### 1) Setup Angular Query
 
 ```typescript
 import { ApplicationConfig } from '@angular/core';
@@ -13,19 +15,29 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
-## Minimal `withQuery`
+### 2) Create a mocked API service
 
 ```typescript
-import { ChangeDetectionStrategy, Component, inject, Injectable } from '@angular/core';
-import { signalStore, withState } from '@ngrx/signals';
-import { withQuery } from '@ngx-signal-store-query/core';
+import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class MockApiService {
   async fetchNumber(id: number): Promise<number> {
     return Promise.resolve(id * 10);
   }
+
+  async add(value: number, current: number): Promise<number> {
+    return Promise.resolve(current + value);
+  }
 }
+```
+
+### 3) Use `withQuery`
+
+```typescript
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { signalStore, withState } from '@ngrx/signals';
+import { withQuery } from '@ngx-signal-store-query/core';
 
 export const QueryStore = signalStore(
   withState({ id: 1 }),
@@ -53,19 +65,12 @@ export class QueryExampleComponent {
 }
 ```
 
-## Minimal `withMutation`
+### 4) Use `withMutation`
 
 ```typescript
-import { ChangeDetectionStrategy, Component, inject, Injectable } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { patchState, signalStore, withState } from '@ngrx/signals';
 import { withMutation } from '@ngx-signal-store-query/core';
-
-@Injectable({ providedIn: 'root' })
-export class MockApiService {
-  async add(value: number, current: number): Promise<number> {
-    return Promise.resolve(current + value);
-  }
-}
 
 export const MutationStore = signalStore(
   withState({ total: 0 }),
