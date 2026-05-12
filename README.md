@@ -2,65 +2,71 @@
 
 Signal Store feature that bridges with Angular Query
 
-## Simple Example
-
-#### Create Store
+## Minimal setup (once)
 
 ```typescript
+import { ApplicationConfig } from '@angular/core';
+import { provideTanStackQuery, QueryClient } from '@tanstack/angular-query-experimental';
+
+export const appConfig: ApplicationConfig = {
+  providers: [provideTanStackQuery(new QueryClient())],
+};
+```
+
+## Minimal `withQuery`
+
+```typescript
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { signalStore, withState } from '@ngrx/signals';
 import { withQuery } from '@ngx-signal-store-query/core';
-import { lastValueFrom } from 'rxjs';
 
-import { ApiService } from './api.service';
-
-export const ExampleStore = signalStore(
-  withState({ categoryId: 1 }),
-  withQuery('example', (store) => {
-    const apiService = inject(ApiService);
-
-    return () => {
-      const categoryId = store.categoryId();
-
-      return {
-        enabled: !!categoryId,
-        queryKey: ['category', { id: categoryId }],
-        queryFn: () =>
-          lastValueFrom(apiService.getCategory$(categoryId)).catch((error) => {
-            console.error(error);
-
-            return null;
-          }),
-      };
-    };
-  }),
+export const QueryStore = signalStore(
+  withState({ id: 1 }),
+  withQuery('number', (store) => () => ({
+    queryKey: ['number', store.id()],
+    queryFn: async () => store.id() * 10,
+  })),
 );
-```
-
-#### Use it in component
-
-<!-- prettier-ignore-start -->
-```typescript
-import { JsonPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-
-import { ExampleStore } from './example.store.ts';
 
 @Component({
-  standalone: true,
-  selector: 'app-example',
-  template: `
-    <pre>
-      Loading: {{ store.exampleQuery.isLoading() }}
-      Fetching: {{ store.exampleQuery.isFetching() }}
-      Data:
-      {{ store.exampleQuery.data() | json }}
-    </pre>
-  `,
+  selector: 'app-query-example',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [JsonPipe],
+  template: `
+    <button (click)="store.numberQuery.refetch()">Refetch</button>
+    <p>pending: {{ store.numberQuery.isPending() }}</p>
+    <p>data: {{ store.numberQuery.data() }}</p>
+  `,
 })
-export class ExampleComponent {
-  public readonly store = inject(ExampleStore);
+export class QueryExampleComponent {
+  readonly store = inject(QueryStore);
 }
 ```
-<!-- prettier-ignore-end -->
+
+## Minimal `withMutation`
+
+```typescript
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { patchState, signalStore, withState } from '@ngrx/signals';
+import { withMutation } from '@ngx-signal-store-query/core';
+
+export const MutationStore = signalStore(
+  withState({ total: 0 }),
+  withMutation('add', (store) => () => ({
+    mutationFn: async (value: number) => store.total() + value,
+    onSuccess: (nextTotal: number) => patchState(store, { total: nextTotal }),
+  })),
+);
+
+@Component({
+  selector: 'app-mutation-example',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: `
+    <button (click)="store.addMutation.mutate(1)">Add 1</button>
+    <p>pending: {{ store.addMutation.isPending() }}</p>
+    <p>total: {{ store.total() }}</p>
+  `,
+})
+export class MutationExampleComponent {
+  readonly store = inject(MutationStore);
+}
+```
