@@ -16,16 +16,27 @@ export const appConfig: ApplicationConfig = {
 ## Minimal `withQuery`
 
 ```typescript
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Injectable } from '@angular/core';
 import { signalStore, withState } from '@ngrx/signals';
 import { withQuery } from '@ngx-signal-store-query/core';
 
+@Injectable({ providedIn: 'root' })
+export class MockApiService {
+  async fetchNumber(id: number): Promise<number> {
+    return Promise.resolve(id * 10);
+  }
+}
+
 export const QueryStore = signalStore(
   withState({ id: 1 }),
-  withQuery('number', (store) => () => ({
-    queryKey: ['number', store.id()],
-    queryFn: async () => store.id() * 10,
-  })),
+  withQuery('number', (store) => {
+    const api = inject(MockApiService);
+
+    return () => ({
+      queryKey: ['number', store.id()],
+      queryFn: () => api.fetchNumber(store.id()),
+    });
+  }),
 );
 
 @Component({
@@ -45,16 +56,27 @@ export class QueryExampleComponent {
 ## Minimal `withMutation`
 
 ```typescript
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Injectable } from '@angular/core';
 import { patchState, signalStore, withState } from '@ngrx/signals';
 import { withMutation } from '@ngx-signal-store-query/core';
 
+@Injectable({ providedIn: 'root' })
+export class MockApiService {
+  async add(value: number, current: number): Promise<number> {
+    return Promise.resolve(current + value);
+  }
+}
+
 export const MutationStore = signalStore(
   withState({ total: 0 }),
-  withMutation('add', (store) => () => ({
-    mutationFn: async (value: number) => store.total() + value,
-    onSuccess: (nextTotal: number) => patchState(store, { total: nextTotal }),
-  })),
+  withMutation('add', (store) => {
+    const api = inject(MockApiService);
+
+    return () => ({
+      mutationFn: (value: number) => api.add(value, store.total()),
+      onSuccess: (nextTotal: number) => patchState(store, { total: nextTotal }),
+    });
+  }),
 );
 
 @Component({
