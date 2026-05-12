@@ -2,65 +2,98 @@
 
 Signal Store feature that bridges with Angular Query
 
-## Simple Example
+## Usage Example
 
-#### Create Store
+### 1) Setup Angular Query
 
 ```typescript
-import { signalStore, withState } from '@ngrx/signals';
-import { withQuery } from '@ngx-signal-store-query/core';
-import { lastValueFrom } from 'rxjs';
+import { ApplicationConfig } from '@angular/core';
+import { provideTanStackQuery, QueryClient } from '@tanstack/angular-query-experimental';
 
-import { ApiService } from './api.service';
-
-export const ExampleStore = signalStore(
-  withState({ categoryId: 1 }),
-  withQuery('example', (store) => {
-    const apiService = inject(ApiService);
-
-    return () => {
-      const categoryId = store.categoryId();
-
-      return {
-        enabled: !!categoryId,
-        queryKey: ['category', { id: categoryId }],
-        queryFn: () =>
-          lastValueFrom(apiService.getCategory$(categoryId)).catch((error) => {
-            console.error(error);
-
-            return null;
-          }),
-      };
-    };
-  }),
-);
+export const appConfig: ApplicationConfig = {
+  providers: [provideTanStackQuery(new QueryClient())],
+};
 ```
 
-#### Use it in component
+### 2) Create a mocked API service
 
-<!-- prettier-ignore-start -->
 ```typescript
-import { JsonPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import { ExampleStore } from './example.store.ts';
+@Injectable({ providedIn: 'root' })
+export class MockApiService {
+  async fetchNumber(id: number): Promise<number> {
+    return Promise.resolve(id * 10);
+  }
 
-@Component({
-  standalone: true,
-  selector: 'app-example',
-  template: `
-    <pre>
-      Loading: {{ store.exampleQuery.isLoading() }}
-      Fetching: {{ store.exampleQuery.isFetching() }}
-      Data:
-      {{ store.exampleQuery.data() | json }}
-    </pre>
-  `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [JsonPipe],
-})
-export class ExampleComponent {
-  public readonly store = inject(ExampleStore);
+  async add(value: number, current: number): Promise<number> {
+    return Promise.resolve(current + value);
+  }
 }
 ```
-<!-- prettier-ignore-end -->
+
+### 3) Use `withQuery`
+
+```typescript
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { signalStore, withState } from '@ngrx/signals';
+import { withQuery } from '@ngx-signal-store-query/core';
+
+export const QueryStore = signalStore(
+  withState({ id: 1 }),
+  withQuery('number', (store) => {
+    const api = inject(MockApiService);
+
+    return () => ({
+      queryKey: ['number', store.id()],
+      queryFn: () => api.fetchNumber(store.id()),
+    });
+  }),
+);
+
+@Component({
+  selector: 'app-query-example',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: `
+    <button (click)="store.numberQuery.refetch()">Refetch</button>
+    <p>pending: {{ store.numberQuery.isPending() }}</p>
+    <p>data: {{ store.numberQuery.data() }}</p>
+  `,
+})
+export class QueryExampleComponent {
+  readonly store = inject(QueryStore);
+}
+```
+
+### 4) Use `withMutation`
+
+```typescript
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { patchState, signalStore, withState } from '@ngrx/signals';
+import { withMutation } from '@ngx-signal-store-query/core';
+
+export const MutationStore = signalStore(
+  withState({ total: 0 }),
+  withMutation('add', (store) => {
+    const api = inject(MockApiService);
+
+    return () => ({
+      mutationFn: (value: number) => api.add(value, store.total()),
+      onSuccess: (nextTotal: number) => patchState(store, { total: nextTotal }),
+    });
+  }),
+);
+
+@Component({
+  selector: 'app-mutation-example',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: `
+    <button (click)="store.addMutation.mutate(1)">Add 1</button>
+    <p>pending: {{ store.addMutation.isPending() }}</p>
+    <p>total: {{ store.total() }}</p>
+  `,
+})
+export class MutationExampleComponent {
+  readonly store = inject(MutationStore);
+}
+```
