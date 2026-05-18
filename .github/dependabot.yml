@@ -29,7 +29,7 @@ updates:
       day: 'monday'
       time: '09:00'
     cooldown:
-      default-days: 2
+      default-days: 7
     groups:
       angular:
         applies-to: 'version-updates'
