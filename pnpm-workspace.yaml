@@ -1,5 +1,5 @@
-# Security: require packages to be at least 2 days old (in minutes) before installation
-minimumReleaseAge: 2880
+# Security: require packages to be at least 7 days old (in minutes) before installation
+minimumReleaseAge: 10080
 packages:
   - 'apps/demo-e2e'
   - '!libs/**'
