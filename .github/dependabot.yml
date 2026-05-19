@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: 'github-actions'
     directories:
       - '/'
-      - '/.github/actions/install-deps'
+      - '/.github/actions/*'
     target-branch: 'main'
     open-pull-requests-limit: 10
     commit-message:
