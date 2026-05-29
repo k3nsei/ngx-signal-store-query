@@ -56,7 +56,7 @@ jobs:
         shell: bash
         run: |
           cd dist/libs/ngx-signal-store-query
-          npm publish --provenance --access
+          npm stage publish --provenance --access=public
 
   release-mirror:
     needs: release-please
