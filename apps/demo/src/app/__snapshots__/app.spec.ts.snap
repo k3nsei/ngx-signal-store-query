@@ -2,16 +2,22 @@
 
 exports[`GIVEN AppComponent > WHEN component was initialized > THEN component should be rendered 1`] = `
 <div
+  _nghost-a-c599290752=""
   id="root1"
-  ng-version="21.2.12"
+  ng-version="22.0.1"
 >
-  <ssq-counter>
+  <ssq-counter
+    _ngcontent-a-c599290752=""
+    _nghost-a-c3988251285=""
+  >
     <output
+      _ngcontent-a-c3988251285=""
       aria-label="Current count"
     >
       0
     </output>
     <button
+      _ngcontent-a-c3988251285=""
       aria-label="Increase"
       class="mdc-fab mat-mdc-fab-base mat-mdc-fab mat-mdc-button-base mat-accent"
       mat-fab=""
@@ -24,6 +30,7 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
         class="mat-mdc-button-persistent-ripple mdc-fab__ripple"
       />
       <mat-icon
+        _ngcontent-a-c3988251285=""
         aria-hidden="true"
         class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color"
         data-mat-icon-name="exposure_plus_1"
@@ -34,6 +41,7 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
       <span
         class="mdc-button__label"
       />
+      <!--container-->
       <span
         class="mat-focus-indicator"
       />
@@ -42,6 +50,7 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
       />
     </button>
     <button
+      _ngcontent-a-c3988251285=""
       aria-label="Decrease"
       class="mdc-fab mat-mdc-fab-base mat-mdc-fab mat-mdc-button-base mat-accent"
       mat-fab=""
@@ -54,6 +63,7 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
         class="mat-mdc-button-persistent-ripple mdc-fab__ripple"
       />
       <mat-icon
+        _ngcontent-a-c3988251285=""
         aria-hidden="true"
         class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color"
         data-mat-icon-name="exposure_neg_1"
@@ -64,6 +74,7 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
       <span
         class="mdc-button__label"
       />
+      <!--container-->
       <span
         class="mat-focus-indicator"
       />
@@ -72,8 +83,12 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
       />
     </button>
   </ssq-counter>
-  <ssq-github-repos>
+  <ssq-github-repos
+    _ngcontent-a-c599290752=""
+    _nghost-a-c1596711146=""
+  >
     <mat-progress-bar
+      _ngcontent-a-c1596711146=""
       aria-valuemax="100"
       aria-valuemin="0"
       class="mat-mdc-progress-bar mdc-linear-progress busy-indicator mat-primary mdc-linear-progress--animation-ready mdc-linear-progress--indeterminate"
@@ -111,20 +126,24 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
     </mat-progress-bar>
     <!--container-->
     <mat-list
+      _ngcontent-a-c1596711146=""
       aria-disabled="false"
       class="mat-mdc-list mat-mdc-list-base mdc-list list"
     >
       <div
+        _ngcontent-a-c1596711146=""
         class="mat-mdc-subheader mdc-list-group__subheader"
         mat-subheader=""
       >
         Google Repositories
       </div>
       <mat-list-item
+        _ngcontent-a-c1596711146=""
         aria-disabled="false"
         class="mat-mdc-list-item mdc-list-item list-item skeleton mdc-list-item--with-leading-icon mdc-list-item--with-two-lines"
       >
         <mat-icon
+          _ngcontent-a-c1596711146=""
           aria-hidden="true"
           class="mat-icon notranslate mat-mdc-list-item-icon list-item__icon material-icons mat-ligature-font mat-icon-no-color mdc-list-item__start"
           data-mat-icon-type="font"
@@ -137,20 +156,26 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
           class="mdc-list-item__content"
         >
           <div
+            _ngcontent-a-c1596711146=""
             class="mat-mdc-list-item-title mdc-list-item__primary-text list-item__title"
             matlistitemtitle=""
           >
             <ssq-skeleton-text
+              _ngcontent-a-c1596711146=""
+              _nghost-a-c1808253393=""
               class="skeleton-text-animated"
             >
                
             </ssq-skeleton-text>
           </div>
           <div
+            _ngcontent-a-c1596711146=""
             class="mat-mdc-list-item-line mdc-list-item__secondary-text list-item__description"
             matlistitemline=""
           >
             <ssq-skeleton-text
+              _ngcontent-a-c1596711146=""
+              _nghost-a-c1808253393=""
               class="skeleton-text-animated"
               inlinesize="12rem"
               style="--ssq-skeleton-text-size-x: 12rem;"
@@ -168,10 +193,12 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
       </mat-list-item>
       <!--container-->
       <mat-list-item
+        _ngcontent-a-c1596711146=""
         aria-disabled="false"
         class="mat-mdc-list-item mdc-list-item list-item skeleton mdc-list-item--with-leading-icon mdc-list-item--with-two-lines"
       >
         <mat-icon
+          _ngcontent-a-c1596711146=""
           aria-hidden="true"
           class="mat-icon notranslate mat-mdc-list-item-icon list-item__icon material-icons mat-ligature-font mat-icon-no-color mdc-list-item__start"
           data-mat-icon-type="font"
@@ -184,20 +211,26 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
           class="mdc-list-item__content"
         >
           <div
+            _ngcontent-a-c1596711146=""
             class="mat-mdc-list-item-title mdc-list-item__primary-text list-item__title"
             matlistitemtitle=""
           >
             <ssq-skeleton-text
+              _ngcontent-a-c1596711146=""
+              _nghost-a-c1808253393=""
               class="skeleton-text-animated"
             >
                
             </ssq-skeleton-text>
           </div>
           <div
+            _ngcontent-a-c1596711146=""
             class="mat-mdc-list-item-line mdc-list-item__secondary-text list-item__description"
             matlistitemline=""
           >
             <ssq-skeleton-text
+              _ngcontent-a-c1596711146=""
+              _nghost-a-c1808253393=""
               class="skeleton-text-animated"
               inlinesize="12rem"
               style="--ssq-skeleton-text-size-x: 12rem;"
@@ -215,10 +248,12 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
       </mat-list-item>
       <!--container-->
       <mat-list-item
+        _ngcontent-a-c1596711146=""
         aria-disabled="false"
         class="mat-mdc-list-item mdc-list-item list-item skeleton mdc-list-item--with-leading-icon mdc-list-item--with-two-lines"
       >
         <mat-icon
+          _ngcontent-a-c1596711146=""
           aria-hidden="true"
           class="mat-icon notranslate mat-mdc-list-item-icon list-item__icon material-icons mat-ligature-font mat-icon-no-color mdc-list-item__start"
           data-mat-icon-type="font"
@@ -231,20 +266,26 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
           class="mdc-list-item__content"
         >
           <div
+            _ngcontent-a-c1596711146=""
             class="mat-mdc-list-item-title mdc-list-item__primary-text list-item__title"
             matlistitemtitle=""
           >
             <ssq-skeleton-text
+              _ngcontent-a-c1596711146=""
+              _nghost-a-c1808253393=""
               class="skeleton-text-animated"
             >
                
             </ssq-skeleton-text>
           </div>
           <div
+            _ngcontent-a-c1596711146=""
             class="mat-mdc-list-item-line mdc-list-item__secondary-text list-item__description"
             matlistitemline=""
           >
             <ssq-skeleton-text
+              _ngcontent-a-c1596711146=""
+              _nghost-a-c1808253393=""
               class="skeleton-text-animated"
               inlinesize="12rem"
               style="--ssq-skeleton-text-size-x: 12rem;"

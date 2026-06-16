@@ -1,9 +1,8 @@
 // @ts-check
-import tsEslint from 'typescript-eslint';
+const { defineConfig } = require('eslint/config');
+const rootConfig = require('../../eslint.config.js');
 
-import rootConfig from '../../eslint.config.mjs';
-
-const config = tsEslint.config(
+module.exports = defineConfig([
   ...rootConfig,
   {
     files: ['**/*.ts'],
@@ -24,12 +23,11 @@ const config = tsEslint.config(
           style: 'kebab-case',
         },
       ],
+      '@typescript-eslint/no-explicit-any': 'warn',
     },
   },
   {
     files: ['**/*.html'],
     rules: {},
   },
-);
-
-export default config;
+]);

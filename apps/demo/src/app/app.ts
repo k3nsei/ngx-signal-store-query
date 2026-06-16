@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { Counter } from './counter';
 import { GithubRepos } from './gh-repos';
@@ -7,7 +7,6 @@ import { GithubRepos } from './gh-repos';
   selector: 'ssq-app',
   templateUrl: './app.html',
   styleUrl: './app.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [Counter, GithubRepos],
 })
 export class App {}

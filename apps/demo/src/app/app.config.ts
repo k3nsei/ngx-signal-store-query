@@ -1,9 +1,5 @@
-import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
-import {
-  type ApplicationConfig,
-  provideBrowserGlobalErrorListeners,
-  provideZonelessChangeDetection,
-} from '@angular/core';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { type ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 import { provideTanStackQuery, QueryClient } from '@tanstack/angular-query-experimental';
@@ -14,9 +10,8 @@ import { githubApiInterceptor } from './gh-repos';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideZonelessChangeDetection(),
     provideClientHydration(withEventReplay()),
-    provideHttpClient(withFetch(), withInterceptors([githubApiInterceptor])),
+    provideHttpClient(withInterceptors([githubApiInterceptor])),
     provideTanStackQuery(
       new QueryClient({
         defaultOptions: {
