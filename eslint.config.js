@@ -1,32 +1,27 @@
 // @ts-check
-import eslint from '@eslint/js';
-import tsEslint from 'typescript-eslint';
-import angularEslint from 'angular-eslint';
-import pluginImport from 'eslint-plugin-import';
-import pluginPrettier from 'eslint-plugin-prettier/recommended';
+const eslint = require('@eslint/js');
+const { defineConfig } = require('eslint/config');
+const tseslint = require('typescript-eslint');
+const angular = require('angular-eslint');
 
-const config = tsEslint.config(
+const pluginImport = require('eslint-plugin-import');
+const pluginPrettier = require('eslint-plugin-prettier/recommended');
+
+module.exports = defineConfig([
   {
     ignores: ['.angular/', 'coverage/', 'dist/', 'tmp/', 'out-tsc/', 'bazel-out/'],
   },
-  ...tsEslint.config({
+  {
     files: ['**/*.?(c|m)ts?(x)'],
     extends: [
       eslint.configs.recommended,
-      ...tsEslint.configs.recommended,
-      ...tsEslint.configs.stylistic,
-      ...angularEslint.configs.tsRecommended,
+      tseslint.configs.recommended,
+      tseslint.configs.stylistic,
+      angular.configs.tsRecommended,
       pluginPrettier,
       pluginImport.flatConfigs.recommended,
     ],
-    languageOptions: {
-      parser: tsEslint.parser,
-      parserOptions: {
-        project: 'tsconfig.json',
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
-    processor: angularEslint.processInlineTemplates,
+    processor: angular.processInlineTemplates,
     rules: {
       /**
        * TypeScript Rules
@@ -60,10 +55,9 @@ const config = tsEslint.config(
           destructuredArrayIgnorePattern: '^(?:[iI]gnore|_)',
           ignoreRestSiblings: true,
         },
-      ],
-      /**
+      ] /**
        * Import/Export Rules
-       */
+       */,
       'import/first': 'error',
       'import/named': 'off',
       'import/no-unresolved': 'off',
@@ -129,12 +123,10 @@ const config = tsEslint.config(
         },
       ],
     },
-  }),
+  },
   {
     files: ['**/*.html'],
-    extends: [...angularEslint.configs.templateRecommended, ...angularEslint.configs.templateAccessibility],
+    extends: [angular.configs.templateRecommended, angular.configs.templateAccessibility],
     rules: {},
   },
-);
-
-export default config;
+]);

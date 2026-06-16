@@ -3,17 +3,10 @@
   "version": 1,
   "cli": {
     "analytics": false,
-    "cache": {
-      "enabled": false,
-      "environment": "local"
-    },
     "packageManager": "pnpm",
-    "schematicCollections": ["angular-eslint"],
-    "warnings": {
-      "versionMismatch": true
-    }
+    "schematicCollections": ["@angular/cdk", "@angular/material", "angular-eslint"]
   },
-  "newProjectRoot": "projects",
+  "newProjectRoot": "apps",
   "projects": {
     "ngx-signal-store-query": {
       "projectType": "library",
@@ -23,9 +16,6 @@
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",
-          "options": {
-            "project": "libs/ngx-signal-store-query/ng-package.json"
-          },
           "configurations": {
             "production": {
               "tsConfig": "libs/ngx-signal-store-query/tsconfig.lib.prod.json"
@@ -37,7 +27,7 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@analogjs/vitest-angular:test",
+          "builder": "@angular/build:unit-test",
           "options": {
             "tsConfig": "libs/ngx-signal-store-query/tsconfig.spec.json"
           }
@@ -46,13 +36,18 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": ["libs/ngx-signal-store-query/**/*.ts", "libs/ngx-signal-store-query/**/*.html"],
-            "eslintConfig": "libs/ngx-signal-store-query/eslint.config.mjs"
+            "eslintConfig": "libs/ngx-signal-store-query/eslint.config.js"
           }
         }
       }
     },
     "demo": {
       "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "apps/demo",
       "sourceRoot": "apps/demo/src",
       "prefix": "ssq",
@@ -61,7 +56,6 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "apps/demo/src/main.ts",
-            "server": "apps/demo/src/main.server.ts",
             "tsConfig": "apps/demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -71,14 +65,14 @@
               }
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["apps/demo/src/styles"],
-              "sass": {
-                "silenceDeprecations": ["legacy-js-api"]
-              }
+              "includePaths": ["apps/demo/src/styles"]
             },
-            "styles": ["apps/demo/src/global-styles.scss"],
-            "scripts": [],
+            "styles": ["apps/demo/src/styles.scss"],
+            "server": "apps/demo/src/main.server.ts",
             "outputMode": "server",
+            "security": {
+              "allowedHosts": []
+            },
             "ssr": {
               "entry": "apps/demo/src/server.ts"
             }
@@ -93,8 +87,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
                 }
               ],
               "outputHashing": "all"
@@ -119,50 +113,17 @@
           },
           "defaultConfiguration": "development"
         },
-        "extract-i18n": {
-          "builder": "@angular/build:extract-i18n"
-        },
         "test": {
-          "builder": "@analogjs/vitest-angular:test",
-          "options": {
-            "tsConfig": "apps/demo/tsconfig.spec.json"
-          }
+          "builder": "@angular/build:unit-test"
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": ["apps/demo/**/*.ts", "apps/demo/**/*.html"],
-            "eslintConfig": "apps/demo/eslint.config.mjs"
+            "eslintConfig": "apps/demo/eslint.config.js"
           }
         }
       }
-    }
-  },
-  "schematics": {
-    "@schematics/angular:component": {
-      "type": "component",
-      "style": "scss"
-    },
-    "@schematics/angular:directive": {
-      "type": "directive"
-    },
-    "@schematics/angular:service": {
-      "type": "service"
-    },
-    "@schematics/angular:guard": {
-      "typeSeparator": "."
-    },
-    "@schematics/angular:interceptor": {
-      "typeSeparator": "."
-    },
-    "@schematics/angular:module": {
-      "typeSeparator": "."
-    },
-    "@schematics/angular:pipe": {
-      "typeSeparator": "."
-    },
-    "@schematics/angular:resolver": {
-      "typeSeparator": "."
     }
   }
 }

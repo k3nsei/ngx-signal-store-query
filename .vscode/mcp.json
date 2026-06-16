@@ -5,11 +5,6 @@
       "command": "npx",
       "args": ["-y", "@angular/cli", "mcp"]
     },
-    "memory": {
-      "type": "local",
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-memory"]
-    },
     "playwright": {
       "type": "local",
       "command": "npx",

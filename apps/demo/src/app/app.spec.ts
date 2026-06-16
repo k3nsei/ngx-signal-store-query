@@ -10,8 +10,8 @@ describe('GIVEN AppComponent', () => {
   let fixture: ComponentFixture<App>;
   let component: App;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [App],
       providers: [
         provideHttpClient(),
@@ -28,11 +28,12 @@ describe('GIVEN AppComponent', () => {
           }),
         ),
       ],
-    });
+    }).compileComponents();
 
     fixture = TestBed.createComponent(App);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+
+    await fixture.whenStable();
   });
 
   describe('WHEN component was initialized', () => {

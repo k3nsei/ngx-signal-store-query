@@ -1,32 +1,42 @@
 /* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
 /* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
+  "references": [
+    {
+      "path": "./apps/demo/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/demo/tsconfig.spec.json"
+    },
+    {
+      "path": "./libs/ngx-signal-store-query/tsconfig.lib.json"
+    },
+    {
+      "path": "./libs/ngx-signal-store-query/tsconfig.spec.json"
+    }
+  ],
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist/out-tsc",
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "sourceMap": true,
-    "declaration": false,
-    "experimentalDecorators": true,
-    "moduleResolution": "bundler",
-    "importHelpers": true,
+    "module": "preserve",
     "target": "ES2022",
-    "module": "ES2022",
-    "lib": ["ES2024", "DOM"],
+    "lib": ["ESNext", "DOM"],
     "paths": {
       "@ngx-signal-store-query/core": ["./libs/ngx-signal-store-query/src/public-api.ts"]
-    }
+    },
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "isolatedModules": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "skipLibCheck": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "files": []
 }
