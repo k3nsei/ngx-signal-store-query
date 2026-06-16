@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.10.0](https://github.com/k3nsei/ngx-signal-store-query/compare/v0.9.0...v0.10.0) (2026-06-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** dropped support for Angular Query versions earlier than 5.101.0
+
+### Miscellaneous Chores
+
+* **deps:** bump packages ([1e0f9f6](https://github.com/k3nsei/ngx-signal-store-query/commit/1e0f9f60a1e1c7075f36472e7524a13968be3305))
+
 ## [0.9.0](https://github.com/k3nsei/ngx-signal-store-query/compare/v0.8.0...v0.9.0) (2026-05-07)
 
 
