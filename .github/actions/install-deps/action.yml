@@ -28,6 +28,10 @@ runs:
         cache: 'pnpm'
         check-latest: true
 
+    - name: Install NPM
+      shell: bash
+      run: npm install --global npm@latest
+
     - name: Install dependencies
       shell: bash
       run: pnpm install --frozen-lockfile
