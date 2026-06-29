@@ -11,23 +11,7 @@ allowBuilds:
 minimumReleaseAge: 10080
 minimumReleaseAgeStrict: true
 minimumReleaseAgeExclude:
-  - '@angular-devkit/architect@0.2200.1'
-  - '@angular-devkit/core@22.0.1'
-  - '@angular-devkit/schematics@22.0.1'
-  - '@angular/build@22.0.1'
-  - '@angular/cdk@22.0.1'
-  - '@angular/cli@22.0.1'
-  - '@angular/common@22.0.1'
-  - '@angular/compiler-cli@22.0.1'
-  - '@angular/compiler@22.0.1'
-  - '@angular/core@22.0.1'
-  - '@angular/forms@22.0.1'
-  - '@angular/material@22.0.1'
-  - '@angular/platform-browser@22.0.1'
-  - '@angular/platform-server@22.0.1'
-  - '@angular/router@22.0.1'
-  - '@angular/ssr@22.0.1'
-  - '@playwright/test@1.61.0'
-  - '@schematics/angular@22.0.1'
-  - playwright-core@1.61.0
-  - playwright@1.61.0
+  - '@angular/*'
+  - '@angular-devkit/*'
+  - '@schematics/*'
+  - ng-packagr
