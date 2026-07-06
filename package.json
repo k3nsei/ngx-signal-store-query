@@ -42,7 +42,7 @@
     "@angular/build": "22.0.4",
     "@angular/cli": "22.0.4",
     "@angular/compiler-cli": "22.0.4",
-    "@commitlint/cli": "21.0.2",
+    "@commitlint/cli": "21.1.0",
     "@commitlint/config-conventional": "21.0.2",
     "@eslint/js": "10.0.1",
     "@octokit/types": "16.0.0",
