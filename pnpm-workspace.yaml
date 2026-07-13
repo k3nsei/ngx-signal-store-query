@@ -13,6 +13,7 @@ minimumReleaseAgeStrict: true
 minimumReleaseAgeExclude:
   - '@angular/*'
   - '@angular-devkit/*'
-  - '@commitlint/*'
   - '@schematics/*'
   - ng-packagr
+  - '@commitlint/cli@21.2.1'
+  - '@commitlint/read@21.2.1'

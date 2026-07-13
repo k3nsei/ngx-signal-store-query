@@ -1,6 +1,10 @@
 # ngx-signal-store-query
 
-Signal Store feature that bridges with Angular Query
+[![npm license][badge-license]][npm-pkg-url]
+[![npm version][badge-version]][npm-pkg-url]
+[![npm monthly downloads][badge-downloads]][npm-pkg-url]
+
+> Signal Store feature that bridges with Angular Query
 
 ## Usage Example
 
@@ -97,3 +101,18 @@ export class MutationExampleComponent {
   readonly store = inject(MutationStore);
 }
 ```
+
+<!-- LINKS-DEFINITIONS-LIST:START -->
+<!-- markdownlint-disable -->
+<!-- oxfmt-ignore-start -->
+<!-- prettier-ignore-start -->
+
+[badge-downloads]: https://img.shields.io/npm/dm/@ngx-signal-store-query/core?style=flat-square
+[badge-license]: https://img.shields.io/npm/l/@ngx-signal-store-query/core?style=flat-square
+[badge-version]: https://img.shields.io/npm/v/@ngx-signal-store-query/core?style=flat-square
+[npm-pkg-url]: https://www.npmjs.com/package/@ngx-signal-store-query/core
+
+<!-- prettier-ignore-end -->
+<!-- oxfmt-ignore-end -->
+<!-- markdownlint-restore -->
+<!-- LINKS-DEFINITIONS-LIST:END -->
