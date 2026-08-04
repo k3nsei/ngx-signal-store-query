@@ -62,7 +62,7 @@ importers:
         version: 22.1.0(@angular/cli@22.1.2(@types/node@26.1.2)(chokidar@5.0.0))(chokidar@5.0.0)(eslint@10.8.0(jiti@2.6.1))(typescript@6.0.3)
       '@angular/build':
         specifier: 22.1.2
-        version: 22.1.2(be58055941ec5d4acf024c38132ba3f1)
+        version: 22.1.2(005498f0eee4aac0a939e1c5d93b54a5)
       '@angular/cli':
         specifier: 22.1.2
         version: 22.1.2(@types/node@26.1.2)(chokidar@5.0.0)
@@ -115,8 +115,8 @@ importers:
         specifier: 17.2.0
         version: 17.2.0
       ng-packagr:
-        specifier: 22.0.1
-        version: 22.0.1(@angular/compiler-cli@22.1.0(@angular/compiler@22.1.0)(typescript@6.0.3))(tslib@2.8.1)(typescript@6.0.3)
+        specifier: 22.0.2
+        version: 22.0.2(@angular/compiler-cli@22.1.0(@angular/compiler@22.1.0)(typescript@6.0.3))(tslib@2.8.1)(typescript@6.0.3)
       prettier:
         specifier: 3.9.6
         version: 3.9.6
@@ -3284,8 +3284,8 @@ packages:
     resolution: {integrity: sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==}
     engines: {node: '>= 0.6'}
 
-  ng-packagr@22.0.1:
-    resolution: {integrity: sha512-gL03L/OBNWz4nqTo8l5u6f3hySYzAVwx3aVZs6X7UGQv+cT+HUozr2XquAvvl/beray0AgCAfydGELDAJAFyKg==}
+  ng-packagr@22.0.2:
+    resolution: {integrity: sha512-8qQ+RWm0W3gK8Sch1kmo3EzIUiCTXIOP2gS7b+vtqCMBf4KBjBP0wFBikW5qRau9lGOzRTML0GPFGoARPR4+fw==}
     engines: {node: ^22.22.3 || ^24.15.0 || >=26.0.0}
     hasBin: true
     peerDependencies:
@@ -3454,6 +3454,10 @@ packages:
 
   piscina@5.2.0:
     resolution: {integrity: sha512-DszUCKeVN/5G5QKo6jAVHL8fmKnkJvQ0ACiVgY7YGCq3TUB2oznAOayvZPIAdEThvhczkXR+qm3IHsNXpFCYfA==}
+    engines: {node: '>=20.x'}
+
+  piscina@5.3.0:
+    resolution: {integrity: sha512-9D3tPBayfoal6l9l4Y8NrMn1jkV718qJoYrla6P51+hh9h0Q+9/1c8KgEnoBQqhguyfgjay4biADI8HJG3pkoA==}
     engines: {node: '>=20.x'}
 
   pkce-challenge@5.0.1:
@@ -3647,6 +3651,11 @@ packages:
 
   sass@1.101.0:
     resolution: {integrity: sha512-OL3GoQyoUdDt843DpVmDO6y2k1sc5IhUDSpu8XucEI+35neq5QivZ1iuegnpraEVTJXlQGK1gl27zKcTLEPbQw==}
+    engines: {node: '>=20.19.0'}
+    hasBin: true
+
+  sass@1.102.0:
+    resolution: {integrity: sha512-NSOyTnaQF7rTAEOtI2fwb386vL+akyiQLBZu8Na7hXCb+umJy0GAqlcMIaqACZ6Z1VgTBS4K9PG6B3IdjHGJsw==}
     engines: {node: '>=20.19.0'}
     hasBin: true
 
@@ -4238,7 +4247,7 @@ snapshots:
       eslint: 10.8.0(jiti@2.6.1)
       typescript: 6.0.3
 
-  '@angular/build@22.1.2(be58055941ec5d4acf024c38132ba3f1)':
+  '@angular/build@22.1.2(005498f0eee4aac0a939e1c5d93b54a5)':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@angular-devkit/architect': 0.2201.2(chokidar@5.0.0)
@@ -4277,7 +4286,7 @@ snapshots:
       '@angular/ssr': 22.1.2(@angular/common@22.1.0(@angular/core@22.1.0(@angular/compiler@22.1.0)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.1.0(@angular/compiler@22.1.0)(rxjs@7.8.2))(@angular/platform-server@22.1.0(@angular/common@22.1.0(@angular/core@22.1.0(@angular/compiler@22.1.0)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/compiler@22.1.0)(@angular/core@22.1.0(@angular/compiler@22.1.0)(rxjs@7.8.2))(@angular/platform-browser@22.1.0(@angular/common@22.1.0(@angular/core@22.1.0(@angular/compiler@22.1.0)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.1.0(@angular/compiler@22.1.0)(rxjs@7.8.2)))(rxjs@7.8.2))(@angular/router@22.1.0(@angular/common@22.1.0(@angular/core@22.1.0(@angular/compiler@22.1.0)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.1.0(@angular/compiler@22.1.0)(rxjs@7.8.2))(@angular/platform-browser@22.1.0(@angular/common@22.1.0(@angular/core@22.1.0(@angular/compiler@22.1.0)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.1.0(@angular/compiler@22.1.0)(rxjs@7.8.2)))(rxjs@7.8.2))
       less: 4.8.1
       lmdb: 3.5.6
-      ng-packagr: 22.0.1(@angular/compiler-cli@22.1.0(@angular/compiler@22.1.0)(typescript@6.0.3))(tslib@2.8.1)(typescript@6.0.3)
+      ng-packagr: 22.0.2(@angular/compiler-cli@22.1.0(@angular/compiler@22.1.0)(typescript@6.0.3))(tslib@2.8.1)(typescript@6.0.3)
       postcss: 8.5.24
       rollup: 4.62.3
       vitest: 4.1.10(@types/node@26.1.2)(jsdom@30.0.0)(vite@8.1.5(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.6.1)(less@4.8.1)(sass@1.101.0)(yaml@2.9.0))
@@ -7143,7 +7152,7 @@ snapshots:
 
   negotiator@1.0.0: {}
 
-  ng-packagr@22.0.1(@angular/compiler-cli@22.1.0(@angular/compiler@22.1.0)(typescript@6.0.3))(tslib@2.8.1)(typescript@6.0.3):
+  ng-packagr@22.0.2(@angular/compiler-cli@22.1.0(@angular/compiler@22.1.0)(typescript@6.0.3))(tslib@2.8.1)(typescript@6.0.3):
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@angular/compiler-cli': 22.1.0(@angular/compiler@22.1.0)(typescript@6.0.3)
@@ -7160,11 +7169,11 @@ snapshots:
       jsonc-parser: 3.3.1
       less: 4.8.1
       ora: 9.4.1
-      piscina: 5.2.0
+      piscina: 5.3.0
       postcss: 8.5.24
       rollup-plugin-dts: 6.4.1(rollup@4.62.3)(typescript@6.0.3)
       rxjs: 7.8.2
-      sass: 1.101.0
+      sass: 1.102.0
       tinyglobby: 0.2.17
       tslib: 2.8.1
       typescript: 6.0.3
@@ -7374,6 +7383,10 @@ snapshots:
   picomatch@4.0.5: {}
 
   piscina@5.2.0:
+    optionalDependencies:
+      '@napi-rs/nice': 1.1.1
+
+  piscina@5.3.0:
     optionalDependencies:
       '@napi-rs/nice': 1.1.1
 
@@ -7633,6 +7646,14 @@ snapshots:
   safer-buffer@2.1.2: {}
 
   sass@1.101.0:
+    dependencies:
+      chokidar: 5.0.0
+      immutable: 5.1.9
+      source-map-js: 1.2.1
+    optionalDependencies:
+      '@parcel/watcher': 2.6.0
+
+  sass@1.102.0:
     dependencies:
       chokidar: 5.0.0
       immutable: 5.1.9
