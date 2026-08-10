@@ -46,7 +46,7 @@
     "@commitlint/cli": "21.2.1",
     "@commitlint/config-conventional": "21.2.0",
     "@eslint/js": "10.0.1",
-    "@octokit/types": "16.0.0",
+    "@octokit/types": "17.0.0",
     "@playwright/test": "1.62.0",
     "@types/express": "5.0.6",
     "@types/node": "26.1.2",
