@@ -1,3 +1,4 @@
+#:schema https://mise.jdx.dev/schema/mise.json
 [tools]
 node = "latest"
 pnpm = "latest"
