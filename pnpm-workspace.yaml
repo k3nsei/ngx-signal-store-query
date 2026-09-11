@@ -15,3 +15,15 @@ minimumReleaseAgeExclude:
   - '@angular-devkit/*'
   - '@schematics/*'
   - 'ng-packagr'
+  - '@angular-eslint/builder@22.5.0'
+  - '@angular-eslint/bundled-angular-compiler@22.5.0'
+  - '@angular-eslint/eslint-plugin-template@22.5.0'
+  - '@angular-eslint/eslint-plugin@22.5.0'
+  - '@angular-eslint/schematics@22.5.0'
+  - '@angular-eslint/template-parser@22.5.0'
+  - '@angular-eslint/utils@22.5.0'
+  - '@ngrx/signals@22.0.1'
+  - angular-eslint@22.5.0
+  - '@playwright/test@1.63.0'
+  - playwright-core@1.63.0
+  - playwright@1.63.0
