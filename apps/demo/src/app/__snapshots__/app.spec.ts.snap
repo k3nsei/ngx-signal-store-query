@@ -4,7 +4,7 @@ exports[`GIVEN AppComponent > WHEN component was initialized > THEN component sh
 <div
   _nghost-a-c599290752=""
   id="root1"
-  ng-version="22.2.2"
+  ng-version="22.2.4"
 >
   <ssq-counter
     _ngcontent-a-c599290752=""
