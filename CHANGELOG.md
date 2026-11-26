@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/k3nsei/ngx-signal-store-query/compare/v0.11.0...v1.0.0) (2026-11-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** Migrate from the experimental `@tanstack/angular-query-experimental` package to the stable `@tanstack/angular-query` package.
+
+### Miscellaneous Chores
+
+* **deps:** migrate from the experimental to stable version of Angular Query ([4861611](https://github.com/k3nsei/ngx-signal-store-query/commit/4861611b7d6d73804ae5cd177abdd66ab87d4208))
+
 ## [0.11.0](https://github.com/k3nsei/ngx-signal-store-query/compare/v0.9.0...v0.11.0) (2026-06-16)
 
 
