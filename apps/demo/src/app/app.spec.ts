@@ -2,7 +2,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { type ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { provideTanStackQuery, QueryClient } from '@tanstack/angular-query-experimental';
+import { provideTanStackQuery, QueryClient, withNoQueryHydration } from '@tanstack/angular-query';
 
 import { App } from './app';
 
@@ -17,15 +17,17 @@ describe('GIVEN AppComponent', () => {
         provideHttpClient(),
         provideHttpClientTesting(),
         provideTanStackQuery(
-          new QueryClient({
-            defaultOptions: {
-              queries: {
-                refetchOnWindowFocus: false,
-                retry: false,
-                staleTime: 0,
+          () =>
+            new QueryClient({
+              defaultOptions: {
+                queries: {
+                  refetchOnWindowFocus: false,
+                  retry: false,
+                  staleTime: 0,
+                },
               },
-            },
-          }),
+            }),
+          withNoQueryHydration(),
         ),
       ],
     }).compileComponents();
@@ -33,7 +35,7 @@ describe('GIVEN AppComponent', () => {
     fixture = TestBed.createComponent(App);
     component = fixture.componentInstance;
 
-    await fixture.whenStable();
+    fixture.detectChanges();
   });
 
   describe('WHEN component was initialized', () => {
