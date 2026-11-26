@@ -1,7 +1,7 @@
 import { inject, Injector, runInInjectionContext } from '@angular/core';
 
 import { type SignalStoreFeatureResult, withProps } from '@ngrx/signals';
-import { type CreateQueryResult, injectQuery, type QueryKey } from '@tanstack/angular-query-experimental';
+import { type CreateQueryResult, injectQuery, type QueryKey } from '@tanstack/angular-query';
 
 import { type CreateQueryFn, type QueryProp } from './types';
 import { lowerFirst } from './utils';

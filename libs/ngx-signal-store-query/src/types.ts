@@ -1,5 +1,5 @@
 import { type SignalStoreFeatureResult, type withProps } from '@ngrx/signals';
-import { type CreateQueryOptions, type injectMutation, type QueryKey } from '@tanstack/angular-query-experimental';
+import { type CreateQueryOptions, type injectMutation, type QueryKey } from '@tanstack/angular-query';
 
 export type StoreType<Input extends SignalStoreFeatureResult, Props extends object> = Parameters<
   Parameters<typeof withProps<Input, Props>>[0]

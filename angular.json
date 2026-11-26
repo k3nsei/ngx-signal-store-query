@@ -11,20 +11,26 @@
     "ngx-signal-store-query": {
       "projectType": "library",
       "root": "libs/ngx-signal-store-query",
-      "sourceRoot": "libs/ngx-signal-store-query/src",
+      "sourceRoot": "libs/ngx-signal-store-query",
       "prefix": "ssq",
       "architect": {
         "build": {
-          "builder": "@angular/build:ng-packagr",
+          "builder": "@angular/build:library",
           "configurations": {
             "production": {
-              "tsConfig": "libs/ngx-signal-store-query/tsconfig.lib.prod.json"
+              "compilationMode": "partial",
+              "declarationMap": false
             },
             "development": {
-              "tsConfig": "libs/ngx-signal-store-query/tsconfig.lib.json"
+              "compilationMode": "full",
+              "declarationMap": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "production",
+          "options": {
+            "tsConfig": "libs/ngx-signal-store-query/tsconfig.lib.json",
+            "outputPath": "dist/libs/ngx-signal-store-query"
+          }
         },
         "test": {
           "builder": "@angular/build:unit-test",
